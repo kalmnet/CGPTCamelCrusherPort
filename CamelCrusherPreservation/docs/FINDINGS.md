@@ -161,3 +161,11 @@ The user reports: AU opens with a black GUI but its parameters change the sound;
 GitHub Actions run 37819328990, source commit 40a6fd9c56dca1563328853ac0da75e7f2822b73, used the macos-14-arm64 image and Xcode 15.4/AppleClang 15. The VST3 and legacy VST bundles each contain x86_64 and arm64 slices. CTest passed core_tests and legacy_smoke; Python passed five preset checks. Ad hoc code signatures verified, and the VST3 validator reported 47 passed, zero failed. The full log is evidence/macos-build.log. No original-AU render or Live/FL project was run by CI; the Cocoa editor was compiled but not visually inspected. The experimental new AU was not built.
 
 Additional Windows DLL, third-party-port and host-feedback findings: [WINDOWS-AND-THIRD-PARTY.md](WINDOWS-AND-THIRD-PARTY.md).
+
+## User acceptance: finalized build 0.1.1
+
+The user reports successful testing of both VST2 and VST3 in native Ableton Live 12.4.6 and FL Studio 26.1.7 build 5419. The VST2 editor now renders in both hosts, controls and preset selection work, and VST3 discovery in Live recovered after the initial macOS security/scan failure. The user also reports successful VST2 project recall from Windows to Mac and from Mac back to Windows using the original Windows DLL.
+
+These are user-reported acceptance results for the tested setup/projects. They are distinct from binary differential tests and CI evidence. They do not establish sample-perfect full-plugin sound equivalence, every automation path, every project/DAW version, or new AU support. Exact full-original-AU comparison renders remain pending.
+
+See [ACCEPTANCE.md](ACCEPTANCE.md) for the finalized build record.

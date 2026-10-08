@@ -26,3 +26,11 @@ The converter preserves all 17 float32 slots, including the five unused values. 
 The user reports that the original AU changes sound despite its black GUI, while the original VST does not respond audibly to parameters. Use the AU's generic parameter interface or the Rosetta reference renderer in TESTING.md. Do not use the nonresponsive VST as the sole sound baseline, and do not assume an AU instance automatically receives a VST2 instance's saved state.
 
 The new AU defaults to a separate identity. Enabling the old AU identity is an explicit collision/recall experiment requiring the original component to be moved out of scanned locations. AU is secondary to the VST3 and legacy project requirements.
+
+## User acceptance: finalized build 0.1.1
+
+The user reports successful testing of both VST2 and VST3 in native Ableton Live 12.4.6 and FL Studio 26.1.7 build 5419. The VST2 editor now renders in both hosts, controls and preset selection work, and VST3 discovery in Live recovered after the initial macOS security/scan failure. The user also reports successful VST2 project recall from Windows to Mac and from Mac back to Windows using the original Windows DLL.
+
+These are user-reported acceptance results for the tested setup/projects. They are distinct from binary differential tests and CI evidence. They do not establish sample-perfect full-plugin sound equivalence, every automation path, every project/DAW version, or new AU support. Exact full-original-AU comparison renders remain pending.
+
+See [ACCEPTANCE.md](ACCEPTANCE.md) for the finalized build record.

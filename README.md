@@ -1,20 +1,18 @@
-# CamelCrusher Mac test plugins
+# CamelCrusher preservation — finalized 0.1.1
 
-**Compiled Mac plugins are now available. No coding or Xcode is needed to install them.**
+[Download the finalized Mac plugins](https://github.com/kalmnet/CGPTCamelCrusherPort/releases/tag/v0.1.1). No coding or Xcode is needed to install them. Read [installation steps](CamelCrusherPreservation/docs/INSTALL.md).
 
-[Download the Mac plugin ZIP](https://github.com/kalmnet/CGPTCamelCrusherPort/actions/runs/37824633602/artifacts/11570837505) while signed in to GitHub. Extract the downloaded ZIP and the plugin ZIP inside it.
+The package contains `CamelCrusher.vst` (VST2, for original project compatibility) and `CamelCrusherPreservation.vst3`. Both include native Apple Silicon ARM64 and Intel x86_64 code. Use VST2 for projects exchanged with Windows using the original CamelCrusher DLL; VST3 does not automatically replace old VST2 instances.
 
-Version 0.1.1 corrects the legacy VST2 Cocoa editor attachment and negotiation; its Mac editor smoke test verifies attachment and all eight bundled images. Live/FL visual retesting remains necessary.
+The user confirmed both plugins work in native Live 12.4.6 and FL Studio 26.1.7 build 5419, including restored GUI/controls. Tested VST2 projects recall in both Windows-to-Mac and Mac-to-Windows directions. [Acceptance and limits](CamelCrusherPreservation/docs/ACCEPTANCE.md) separates these user reports from automated verification.
 
-Read [the installation steps](CamelCrusherPreservation/docs/INSTALL.md). The download contains `CamelCrusherPreservation.vst3` and the optional old-project compatibility adapter `CamelCrusher.vst`. Both include native ARM64 and Intel x86_64 code.
+The release preserves the tested 0.1.1 binaries. The Apple Silicon CI build passed core/legacy tests, preset checks and 47 VST3 validator tests. Selected original Intel DSP tests matched exactly in their stated experiments; Windows selected distortion/compressor tests also matched. Full original-plugin comparison renders remain pending. The new AU is experimental source only.
 
-The macOS build succeeded on an Apple Silicon runner using Xcode 15.4. Core and legacy-adapter checks passed; the VST3 validator passed 47 tests. GUI appearance, full original-AU sound comparisons and real Ableton Live/FL Studio project recall still need your Mac tests. Test a copied project. Do not register both original and replacement VST2 plugins with the same ID.
-
-The build artifact expires after 30 days. [Actions](https://github.com/kalmnet/CGPTCamelCrusherPort/actions/workflows/mac-plugins.yml) can rebuild it using Run workflow. The complete source and build instructions remain in this repository.
-
-- [Verified findings and limitations](CamelCrusherPreservation/docs/FINDINGS.md)
-- [Sound and host testing](CamelCrusherPreservation/docs/TESTING.md)
-- [Old-project migration and recall](CamelCrusherPreservation/docs/MIGRATION.md)
+- [Verified findings](CamelCrusherPreservation/docs/FINDINGS.md)
+- [Testing procedures](CamelCrusherPreservation/docs/TESTING.md)
+- [Project migration](CamelCrusherPreservation/docs/MIGRATION.md)
+- [Windows and third-party investigation](CamelCrusherPreservation/docs/WINDOWS-AND-THIRD-PARTY.md)
+- [Source build instructions](CamelCrusherPreservation/README.md)
 - [Provenance and distribution limits](CamelCrusherPreservation/NOTICE.md)
 
-The original AU is the user's working sound/parameter reference despite its black GUI. The original binaries and external SDK dependencies are not included. Windows DLL and JDMeet findings are in [the additional investigation report](CamelCrusherPreservation/docs/WINDOWS-AND-THIRD-PARTY.md). This private repository is for the requested preservation research; no public redistribution rights are asserted. AU reconstruction remains an experimental source target.
+This private repository is for the requested preservation work. Original executable binaries and third-party port assets/code are not included; no public redistribution rights are asserted.

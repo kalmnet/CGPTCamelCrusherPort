@@ -12,13 +12,18 @@
     },
     {
       "path": "README.md",
-      "sha256": "3939fbb6636f6abee6342278279a6c87d7f077f7a516947aeb48bb41a14b6057",
-      "bytes": 6765
+      "sha256": "37931f352caba216323d14c8db70db8eb9b1e70134fe064d6953d0bda3c5b829",
+      "bytes": 6837
+    },
+    {
+      "path": "docs/ACCEPTANCE.md",
+      "sha256": "660e256c7cca678e42d6134b932383d1c8b862349832c4aae62745537081a1a4",
+      "bytes": 1291
     },
     {
       "path": "docs/FINDINGS.md",
-      "sha256": "e60e2c69f1ed3508a57ebbd2d6c818c25bef10c9415a8740a728afad11dd5740",
-      "bytes": 15441
+      "sha256": "2afe5b3d6b98da3d6ba1860256c62e76f1ceba64295ca36109bc53522a2f47bb",
+      "bytes": 16307
     },
     {
       "path": "docs/INSTALL.md",
@@ -32,18 +37,18 @@
     },
     {
       "path": "docs/MIGRATION.md",
-      "sha256": "21590d89a749795ae1f00b183d150902917b8e08af0cb9f7c6ccfbba66291387",
-      "bytes": 4487
+      "sha256": "9f4802a10aae4665a4f0657bfd5b4e70603ea505a24c8f2bdb992822e6fdcb63",
+      "bytes": 5353
     },
     {
       "path": "docs/TESTING.md",
-      "sha256": "4059eb2bb6c86f4931dd658e5fdd031e99494cfcba4ceb4fdb4f6812ef694185",
-      "bytes": 6913
+      "sha256": "5a7d1ae71a26763d2f659a1d77e411ab25951fafa97b78e4736a60a4940af652",
+      "bytes": 7779
     },
     {
       "path": "docs/WINDOWS-AND-THIRD-PARTY.md",
-      "sha256": "f6b675da2a49fe5eb0e33900ca673c48f75e41f06a9a21b49fb659483500f15f",
-      "bytes": 7499
+      "sha256": "8a62ce958d5d92d3daece8a423e35c38d7c1c52aa512d6a6c2fb5063dc64a603",
+      "bytes": 8365
     },
     {
       "path": "docs/evidence/additional-binaries-inventory.json",

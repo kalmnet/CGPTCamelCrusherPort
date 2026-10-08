@@ -44,3 +44,11 @@ User versions: Live 12.4.6; FL Studio 26.1.7 build 5419. Reported native VST2 so
 The adapter incorrectly returned 0xbeef rather than signed 32-bit 0xbeef0000 for hasCockosViewAsConfig. It also gated effEditOpen on optional prior negotiation, which a 64-bit Cocoa host may skip. Both were corrected; parameter indexing, legacy identity, chunks and DSP remain preserved. A Mac smoke test now opens the VST2 editor without negotiation, verifies one attached NSView and all eight bundled images, then verifies detachment. This passed on Apple Silicon in run 37824633602, along with core checks, five preset tests and 47 VST3 validator tests. Log: evidence/macos-editor-fix-build.log. This does not yet prove Live/FL visual behavior; retest is required.
 
 Live's VST3 folder settings are confirmed by the user. They subsequently reported an initial macOS security block during scanning, followed by allowing it without successful rediscovery. A cached failed scan is a plausible explanation, not reproduced proof. The next targeted step is a complete Live rescan after approval; see LIVE-DISCOVERY.md. No VST3 class identity was changed to evade the cache.
+
+## User acceptance: finalized build 0.1.1
+
+The user reports successful testing of both VST2 and VST3 in native Ableton Live 12.4.6 and FL Studio 26.1.7 build 5419. The VST2 editor now renders in both hosts, controls and preset selection work, and VST3 discovery in Live recovered after the initial macOS security/scan failure. The user also reports successful VST2 project recall from Windows to Mac and from Mac back to Windows using the original Windows DLL.
+
+These are user-reported acceptance results for the tested setup/projects. They are distinct from binary differential tests and CI evidence. They do not establish sample-perfect full-plugin sound equivalence, every automation path, every project/DAW version, or new AU support. Exact full-original-AU comparison renders remain pending.
+
+See [ACCEPTANCE.md](ACCEPTANCE.md) for the finalized build record.
