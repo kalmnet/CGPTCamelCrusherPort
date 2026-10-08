@@ -1,0 +1,57 @@
+name: Build Mac plugins
+on:
+  push:
+    branches: [main]
+    paths: ['CamelCrusherPreservation/**', '.github/workflows/mac-plugins.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  plugins:
+    runs-on: macos-14
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - name: Fetch pinned VST3 SDK
+        run: |
+          git clone https://github.com/steinbergmedia/vst3sdk.git "$RUNNER_TEMP/vst3sdk"
+          git -C "$RUNNER_TEMP/vst3sdk" checkout 3cdf9ca5d1f5b1b21e0a86832aa4abe55607bd96
+          git -C "$RUNNER_TEMP/vst3sdk" submodule update --init --recursive
+      - name: Configure universal Mac plugins
+        run: >-
+          cmake -S CamelCrusherPreservation -B build-mac
+          -DCMAKE_BUILD_TYPE=Release
+          '-DCMAKE_OSX_ARCHITECTURES=arm64;x86_64'
+          -DCMAKE_OSX_DEPLOYMENT_TARGET=11.0
+          -DVST3_SDK_ROOT="$RUNNER_TEMP/vst3sdk"
+          -DCAMEL_BUILD_LEGACY=ON
+      - name: Compile
+        run: cmake --build build-mac --parallel 3
+      - name: Core and legacy adapter tests
+        run: |
+          ctest --test-dir build-mac --output-on-failure
+          python3 CamelCrusherPreservation/tests/test_presets.py
+      - name: Sign and validate plugins
+        run: |
+          codesign --force --deep --sign - build-mac/VST3/Release/CamelCrusherPreservation.vst3
+          codesign --force --deep --sign - build-mac/CamelCrusher.vst
+          codesign --verify --deep --strict build-mac/VST3/Release/CamelCrusherPreservation.vst3
+          codesign --verify --deep --strict build-mac/CamelCrusher.vst
+          lipo -archs build-mac/VST3/Release/CamelCrusherPreservation.vst3/Contents/MacOS/CamelCrusherPreservation
+          lipo -archs build-mac/CamelCrusher.vst/Contents/MacOS/CamelCrusher
+          build-mac/bin/Release/validator build-mac/VST3/Release/CamelCrusherPreservation.vst3
+      - name: Package plugins
+        run: |
+          mkdir -p download
+          ditto build-mac/VST3/Release/CamelCrusherPreservation.vst3 download/CamelCrusherPreservation.vst3
+          ditto build-mac/CamelCrusher.vst download/CamelCrusher.vst
+          cp CamelCrusherPreservation/NOTICE.md download/NOTICE.md
+          cp CamelCrusherPreservation/docs/INSTALL.md download/INSTALL.md
+          ditto -c -k --sequesterRsrc --keepParent download CamelCrusher-Mac-plugins.zip
+      - name: Upload downloadable plugins
+        uses: actions/upload-artifact@v4
+        with:
+          name: CamelCrusher-Mac-plugins
+          path: CamelCrusher-Mac-plugins.zip
+          retention-days: 30
+          if-no-files-found: error
