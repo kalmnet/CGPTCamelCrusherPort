@@ -1,0 +1,15 @@
+{
+  "binary_kind": "vst",
+  "binary_sha256": "ef7529f06f4f9ee05d914a4b59a21b63c651dfe362fc80dafa4e73ddab63f557",
+  "cases": 2880,
+  "channel_samples": 1102080,
+  "max_absolute_error": 0.0,
+  "nonfinite_cases": 0,
+  "failures": [],
+  "seed": 19388,
+  "limitations": [
+    "Selected DSP routines and reconstructed object state; not full plugin hosting",
+    "Linux libm imports; not macOS Intel math or ARM64 math",
+    "Host MIDI and bypass dispatch are outside this comparison"
+  ]
+}

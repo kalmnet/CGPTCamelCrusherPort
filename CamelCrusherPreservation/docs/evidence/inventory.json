@@ -1,0 +1,199 @@
+{
+  "archive": "CamelCrusher.zip",
+  "sha256": "1a4273fcd4689b2a7969eabbe3aab6c34e4ee6be35968a89d2ad407035b38b59",
+  "files": [
+    {
+      "path": "CamelCrusher/CamelCrusher.vst/Contents/Info.plist",
+      "size": 954,
+      "sha256": "ba1e907815e6e48388e1e58f79fe766e97e19becba3e13763762d3bd1ae323b1",
+      "plist": {
+        "CFBundleBuildDate": "2006-04-10T13:36:21Z",
+        "CFBundleDevelopmentRegion": "English",
+        "CFBundleExecutable": "CamelCrusher",
+        "CFBundleGetInfoString": "CamelCrusher 1.01, \u00a9 Camel Audio 2006",
+        "CFBundleIconFile": "commonIcon",
+        "CFBundleIdentifier": "com.camelaudio.vst.CamelCrusher",
+        "CFBundleInfoDictionaryVersion": "6.0",
+        "CFBundleName": "CamelCrusher",
+        "CFBundlePackageType": "BNDL",
+        "CFBundleShortVersionString": "1.01",
+        "CFBundleSignature": "stCA",
+        "CFBundleVersion": "1.01"
+      }
+    },
+    {
+      "path": "CamelCrusher/CamelCrusher.vst/Contents/PkgInfo",
+      "size": 8,
+      "sha256": "08a84d8e98e87b2b1344198e2afd2c20a6622c9f198540ba273dd7a31d4c3e40"
+    },
+    {
+      "path": "CamelCrusher/CamelCrusher.component/Contents/Info.plist",
+      "size": 813,
+      "sha256": "5290e88b2ec4cea42d3f69e15d8db02d16d4f4736b6de18f3caa00e55266939b",
+      "plist": {
+        "CFBundleDevelopmentRegion": "English",
+        "CFBundleExecutable": "CamelCrusher",
+        "CFBundleGetInfoString": "CamelCrusher 1.01, \u00a9 Camel Audio 2011",
+        "CFBundleIdentifier": "com.camelaudio.au.CamelCrusher",
+        "CFBundleInfoDictionaryVersion": "6.0",
+        "CFBundlePackageType": "BNDL",
+        "CFBundleShortVersionString": "1.01",
+        "CFBundleSignature": "????",
+        "CFBundleVersion": "1.01",
+        "CSResourcesFileMapped": true
+      }
+    },
+    {
+      "path": "CamelCrusher/CamelCrusher.component/Contents/PkgInfo",
+      "size": 8,
+      "sha256": "d06a80ba92de0833d0ed03de1b02b7c8913f126d9e8c8931b190765dd5d83b11"
+    },
+    {
+      "path": "CamelCrusher/Camel Audio/CamelCrusherData/MidiConfig.txt",
+      "size": 225,
+      "sha256": "5679d599273a6f990c47a1ec0f3da42d00836fb1be6c40d58ac7a54b343cb436"
+    },
+    {
+      "path": "CamelCrusher/Camel Audio/CamelCrusherData/CamelCrusherManual.pdf",
+      "size": 132868,
+      "sha256": "1819103e3a2a24c3c481c4300cb3e287d421d4caca3a7708cfd5d149a63ebce0"
+    },
+    {
+      "path": "CamelCrusher/Camel Audio/CamelCrusherData/CamelCrusherPresetsA.fxb",
+      "size": 1927,
+      "sha256": "83736969756da08e84f0683999aa0484427ddf4ae7ac6a22fe2830869144ee2e"
+    },
+    {
+      "path": "CamelCrusher/CamelCrusher.vst/Contents/MacOS/CamelCrusher",
+      "size": 2041596,
+      "sha256": "0a43999fcbd054105050148b9cb73170a28a685f45934c65b50efcc16f013f9d",
+      "architectures": [
+        {
+          "cpu": "x86_64",
+          "subtype": 3,
+          "offset": 4096,
+          "size": 729768,
+          "sha256": "ef7529f06f4f9ee05d914a4b59a21b63c651dfe362fc80dafa4e73ddab63f557"
+        },
+        {
+          "cpu": "i386",
+          "subtype": 3,
+          "offset": 737280,
+          "size": 646548,
+          "sha256": "810353096008d8249a5440f23e20affc6b1287dd3095aa73c3bf1b8faa4b656e"
+        },
+        {
+          "cpu": "PowerPC",
+          "subtype": 10,
+          "offset": 1384448,
+          "size": 657148,
+          "sha256": "ef7fce4aa3bda29b1945cc9131ef35bee7bacaa46434cc31ca47b4e90d28cbbe"
+        }
+      ]
+    },
+    {
+      "path": "CamelCrusher/CamelCrusher.vst/Contents/Resources/CamelCrusherinfo-plist.plc",
+      "size": 1221,
+      "sha256": "fc8705ca2f328b8542a655b65e35a64fb861bd800760334f373c1047ec2a223e"
+    },
+    {
+      "path": "CamelCrusher/CamelCrusher.component/Contents/MacOS/CamelCrusher",
+      "size": 2652408,
+      "sha256": "566e7366d10cf9754871d0f6add9f0505c2c57d9585b1abc8b9ef5a526c07281",
+      "architectures": [
+        {
+          "cpu": "x86_64",
+          "subtype": 3,
+          "offset": 4096,
+          "size": 906936,
+          "sha256": "834860ca5d4c59576dde1619d4e17050489ade3b0f756827ee4a7c56f3d322b0"
+        },
+        {
+          "cpu": "i386",
+          "subtype": 3,
+          "offset": 913408,
+          "size": 882896,
+          "sha256": "fa66ac4adb3a42bc24907d50329b363a19db3b40735c29127f3ab1bdb2727af9"
+        },
+        {
+          "cpu": "PowerPC",
+          "subtype": 10,
+          "offset": 1798144,
+          "size": 854264,
+          "sha256": "a5e34340964181d4213112ba58003deff86edf5aaa5b074609d3356a2be56f5b"
+        }
+      ]
+    },
+    {
+      "path": "CamelCrusher/CamelCrusher.component/Contents/Resources/CamelCrusher.rsrc",
+      "size": 791,
+      "sha256": "309dfa9ec8b64adc7bb273c858d17fe04b8042637ae781725676f42fdc1c82e5"
+    },
+    {
+      "path": "CamelCrusher/Camel Audio/CamelCrusherData/OldPresets/CamelCrusherPresetsA.fxb",
+      "size": 1927,
+      "sha256": "83736969756da08e84f0683999aa0484427ddf4ae7ac6a22fe2830869144ee2e"
+    },
+    {
+      "path": "CamelCrusher/Camel Audio/CamelCrusherData/Skins/default/FontDisplay.png",
+      "size": 4889,
+      "sha256": "40f14ca49303632227825015f4d239b1ba44b153552c72907163facff50d0140"
+    },
+    {
+      "path": "CamelCrusher/Camel Audio/CamelCrusherData/Skins/default/Thumbs.db",
+      "size": 80384,
+      "sha256": "638c97ad3f514a51f182f55b008d01bb1945f44b6b4ac492f9461c0fadd840b5"
+    },
+    {
+      "path": "CamelCrusher/Camel Audio/CamelCrusherData/Skins/default/OnButton.png",
+      "size": 3336,
+      "sha256": "b22d8d23dda8623eb71d579dd45bf6eece13b892b3a8a11828a99823fcd9bf9a"
+    },
+    {
+      "path": "CamelCrusher/Camel Audio/CamelCrusherData/Skins/default/FontSelector.png",
+      "size": 2220,
+      "sha256": "f5f7c3ef2469dfa91d4401cc25d74b6ff88c0ab5642164eebeab8247aaaef7ed"
+    },
+    {
+      "path": "CamelCrusher/Camel Audio/CamelCrusherData/Skins/default/FontVersion.png",
+      "size": 4206,
+      "sha256": "e1809e6f3399e43a222fb88f9b699759c805ae7213cd1298b71e637e15952e4b"
+    },
+    {
+      "path": "CamelCrusher/Camel Audio/CamelCrusherData/Skins/default/PhatButton.png",
+      "size": 2180,
+      "sha256": "ae67ea66acbfcdf050b1317eb2696c2dd55d95cf6b984b7d9bce834ab25db977"
+    },
+    {
+      "path": "CamelCrusher/Camel Audio/CamelCrusherData/Skins/default/ButtonRandom.png",
+      "size": 6257,
+      "sha256": "50b5ba9ce8866207c13aa9902b78ea895a6460a7efe06e44b852a1114eca1083"
+    },
+    {
+      "path": "CamelCrusher/Camel Audio/CamelCrusherData/Skins/default/FontDisplay-Old.png",
+      "size": 58177,
+      "sha256": "ff4b2c640d5be3571a5984bf80d962b4a3e90738302c27c0755a7a153452460a"
+    },
+    {
+      "path": "CamelCrusher/Camel Audio/CamelCrusherData/Skins/default/Knob.png",
+      "size": 29364,
+      "sha256": "17f882bf3bded564ed083a7247149365b26b5b07357d7dab7bcf6f3dcd2fe584"
+    },
+    {
+      "path": "CamelCrusher/Camel Audio/CamelCrusherData/Skins/default/Background.png",
+      "size": 162663,
+      "sha256": "6a3f7b81593a9a15d660d9a8dcdfdc3a43bea723fb4d488de30530d26b829cfe"
+    },
+    {
+      "path": "CamelCrusher/Camel Audio/CamelCrusherData/Skins/default/SelectorPreset.png",
+      "size": 9251,
+      "sha256": "fb3698ff5e934b9ea2f57db5b2a6e8cde4c45f19087a5dac5c589768845c3629"
+    },
+    {
+      "path": "CamelCrusher/Camel Audio/CamelCrusherData/Skins/default/SkinParameters.txt",
+      "size": 2704,
+      "sha256": "9c60fef55e9a29c5982d91d9433a3d1a8d105b3195bc240ecc900faf37f85961"
+    }
+  ],
+  "bundles": {}
+}

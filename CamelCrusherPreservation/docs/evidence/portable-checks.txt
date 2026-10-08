@@ -1,0 +1,8 @@
+2026-10-08, Linux x86_64, Release, GCC 14.2.0
+CMake build: passed (core, VST3, legacy ABI adapter)
+CTest: 2/2 passed (core_tests, legacy_smoke)
+Python preset parser/converter: 5/5 passed
+VST3 SDK validator: 47 passed, 0 failed (see vst3-validator.log)
+VST Intel differential: 2,880 cases, 1,102,080 channel samples, maximum error 0
+AU Intel differential: 2,880 cases, 1,102,080 channel samples, maximum error 0
+Mac builds, GUI, DAW recall and original full-plugin Rosetta renders: NOT RUN

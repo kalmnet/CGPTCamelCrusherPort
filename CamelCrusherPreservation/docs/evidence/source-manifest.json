@@ -1,0 +1,294 @@
+{
+  "files": [
+    {
+      "path": "CMakeLists.txt",
+      "sha256": "841b654daff2584b2f458536a4b979c6017524fb78e8a089a1fafcc87a8d8be5",
+      "bytes": 6416
+    },
+    {
+      "path": "NOTICE.md",
+      "sha256": "1909c5bea312de078845ce6fc5399944cb03e8bd6a6a5e27930eeac3c5f6163b",
+      "bytes": 2299
+    },
+    {
+      "path": "README.md",
+      "sha256": "321aabeedee35f50f1ca14d60c6e8c4604e0f4afb13ffb25a4868cb4299a3f09",
+      "bytes": 6429
+    },
+    {
+      "path": "docs/FINDINGS.md",
+      "sha256": "d2766ef5dab592687569d1391f0f2d3678b732161ce7e4f90b7ab105af5fb35b",
+      "bytes": 14360
+    },
+    {
+      "path": "docs/MIGRATION.md",
+      "sha256": "ccb111a722c5874b86462627b0427799125ff74a4890cc4b2cb589ac6a26a55e",
+      "bytes": 4232
+    },
+    {
+      "path": "docs/TESTING.md",
+      "sha256": "cc5673bfd32ea7cf6936e6aa295c8cb7ce01b23dfa324f788fe1c28f0e837a11",
+      "bytes": 6367
+    },
+    {
+      "path": "docs/evidence/au-differential.json",
+      "sha256": "d5541c4c7497a08fa65a314a8857513ce080a2445b38fe1aaaab084a5b9c141a",
+      "bytes": 483
+    },
+    {
+      "path": "docs/evidence/au-selected-decompilation.c",
+      "sha256": "dd98f6e2aca2f75e1e28fa62c388b8188e2646ddb2c5c5c0c6fca2dbe88e5048",
+      "bytes": 39441
+    },
+    {
+      "path": "docs/evidence/au-state-and-randomization.c",
+      "sha256": "213c434baa79165389cd96bbc6535a38e723e80bcb184164929a8ce5d13d592a",
+      "bytes": 14652
+    },
+    {
+      "path": "docs/evidence/inventory.json",
+      "sha256": "d94631d615e2706ca139d5ee8eb2e7349e733e87825c1665de1bf054451d4e47",
+      "bytes": 7398
+    },
+    {
+      "path": "docs/evidence/portable-checks.txt",
+      "sha256": "10ae61033abd91f23f9aa735fd0e4d6ee6ba4574d3c8e73b1a8da960681cea52",
+      "bytes": 489
+    },
+    {
+      "path": "docs/evidence/vst-differential.json",
+      "sha256": "5b4d4368660b47d043752022b75244ebc43e08e32c56495ab50248885333b273",
+      "bytes": 484
+    },
+    {
+      "path": "docs/evidence/vst-selected-decompilation.c",
+      "sha256": "9cfb3ea18b3ce97d4c1bc5061d158cc190d7783f6234f5bceeba164dc93dd294",
+      "bytes": 55304
+    },
+    {
+      "path": "docs/evidence/vst3-validator.log",
+      "sha256": "e0d39970fc5b913511e8f91a106ee359b90dcdc07422ff43a1f573b7b0b6c4e4",
+      "bytes": 12522
+    },
+    {
+      "path": "docs/factory-presets.json",
+      "sha256": "4d9dbee91da36a067dcc3020dbd03b3d7b0d9e32070a745611127f787f152657",
+      "bytes": 7138
+    },
+    {
+      "path": "resources/AuInfo.plist.in",
+      "sha256": "fd553080b33880fad190554ae89eddecafc7edcfc1498043ed1f8d40f48bfc68",
+      "bytes": 986
+    },
+    {
+      "path": "resources/Background.png",
+      "sha256": "6a3f7b81593a9a15d660d9a8dcdfdc3a43bea723fb4d488de30530d26b829cfe",
+      "bytes": 162663
+    },
+    {
+      "path": "resources/ButtonRandom.png",
+      "sha256": "50b5ba9ce8866207c13aa9902b78ea895a6460a7efe06e44b852a1114eca1083",
+      "bytes": 6257
+    },
+    {
+      "path": "resources/FactoryBank.vstpreset",
+      "sha256": "370e7e4bd294b58b48e81bf299935c20eb95e414a2a4072b1662e6a90de0b4bd",
+      "bytes": 1851
+    },
+    {
+      "path": "resources/FontDisplay-Old.png",
+      "sha256": "ff4b2c640d5be3571a5984bf80d962b4a3e90738302c27c0755a7a153452460a",
+      "bytes": 58177
+    },
+    {
+      "path": "resources/FontDisplay.png",
+      "sha256": "40f14ca49303632227825015f4d239b1ba44b153552c72907163facff50d0140",
+      "bytes": 4889
+    },
+    {
+      "path": "resources/FontSelector.png",
+      "sha256": "f5f7c3ef2469dfa91d4401cc25d74b6ff88c0ab5642164eebeab8247aaaef7ed",
+      "bytes": 2220
+    },
+    {
+      "path": "resources/FontVersion.png",
+      "sha256": "e1809e6f3399e43a222fb88f9b699759c805ae7213cd1298b71e637e15952e4b",
+      "bytes": 4206
+    },
+    {
+      "path": "resources/Knob.png",
+      "sha256": "17f882bf3bded564ed083a7247149365b26b5b07357d7dab7bcf6f3dcd2fe584",
+      "bytes": 29364
+    },
+    {
+      "path": "resources/LegacyInfo.plist",
+      "sha256": "d561a3e9388582c927055d2495a5ec185290d5e4a7e90351279d46329aba88f8",
+      "bytes": 577
+    },
+    {
+      "path": "resources/OnButton.png",
+      "sha256": "b22d8d23dda8623eb71d579dd45bf6eece13b892b3a8a11828a99823fcd9bf9a",
+      "bytes": 3336
+    },
+    {
+      "path": "resources/PhatButton.png",
+      "sha256": "ae67ea66acbfcdf050b1317eb2696c2dd55d95cf6b984b7d9bce834ab25db977",
+      "bytes": 2180
+    },
+    {
+      "path": "resources/SelectorPreset.png",
+      "sha256": "fb3698ff5e934b9ea2f57db5b2a6e8cde4c45f19087a5dac5c589768845c3629",
+      "bytes": 9251
+    },
+    {
+      "path": "resources/SkinParameters.txt",
+      "sha256": "9c60fef55e9a29c5982d91d9433a3d1a8d105b3195bc240ecc900faf37f85961",
+      "bytes": 2704
+    },
+    {
+      "path": "src/Au.mm",
+      "sha256": "ea6c82acf4386dc6b1f8f7751d97d8550e5d5bb46593ac9eb7b2215094c7bdb2",
+      "bytes": 9189
+    },
+    {
+      "path": "src/Dsp.cpp",
+      "sha256": "e2c852cdfb7228ac016d04ab7415fec30a927940004cd981c0a4df5de367ae87",
+      "bytes": 8002
+    },
+    {
+      "path": "src/Dsp.h",
+      "sha256": "72afb693ee6761cd3a9f30bf1e79cd32b10f622ecba1fd868a756a216169edb9",
+      "bytes": 2274
+    },
+    {
+      "path": "src/EditorModel.h",
+      "sha256": "58014b020bdf5eb95e876f52874106f9fa6dffa45e51a9b9b97f978b5250f8a5",
+      "bytes": 678
+    },
+    {
+      "path": "src/Legacy.cpp",
+      "sha256": "eb2a58eef4097afa061be38ad35ebcb0a648aa155f1c7c794f56b65be95d440b",
+      "bytes": 8098
+    },
+    {
+      "path": "src/LegacyAbi.h",
+      "sha256": "1a54e4e802bc70211d971159853f5d391a3092313ed324424d2c6b8c351e5057",
+      "bytes": 1084
+    },
+    {
+      "path": "src/LegacyMac.mm",
+      "sha256": "4d01224bfe9547a45a93b145fb06b4a195a2cc23a5c64abbd960332c5bd8ba2c",
+      "bytes": 474
+    },
+    {
+      "path": "src/NativeEditor.mm",
+      "sha256": "e38fc86524f6c352988e8ea6005efde4541a1256a02a6709e2909d76181f5354",
+      "bytes": 7921
+    },
+    {
+      "path": "src/Presets.generated.h",
+      "sha256": "efe88b61700f51cbd656c7893f87ec92974658fa0b8271309339bf50d3c72cfc",
+      "bytes": 6464
+    },
+    {
+      "path": "src/State.cpp",
+      "sha256": "3a7610bad05912b1f8eba0ff2e01fffd8a2c12cd360300913039ffab9c1b3840",
+      "bytes": 5964
+    },
+    {
+      "path": "src/State.h",
+      "sha256": "fab2ecda7d5c725bdee604155fa0f9cee9df0a7370c5eef84d8ebdd46613ca08",
+      "bytes": 941
+    },
+    {
+      "path": "src/Vst3.cpp",
+      "sha256": "0ef1636ea60f1a472cb27069b668a7ce96359c6f1b3252f78f9ff028d99dbfbd",
+      "bytes": 8539
+    },
+    {
+      "path": "src/Vst3.h",
+      "sha256": "93607cd12a02a238fdc6c8e968935a83ed9b5122b36332d0b83e799dcf54c053",
+      "bytes": 2689
+    },
+    {
+      "path": "src/Vst3MacView.mm",
+      "sha256": "1b6559aa9de02d9a68b261df98ede9601af4d1950c84d25ca3b58a51b2e03549",
+      "bytes": 1751
+    },
+    {
+      "path": "tests/bridge.cpp",
+      "sha256": "2e7e17f56925c4e2685a25c1642d7a995561f7558cccb2569723398da881a215",
+      "bytes": 968
+    },
+    {
+      "path": "tests/core_tests.cpp",
+      "sha256": "f80c78a7001cbadf2705c62491ace598ff48a126b5d6733c0e1fd9921a059365",
+      "bytes": 3136
+    },
+    {
+      "path": "tests/fixtures/factory-bank.fxb",
+      "sha256": "83736969756da08e84f0683999aa0484427ddf4ae7ac6a22fe2830869144ee2e",
+      "bytes": 1927
+    },
+    {
+      "path": "tests/legacy_smoke.cpp",
+      "sha256": "9c0bdb9da2c2e75586fcc8d2388b24836426912b066f1318077976b8e1f1346e",
+      "bytes": 2625
+    },
+    {
+      "path": "tests/test_presets.py",
+      "sha256": "468b0ddf6146d030d0bd4859409171d671bb7472c7d2c06c8658f2c654245edf",
+      "bytes": 1389
+    },
+    {
+      "path": "tools/au_reference.cpp",
+      "sha256": "1ea18cca353cbb94fee29c653f76ec19b0f1c7aef1a7de9754000db99d4cbd17",
+      "bytes": 5138
+    },
+    {
+      "path": "tools/binary_oracle.py",
+      "sha256": "34531b3dfb65f0e4208049314e4ce53494d0dec21be6782c92c9dc382be21559",
+      "bytes": 3010
+    },
+    {
+      "path": "tools/build_macos.sh",
+      "sha256": "809c9921d815b602815edbdddbf1e1553c4aacde1ad709b3425e87697f9ff0c7",
+      "bytes": 1075
+    },
+    {
+      "path": "tools/differential.py",
+      "sha256": "b2a5c84cd24c8d3666c7e56cb580596705b358d47fd3540daefc4c17ed8014a0",
+      "bytes": 5154
+    },
+    {
+      "path": "tools/ghidra/ExportCamel.java",
+      "sha256": "454c0a8fe88a096b44b8c4737cf422880441e17836902fe2051bdace6dcf35bc",
+      "bytes": 1189
+    },
+    {
+      "path": "tools/ghidra/ExportExtra.java",
+      "sha256": "5efbbf2268cad05f2d859401c312a33064d870777cc8f57c663234e0cc9d2ddc",
+      "bytes": 1084
+    },
+    {
+      "path": "tools/inventory.py",
+      "sha256": "676f09fd42be2b7fff67927d6c23cf06ad000b122153446d454385d1c1388281",
+      "bytes": 1805
+    },
+    {
+      "path": "tools/presets.py",
+      "sha256": "47e1b9a92c2339620e41939c419ef380cb356867447e798cc4494e528cefb9f9",
+      "bytes": 4910
+    },
+    {
+      "path": "tools/render.cpp",
+      "sha256": "bec043738e839a5fe12e0a401cc2c7866f8bcf713b831c718813867569c69c5a",
+      "bytes": 1649
+    },
+    {
+      "path": "tools/render_tests.py",
+      "sha256": "f00163a45a44cc9cc9a490f24cb4a5bf65e7db6d9961af48578bd1ea7fae43a5",
+      "bytes": 2099
+    }
+  ]
+}

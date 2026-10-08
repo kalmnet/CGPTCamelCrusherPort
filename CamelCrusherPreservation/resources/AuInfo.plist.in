@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0"><dict>
+<key>CFBundleExecutable</key><string>CamelCrusherAU</string>
+<key>CFBundleIdentifier</key><string>org.preservation.camelcrusher.au</string>
+<key>CFBundleName</key><string>CamelCrusher Preservation</string>
+<key>CFBundlePackageType</key><string>BNDL</string>
+<key>CFBundleShortVersionString</key><string>0.1.0</string>
+<key>CFBundleVersion</key><string>1</string>
+<key>AudioComponents</key><array><dict>
+<key>description</key><string>CamelCrusher DSP preservation</string>
+<key>factoryFunction</key><string>CamelCrusherAUFactory</string>
+<key>manufacturer</key><string>@AU_MAKER@</string>
+<key>name</key><string>Preservation Research: CamelCrusher</string>
+<key>subtype</key><string>@AU_SUBTYPE@</string>
+<key>type</key><string>aumf</string>
+<key>version</key><integer>65536</integer>
+</dict></array>
+</dict></plist>

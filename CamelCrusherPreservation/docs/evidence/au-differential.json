@@ -1,0 +1,15 @@
+{
+  "binary_kind": "au",
+  "binary_sha256": "834860ca5d4c59576dde1619d4e17050489ade3b0f756827ee4a7c56f3d322b0",
+  "cases": 2880,
+  "channel_samples": 1102080,
+  "max_absolute_error": 0.0,
+  "nonfinite_cases": 0,
+  "failures": [],
+  "seed": 19388,
+  "limitations": [
+    "Selected DSP routines and reconstructed object state; not full plugin hosting",
+    "Linux libm imports; not macOS Intel math or ARM64 math",
+    "Host MIDI and bypass dispatch are outside this comparison"
+  ]
+}
