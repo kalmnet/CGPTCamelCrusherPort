@@ -66,6 +66,6 @@ IPlugView* PLUGIN_API Controller::createView(FIDString){return nullptr;}
 }
 using namespace Steinberg;using namespace Steinberg::Vst;
 BEGIN_FACTORY_DEF("Preservation Research",""," ")
- DEF_CLASS2(INLINE_UID_FROM_FUID(camel::processorUid),PClassInfo::kManyInstances,kVstAudioEffectClass,"CamelCrusher Preservation",Vst::kDistributable,"Fx|Distortion","0.1.0",kVstVersionString,camel::Processor::create)
- DEF_CLASS2(INLINE_UID_FROM_FUID(camel::controllerUid),PClassInfo::kManyInstances,kVstComponentControllerClass,"CamelCrusher Preservation Controller",0,"","0.1.0",kVstVersionString,camel::Controller::create)
+ DEF_CLASS2(INLINE_UID_FROM_FUID(camel::processorUid),PClassInfo::kManyInstances,kVstAudioEffectClass,"CamelCrusher Preservation",Vst::kDistributable,"Fx|Distortion","0.1.1",kVstVersionString,camel::Processor::create)
+ DEF_CLASS2(INLINE_UID_FROM_FUID(camel::controllerUid),PClassInfo::kManyInstances,kVstComponentControllerClass,"CamelCrusher Preservation Controller",0,"","0.1.1",kVstVersionString,camel::Controller::create)
 END_FACTORY

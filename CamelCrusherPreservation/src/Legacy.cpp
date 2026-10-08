@@ -71,7 +71,7 @@ public:
   case 13:if(ptr)*static_cast<legacy::Rect**>(ptr)=&p->rect;return 1;
   case 14:
 #if defined(__APPLE__)
-   if(p->cocoaView&&ptr&&!p->editor){auto path=legacyResourceDirectory();p->editor=createNativeEditor(ptr,p,path.c_str());return p->editor?1:0;}
+   if(ptr&&!p->editor){auto path=legacyResourceDirectory();p->editor=createNativeEditor(ptr,p,path.c_str());return p->editor?1:0;}
 #endif
    return 0;
   case 15:p->closeEditor();return 1;case 19:return 1;
@@ -83,7 +83,7 @@ public:
   case 26:return index>=0&&index<int(parameterCount);case 35:return 1;
   case 44:p->bypassed.store(value!=0);return 1;
   case 45:copy(ptr,"CamelCrusher",32);return 1;case 47:copy(ptr,"Camel Audio",64);return 1;case 48:copy(ptr,"CamelCrusher",64);return 1;case 49:return 101;
-  case 51:if(ptr){const char* s=static_cast<const char*>(ptr);if(std::strcmp(s,"hasCockosViewAsConfig")==0){p->cocoaView=true;return 0xbeef;}if(std::strcmp(s,"plugAsChannelInsert")==0||std::strcmp(s,"plugAsSend")==0||std::strcmp(s,"2in2out")==0)return 1;}return 0;
+  case 51:if(ptr){const char* s=static_cast<const char*>(ptr);if(std::strcmp(s,"hasCockosViewAsConfig")==0){p->cocoaView=true;return std::int32_t(0xbeef0000u);}if(std::strcmp(s,"plugAsChannelInsert")==0||std::strcmp(s,"plugAsSend")==0||std::strcmp(s,"2in2out")==0)return 1;}return 0;
   case 52:return 0;case 58:return 2400;case 71:case 72:return 1;default:return 0;
   }
  }
