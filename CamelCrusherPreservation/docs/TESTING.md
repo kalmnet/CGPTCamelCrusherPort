@@ -60,3 +60,5 @@ Follow MIGRATION.md. A recall pass requires matching all saved normalized values
 ## Known gaps to target
 
 Dense sample-offset VST3 automation, MIDI Learn/events, wrapper silence optimization, full AU state restore, original GUI interactions, extreme valid parameter transitions and filter tails require additional tests. The original wrapper contains an endpoint-based quiet counter and a conditional bypass path; it is outside the selected-DSP oracle and not reproduced in the new adapters. Full-plugin silence/tail renders must establish its audible impact before claiming complete behavior preservation.
+
+The subsequent Windows DLL experiment and corrected Mac editor test are documented in WINDOWS-AND-THIRD-PARTY.md. The Mac legacy smoke test now verifies opening without prior negotiation, attachment, eight loaded GUI images and clean detachment. Live/FL Studio visual and sound comparisons remain separate user tests.

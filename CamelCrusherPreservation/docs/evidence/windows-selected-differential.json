@@ -1,0 +1,30 @@
+{
+  "dll_sha256": "4406af857e7d80fb8b8aed7aab3714b48af5b49f9e97b686d8ada2b4fb8bccad",
+  "seed": 19388,
+  "routines": {
+    "state_primitives": {
+      "factory_programs": 20,
+      "words_round_tripped": 380,
+      "max_absolute_error": 0.0,
+      "byte_identical": true
+    },
+    "mech": {
+      "channel_samples": 65536,
+      "max_absolute_error": 0.0
+    },
+    "tube": {
+      "channel_samples": 65536,
+      "max_absolute_error": 0.0
+    },
+    "compressor": {
+      "cases": 288,
+      "channel_samples": 110208,
+      "max_absolute_error": 0.0
+    }
+  },
+  "limitations": [
+    "Selected distortion and compressor routines only",
+    "No full DLL load, Windows host, original CRT math, filter, master, or whole-plugin equality test",
+    "Object state reconstructed; DLL entry point and GUI never run"
+  ]
+}

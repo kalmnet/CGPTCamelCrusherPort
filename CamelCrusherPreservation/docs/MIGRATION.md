@@ -13,7 +13,7 @@ The optional legacy adapter instead reports CamelCrusher, ID `CaCr`, 17 paramete
 5. Open the duplicated old project. Verify that the instance actually resolves to the new adapter. Check every normalized parameter, active program, unused values, host bypass and automation assignments against the baseline. Render without changing settings. Do not overwrite the original project while compatibility is uncertain.
 6. Save the tested copy under a new name, close the DAW completely, reopen, and repeat the value and render checks. Test multiple instances with different presets, frozen tracks, disabled effects and automation. A successful single instance does not certify every project.
 
-For Windows-origin Live projects, transfer the complete project/assets and confirm the DAW's cross-platform plugin lookup. For FL Studio, confirm that the Mac version can read the specific Windows project's wrapper state and find the registered VST2 effect. The old Windows DLL has not been inspected, so neither cross-platform DSP identity nor automatic host lookup is claimed.
+For Windows-origin Live projects, transfer the complete project/assets and confirm the DAW's cross-platform plugin lookup. For FL Studio, confirm that the Mac version can read the specific Windows project's wrapper state and find the registered VST2 effect. The subsequently supplied Windows DLL confirms the same identity/parameter order/state serialization, and selected distortion/compressor comparisons match. Full platform DSP equality and automatic host lookup across all projects are not certified. The user reports successful recall of tested old Windows instances; exact values, automation and renders still need comparison.
 
 ## Explicit migration to VST3
 

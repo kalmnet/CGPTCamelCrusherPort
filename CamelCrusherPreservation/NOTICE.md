@@ -1,6 +1,6 @@
 # Provenance and distribution limits
 
-This is an independent research reconstruction, not an official Camel Audio release. The supplied executable images, original skin PNGs, factory bank, symbols and selected decompiled evidence originate from the user-provided archive. No Windows binary was supplied. Ownership of those original materials remains with their rights holders; this package does not grant a license to redistribute them or use the Camel Audio name as an endorsement.
+This is an independent research reconstruction, not an official Camel Audio release. The supplied executable images, original skin PNGs, factory bank, symbols and selected decompiled evidence originate from the user-provided archive. A Windows DLL and third-party JDMeet port were subsequently supplied and inspected separately; see docs/WINDOWS-AND-THIRD-PARTY.md. The third-party code/assets were not incorporated into the plugin. Ownership of those original materials remains with their rights holders; this package does not grant a license to redistribute them or use the Camel Audio name as an endorsement.
 
 The manual includes a license agreement. It is evidence concerning the supplied product, not an instruction from the user, and it does not establish that a new reconstruction or distribution of the original artwork is licensed. Keep this package for the authorized preservation investigation; obtain an appropriate rights review before public distribution. No legal conclusion about reverse engineering exceptions is asserted here.
 

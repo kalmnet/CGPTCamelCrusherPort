@@ -1,0 +1,110 @@
+[
+  {
+    "archive": "CamelCrusher WINDOWS.zip",
+    "sha256": "eaad9222ddccf25d30fb236f889e5d560e03023b3b9f739068bac43a3de23671",
+    "files": [
+      {
+        "path": "CamelCrusher WINDOWS/CamelCrusher.dll",
+        "bytes": 692736,
+        "sha256": "4406af857e7d80fb8b8aed7aab3714b48af5b49f9e97b686d8ada2b4fb8bccad"
+      },
+      {
+        "path": "CamelCrusher WINDOWS/default/FontDisplay.png",
+        "bytes": 4889,
+        "sha256": "40f14ca49303632227825015f4d239b1ba44b153552c72907163facff50d0140",
+        "identical_to_preservation_resource": true
+      },
+      {
+        "path": "CamelCrusher WINDOWS/default/OnButton.png",
+        "bytes": 3336,
+        "sha256": "b22d8d23dda8623eb71d579dd45bf6eece13b892b3a8a11828a99823fcd9bf9a",
+        "identical_to_preservation_resource": true
+      },
+      {
+        "path": "CamelCrusher WINDOWS/default/FontSelector.png",
+        "bytes": 2220,
+        "sha256": "f5f7c3ef2469dfa91d4401cc25d74b6ff88c0ab5642164eebeab8247aaaef7ed",
+        "identical_to_preservation_resource": true
+      },
+      {
+        "path": "CamelCrusher WINDOWS/default/FontVersion.png",
+        "bytes": 4206,
+        "sha256": "e1809e6f3399e43a222fb88f9b699759c805ae7213cd1298b71e637e15952e4b",
+        "identical_to_preservation_resource": true
+      },
+      {
+        "path": "CamelCrusher WINDOWS/default/PhatButton.png",
+        "bytes": 2180,
+        "sha256": "ae67ea66acbfcdf050b1317eb2696c2dd55d95cf6b984b7d9bce834ab25db977",
+        "identical_to_preservation_resource": true
+      },
+      {
+        "path": "CamelCrusher WINDOWS/default/ButtonRandom.png",
+        "bytes": 6257,
+        "sha256": "50b5ba9ce8866207c13aa9902b78ea895a6460a7efe06e44b852a1114eca1083",
+        "identical_to_preservation_resource": true
+      },
+      {
+        "path": "CamelCrusher WINDOWS/default/FontDisplay-Old.png",
+        "bytes": 58177,
+        "sha256": "ff4b2c640d5be3571a5984bf80d962b4a3e90738302c27c0755a7a153452460a",
+        "identical_to_preservation_resource": true
+      },
+      {
+        "path": "CamelCrusher WINDOWS/default/Knob.png",
+        "bytes": 29364,
+        "sha256": "17f882bf3bded564ed083a7247149365b26b5b07357d7dab7bcf6f3dcd2fe584",
+        "identical_to_preservation_resource": true
+      },
+      {
+        "path": "CamelCrusher WINDOWS/default/Background.png",
+        "bytes": 162663,
+        "sha256": "6a3f7b81593a9a15d660d9a8dcdfdc3a43bea723fb4d488de30530d26b829cfe",
+        "identical_to_preservation_resource": true
+      },
+      {
+        "path": "CamelCrusher WINDOWS/default/SelectorPreset.png",
+        "bytes": 9251,
+        "sha256": "fb3698ff5e934b9ea2f57db5b2a6e8cde4c45f19087a5dac5c589768845c3629",
+        "identical_to_preservation_resource": true
+      },
+      {
+        "path": "CamelCrusher WINDOWS/default/SkinParameters.txt",
+        "bytes": 2704,
+        "sha256": "9c60fef55e9a29c5982d91d9433a3d1a8d105b3195bc240ecc900faf37f85961",
+        "identical_to_preservation_resource": true
+      }
+    ]
+  },
+  {
+    "archive": "JDMeet Crusher.vst3.zip",
+    "sha256": "8dc7ae0814d305e5e2dd4ccd95e50ab9db5f2392e30f6def356c2da3d7f1bcc2",
+    "files": [
+      {
+        "path": "JDMeet Crusher.vst3/Contents/Info.plist",
+        "bytes": 883,
+        "sha256": "91d67442659e02f5e1e3bb3a676f08b4b1329dcb6bf8893bd4f1462455cd4e7c"
+      },
+      {
+        "path": "JDMeet Crusher.vst3/Contents/PkgInfo",
+        "bytes": 8,
+        "sha256": "d06a80ba92de0833d0ed03de1b02b7c8913f126d9e8c8931b190765dd5d83b11"
+      },
+      {
+        "path": "JDMeet Crusher.vst3/Contents/_CodeSignature/CodeResources",
+        "bytes": 2452,
+        "sha256": "f72fe1125b9641b710fc07f52bb5157c5364d12fb4df9c4fdb0aa606c82f8c76"
+      },
+      {
+        "path": "JDMeet Crusher.vst3/Contents/MacOS/JDMeet Crusher",
+        "bytes": 8200720,
+        "sha256": "b03ade7ed63ebb49f4ee86a1ee2439545c32ac9af76adb3959d5700a55e338a6"
+      },
+      {
+        "path": "JDMeet Crusher.vst3/Contents/Resources/moduleinfo.json",
+        "bytes": 974,
+        "sha256": "39312440b7aee9a2d9d0f1a854d0c8f129034ad14761003c870d4b4b195caa8c"
+      }
+    ]
+  }
+]

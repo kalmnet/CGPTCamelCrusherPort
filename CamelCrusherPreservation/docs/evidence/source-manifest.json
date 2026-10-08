@@ -2,23 +2,23 @@
   "files": [
     {
       "path": "CMakeLists.txt",
-      "sha256": "d23521c82c1068d8aacca74144c68c7c10b619b551067f1342b005cd272fae19",
-      "bytes": 6487
+      "sha256": "92fbe05e9eba4e3df36b0ce02e84276cb91eee2a6ef3c474c4b2d2a242c362d9",
+      "bytes": 6725
     },
     {
       "path": "NOTICE.md",
-      "sha256": "1909c5bea312de078845ce6fc5399944cb03e8bd6a6a5e27930eeac3c5f6163b",
-      "bytes": 2299
+      "sha256": "796da2e28ba65840945c1cb7f356ddde6a4df88789666fcf285a88563ea0ded4",
+      "bytes": 2466
     },
     {
       "path": "README.md",
-      "sha256": "4921ff11a7c663fa34ca5c91ec4314ea8f32b4ad7ebb6dedb9b80c8fd5f66538",
-      "bytes": 6648
+      "sha256": "3939fbb6636f6abee6342278279a6c87d7f077f7a516947aeb48bb41a14b6057",
+      "bytes": 6765
     },
     {
       "path": "docs/FINDINGS.md",
-      "sha256": "a6d523883f66761968facb13501981a87fdbfd0acca501e0986a5424a900a051",
-      "bytes": 15193
+      "sha256": "e60e2c69f1ed3508a57ebbd2d6c818c25bef10c9415a8740a728afad11dd5740",
+      "bytes": 15441
     },
     {
       "path": "docs/INSTALL.md",
@@ -26,14 +26,29 @@
       "bytes": 1324
     },
     {
+      "path": "docs/LIVE-DISCOVERY.md",
+      "sha256": "c3c7fe42d5d30dd7d2b613f75ca777d9c3de496544dd7b7b01de0f28ccac0c95",
+      "bytes": 1307
+    },
+    {
       "path": "docs/MIGRATION.md",
-      "sha256": "ccb111a722c5874b86462627b0427799125ff74a4890cc4b2cb589ac6a26a55e",
-      "bytes": 4232
+      "sha256": "21590d89a749795ae1f00b183d150902917b8e08af0cb9f7c6ccfbba66291387",
+      "bytes": 4487
     },
     {
       "path": "docs/TESTING.md",
-      "sha256": "533065ead63fa1aa81fcb74fc461e9dec93f3de80d619a48066a4f7a87302247",
-      "bytes": 6594
+      "sha256": "4059eb2bb6c86f4931dd658e5fdd031e99494cfcba4ceb4fdb4f6812ef694185",
+      "bytes": 6913
+    },
+    {
+      "path": "docs/WINDOWS-AND-THIRD-PARTY.md",
+      "sha256": "f6b675da2a49fe5eb0e33900ca673c48f75e41f06a9a21b49fb659483500f15f",
+      "bytes": 7499
+    },
+    {
+      "path": "docs/evidence/additional-binaries-inventory.json",
+      "sha256": "3e1c65fcf0b26b4db847fbcb1bf2d21ddd559f5baa78e94d3ac986174e67af5a",
+      "bytes": 4107
     },
     {
       "path": "docs/evidence/au-differential.json",
@@ -56,9 +71,19 @@
       "bytes": 7398
     },
     {
+      "path": "docs/evidence/jdmeet-static-facts.txt",
+      "sha256": "f3be7df0b43dbd82019b07f39312ec0e838b61a887bd02fabd22c5dca991a3ce",
+      "bytes": 489
+    },
+    {
       "path": "docs/evidence/macos-build.log",
       "sha256": "ce9b87adc9cb212f50a338da947c7dd5fb8a8fa154ea685200a8e4856d1ec439",
       "bytes": 69644
+    },
+    {
+      "path": "docs/evidence/macos-editor-fix-build.log",
+      "sha256": "1534609bc457a40a794332bffa455cdf59594aad126f28031b4cbe921665c6d3",
+      "bytes": 69759
     },
     {
       "path": "docs/evidence/portable-checks.txt",
@@ -79,6 +104,16 @@
       "path": "docs/evidence/vst3-validator.log",
       "sha256": "e0d39970fc5b913511e8f91a106ee359b90dcdc07422ff43a1f573b7b0b6c4e4",
       "bytes": 12522
+    },
+    {
+      "path": "docs/evidence/windows-selected-decompilation.c",
+      "sha256": "04869db4dac23e48e08e66c84b6f05f548b159ff572a19f24b76220fdca45874",
+      "bytes": 64515
+    },
+    {
+      "path": "docs/evidence/windows-selected-differential.json",
+      "sha256": "742c6ab417ae6ef62520d7bb94bacebc3266435b3a6d77cb44e35d9e43d9d1a6",
+      "bytes": 817
     },
     {
       "path": "docs/factory-presets.json",
@@ -177,8 +212,8 @@
     },
     {
       "path": "src/Legacy.cpp",
-      "sha256": "eb2a58eef4097afa061be38ad35ebcb0a648aa155f1c7c794f56b65be95d440b",
-      "bytes": 8098
+      "sha256": "23ccf242132c42dda67c079d67ab89ef1005f618eca8a40e20948af5c4b77dcf",
+      "bytes": 8103
     },
     {
       "path": "src/LegacyAbi.h",
@@ -212,7 +247,7 @@
     },
     {
       "path": "src/Vst3.cpp",
-      "sha256": "0ef1636ea60f1a472cb27069b668a7ce96359c6f1b3252f78f9ff028d99dbfbd",
+      "sha256": "1894ac7ec085c0b8981846214251c8229ec34b1c7a3e166a56bab8d8d0fd95be",
       "bytes": 8539
     },
     {
@@ -242,13 +277,23 @@
     },
     {
       "path": "tests/legacy_smoke.cpp",
-      "sha256": "9c0bdb9da2c2e75586fcc8d2388b24836426912b066f1318077976b8e1f1346e",
-      "bytes": 2625
+      "sha256": "e76643c57c57581f83be1267a35a2705a7957e7d8178187cdbb81a19283ac5b1",
+      "bytes": 3383
+    },
+    {
+      "path": "tests/mac_editor_smoke.mm",
+      "sha256": "20c7ea6d93901c2800ccacee4f948803d28a93ccd3025cbc8009b2b13f3358df",
+      "bytes": 689
     },
     {
       "path": "tests/test_presets.py",
       "sha256": "468b0ddf6146d030d0bd4859409171d671bb7472c7d2c06c8658f2c654245edf",
       "bytes": 1389
+    },
+    {
+      "path": "tests/windows_bridge.cpp",
+      "sha256": "df9b3e7c666f4b6bd0a3b438ceacaa313481e2a3adfbf0e7a0c270fc57888106",
+      "bytes": 1575
     },
     {
       "path": "tools/au_reference.cpp",
@@ -281,6 +326,21 @@
       "bytes": 1084
     },
     {
+      "path": "tools/ghidra/ExportJD.java",
+      "sha256": "12eb0465ce65d166b45852ad8680be66b628b631d65aca6c15f6d24039266a06",
+      "bytes": 976
+    },
+    {
+      "path": "tools/ghidra/ExportWindows.java",
+      "sha256": "9e2958df4164343e29d3870155963df1e1d002094b01fe987746acd630e697fc",
+      "bytes": 1068
+    },
+    {
+      "path": "tools/ghidra/ExportWindowsDsp.java",
+      "sha256": "6bdc2a920c733cb96d1151a36ef04430364725b35320be4dd6753e2d6bd410da",
+      "bytes": 1128
+    },
+    {
       "path": "tools/inventory.py",
       "sha256": "676f09fd42be2b7fff67927d6c23cf06ad000b122153446d454385d1c1388281",
       "bytes": 1805
@@ -299,6 +359,11 @@
       "path": "tools/render_tests.py",
       "sha256": "f00163a45a44cc9cc9a490f24cb4a5bf65e7db6d9961af48578bd1ea7fae43a5",
       "bytes": 2099
+    },
+    {
+      "path": "tools/windows_differential.py",
+      "sha256": "476057e439db2963ab6a66eb57382dc531c54bb4f6ec474ddd28caff6af793cc",
+      "bytes": 5631
     }
   ]
 }

@@ -1,0 +1,8 @@
+x86_64 VA 0x24230: CrushCloneProcessor::processBlock
+0x2532f: call 0x2b251c
+0x25424: call 0x2b251c
+Mach-O indirect-symbol mapping: stub 0x2b251c -> _tanhf
+float constants: 0x2b5dd8=19.0, 0x2b5ddc=.07999999821186066
+float constants: 0x2b5de0=29.0, 0x2b5de4=.15000000596046448
+State restore symbol at 0x28920 checks first uint32 against 0x21324356 and reads a following length.
+Selected decompilation types are imperfect; raw call targets, bytes and symbol mapping substantiate these facts.

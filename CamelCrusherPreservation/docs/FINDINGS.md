@@ -138,7 +138,7 @@ Ghidra sometimes generated bad instruction boundaries and implausible decompilat
 | --- | --- |
 | Active Mech, Tube, biquad/filter limiter and compressor algorithms | Recovered, tested against both original Intel DSP images in the stated harness |
 | Normalized parameter order, factory values, little-endian chunks | Recovered and round-trip tested |
-| Windows binary DSP and host metadata | Not supplied; not verified |
+| Windows binary DSP and host metadata | Subsequently supplied: identity/order/serialization verified, selected Mech/Tube/compressor tests match; full Windows DSP equality remains pending |
 | Native macOS ARM64 compilation | Universal VST3/legacy bundles built on Apple Silicon with Xcode 15.4; core/adapter tests and 47 validator checks passed |
 | macOS Intel/ARM libm equality to original and DAW scanning | Full original-AU comparisons and Live/FL tests remain pending |
 | Reopening real Ableton Live/FL Studio projects | Adapter and import routes provided; requires actual projects/host tests |
@@ -159,3 +159,5 @@ The user reports: AU opens with a black GUI but its parameters change the sound;
 ## Subsequent macOS build evidence
 
 GitHub Actions run 37819328990, source commit 40a6fd9c56dca1563328853ac0da75e7f2822b73, used the macos-14-arm64 image and Xcode 15.4/AppleClang 15. The VST3 and legacy VST bundles each contain x86_64 and arm64 slices. CTest passed core_tests and legacy_smoke; Python passed five preset checks. Ad hoc code signatures verified, and the VST3 validator reported 47 passed, zero failed. The full log is evidence/macos-build.log. No original-AU render or Live/FL project was run by CI; the Cocoa editor was compiled but not visually inspected. The experimental new AU was not built.
+
+Additional Windows DLL, third-party-port and host-feedback findings: [WINDOWS-AND-THIRD-PARTY.md](WINDOWS-AND-THIRD-PARTY.md).

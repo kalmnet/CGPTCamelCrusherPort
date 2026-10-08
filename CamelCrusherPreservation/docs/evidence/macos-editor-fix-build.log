@@ -1,0 +1,754 @@
+﻿2026-10-08T18:29:14.1813050Z Current runner version: '2.337.0'
+2026-10-08T18:29:14.1827800Z ##[group]Runner Image Provisioner
+2026-10-08T18:29:14.1828390Z Hosted Compute Agent
+2026-10-08T18:29:14.1828900Z Version: 20260828.587
+2026-10-08T18:29:14.1829370Z Commit: abac92662cab4cc7352de4f9f9d2e2419aad9c29
+2026-10-08T18:29:14.1829910Z Build Date: 2026-08-28T16:44:25Z
+2026-10-08T18:29:14.1830500Z Worker ID: {844c9e6a-57c2-41ac-aa67-e3617ebdd893}
+2026-10-08T18:29:14.1831020Z Azure Region: westus
+2026-10-08T18:29:14.1831480Z ##[endgroup]
+2026-10-08T18:29:14.1832380Z ##[group]Operating System
+2026-10-08T18:29:14.1832890Z macOS
+2026-10-08T18:29:14.1833280Z 14.8.9
+2026-10-08T18:29:14.1833690Z 23J631
+2026-10-08T18:29:14.1834110Z ##[endgroup]
+2026-10-08T18:29:14.1834590Z ##[group]Runner Image
+2026-10-08T18:29:14.1835050Z Image: macos-14-arm64
+2026-10-08T18:29:14.1835570Z Version: 20260831.0302.1
+2026-10-08T18:29:14.1836450Z Included Software: https://github.com/actions/runner-images/blob/macos-14-arm64/20260831.0302/images/macos/macos-14-arm64-Readme.md
+2026-10-08T18:29:14.1837660Z Image Release: https://github.com/actions/runner-images/releases/tag/macos-14-arm64%2F20260831.0302
+2026-10-08T18:29:14.1876170Z ##[endgroup]
+2026-10-08T18:29:14.1876900Z ##[group]GITHUB_TOKEN Permissions
+2026-10-08T18:29:14.1878290Z Contents: read
+2026-10-08T18:29:14.1878630Z Metadata: read
+2026-10-08T18:29:14.1878980Z ##[endgroup]
+2026-10-08T18:29:14.1880370Z Secret source: Actions
+2026-10-08T18:29:14.1880900Z Cache mode: write
+2026-10-08T18:29:14.1881330Z Prepare workflow directory
+2026-10-08T18:29:14.2091470Z Prepare all required actions
+2026-10-08T18:29:14.2124310Z Getting action download info
+2026-10-08T18:29:14.4673330Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+2026-10-08T18:29:14.7217570Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+2026-10-08T18:29:14.9030050Z Complete job name: plugins
+2026-10-08T18:29:14.9437260Z ##[group]Run actions/checkout@v4
+2026-10-08T18:29:14.9437790Z with:
+2026-10-08T18:29:14.9438110Z   repository: kalmnet/CGPTCamelCrusherPort
+2026-10-08T18:29:14.9441220Z   token: ***
+2026-10-08T18:29:14.9441630Z   ssh-strict: true
+2026-10-08T18:29:14.9441970Z   ssh-user: git
+2026-10-08T18:29:14.9449430Z   persist-credentials: true
+2026-10-08T18:29:14.9449780Z   clean: true
+2026-10-08T18:29:14.9450090Z   sparse-checkout-cone-mode: true
+2026-10-08T18:29:14.9450540Z   fetch-depth: 1
+2026-10-08T18:29:14.9450840Z   fetch-tags: false
+2026-10-08T18:29:14.9451150Z   show-progress: true
+2026-10-08T18:29:14.9451460Z   lfs: false
+2026-10-08T18:29:14.9451750Z   submodules: false
+2026-10-08T18:29:14.9452180Z   set-safe-directory: true
+2026-10-08T18:29:14.9452580Z   allow-unsafe-pr-checkout: false
+2026-10-08T18:29:14.9453130Z ##[endgroup]
+2026-10-08T18:29:15.0724920Z Syncing repository: kalmnet/CGPTCamelCrusherPort
+2026-10-08T18:29:15.0726200Z ##[group]Getting Git version info
+2026-10-08T18:29:15.0726890Z Working directory is '/Users/runner/work/CGPTCamelCrusherPort/CGPTCamelCrusherPort'
+2026-10-08T18:29:15.0727920Z [command]/opt/homebrew/bin/git version
+2026-10-08T18:29:15.0880780Z git version 2.55.0
+2026-10-08T18:29:15.0890800Z ##[endgroup]
+2026-10-08T18:29:15.0895850Z Copying '/Users/runner/.gitconfig' to '/Users/runner/work/_temp/6bacd35c-d7e7-4a7e-8cd5-4162babd048a/.gitconfig'
+2026-10-08T18:29:15.0902240Z Temporarily overriding HOME='/Users/runner/work/_temp/6bacd35c-d7e7-4a7e-8cd5-4162babd048a' before making global git config changes
+2026-10-08T18:29:15.0903240Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-08T18:29:15.0904950Z [command]/opt/homebrew/bin/git config --global --add safe.directory /Users/runner/work/CGPTCamelCrusherPort/CGPTCamelCrusherPort
+2026-10-08T18:29:15.0979220Z Deleting the contents of '/Users/runner/work/CGPTCamelCrusherPort/CGPTCamelCrusherPort'
+2026-10-08T18:29:15.0980850Z ##[group]Initializing the repository
+2026-10-08T18:29:15.0983630Z [command]/opt/homebrew/bin/git init /Users/runner/work/CGPTCamelCrusherPort/CGPTCamelCrusherPort
+2026-10-08T18:29:15.1131900Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-10-08T18:29:15.1142980Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-10-08T18:29:15.1143680Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-10-08T18:29:15.1144210Z hint: call:
+2026-10-08T18:29:15.1144500Z hint:
+2026-10-08T18:29:15.1144880Z hint: 	git config --global init.defaultBranch <name>
+2026-10-08T18:29:15.1145290Z hint:
+2026-10-08T18:29:15.1145680Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-10-08T18:29:15.1146280Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-10-08T18:29:15.1146760Z hint:
+2026-10-08T18:29:15.1147050Z hint: 	git branch -m <name>
+2026-10-08T18:29:15.1147360Z hint:
+2026-10-08T18:29:15.1147810Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-10-08T18:29:15.1148560Z Initialized empty Git repository in /Users/runner/work/CGPTCamelCrusherPort/CGPTCamelCrusherPort/.git/
+2026-10-08T18:29:15.1149910Z [command]/opt/homebrew/bin/git remote add origin https://github.com/kalmnet/CGPTCamelCrusherPort
+2026-10-08T18:29:15.1186350Z ##[endgroup]
+2026-10-08T18:29:15.1186950Z ##[group]Disabling automatic garbage collection
+2026-10-08T18:29:15.1188870Z [command]/opt/homebrew/bin/git config --local gc.auto 0
+2026-10-08T18:29:15.1228150Z ##[endgroup]
+2026-10-08T18:29:15.1228680Z ##[group]Setting up auth
+2026-10-08T18:29:15.1231630Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-08T18:29:15.1270520Z [command]/opt/homebrew/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-08T18:29:15.1905600Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-08T18:29:15.1942910Z [command]/opt/homebrew/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-08T18:29:15.2655140Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-08T18:29:15.2695130Z [command]/opt/homebrew/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-08T18:29:15.3345240Z [command]/opt/homebrew/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-10-08T18:29:15.3391520Z ##[endgroup]
+2026-10-08T18:29:15.3392360Z ##[group]Fetching the repository
+2026-10-08T18:29:15.3396330Z [command]/opt/homebrew/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +88d61e500ecc3f756f2b3416b969568633604d27:refs/remotes/origin/main
+2026-10-08T18:29:16.1166210Z From https://github.com/kalmnet/CGPTCamelCrusherPort
+2026-10-08T18:29:16.1167400Z  * [new ref]         88d61e500ecc3f756f2b3416b969568633604d27 -> origin/main
+2026-10-08T18:29:16.1172040Z ##[endgroup]
+2026-10-08T18:29:16.1172840Z ##[group]Determining the checkout info
+2026-10-08T18:29:16.1178130Z ##[endgroup]
+2026-10-08T18:29:16.1184600Z [command]/opt/homebrew/bin/git sparse-checkout disable
+2026-10-08T18:29:16.1264950Z [command]/opt/homebrew/bin/git config --local --unset-all extensions.worktreeConfig
+2026-10-08T18:29:16.1315110Z ##[group]Checking out the ref
+2026-10-08T18:29:16.1322340Z [command]/opt/homebrew/bin/git checkout --progress --force -B main refs/remotes/origin/main
+2026-10-08T18:29:16.1592480Z Switched to a new branch 'main'
+2026-10-08T18:29:16.1599560Z branch 'main' set up to track 'origin/main'.
+2026-10-08T18:29:16.1607920Z ##[endgroup]
+2026-10-08T18:29:16.1698140Z [command]/opt/homebrew/bin/git log -1 --format=%H
+2026-10-08T18:29:16.1757270Z 88d61e500ecc3f756f2b3416b969568633604d27
+2026-10-08T18:29:16.1933950Z ##[group]Run git clone https://github.com/steinbergmedia/vst3sdk.git "$RUNNER_TEMP/vst3sdk"
+2026-10-08T18:29:16.1935490Z [36;1mgit clone https://github.com/steinbergmedia/vst3sdk.git "$RUNNER_TEMP/vst3sdk"[0m
+2026-10-08T18:29:16.1937070Z [36;1mgit -C "$RUNNER_TEMP/vst3sdk" checkout 3cdf9ca5d1f5b1b21e0a86832aa4abe55607bd96[0m
+2026-10-08T18:29:16.1938550Z [36;1mgit -C "$RUNNER_TEMP/vst3sdk" submodule update --init --recursive[0m
+2026-10-08T18:29:16.2012100Z shell: /bin/bash -e {0}
+2026-10-08T18:29:16.2012670Z ##[endgroup]
+2026-10-08T18:29:16.2597150Z Cloning into '/Users/runner/work/_temp/vst3sdk'...
+2026-10-08T18:29:17.1334650Z HEAD is now at 3cdf9ca VST3 SDK 3.8.1
+2026-10-08T18:29:17.2008200Z Submodule 'base' (https://github.com/steinbergmedia/vst3_base) registered for path 'base'
+2026-10-08T18:29:17.2012220Z Submodule 'cmake' (https://github.com/steinbergmedia/vst3_cmake) registered for path 'cmake'
+2026-10-08T18:29:17.2016280Z Submodule 'doc' (https://github.com/steinbergmedia/vst3_doc) registered for path 'doc'
+2026-10-08T18:29:17.2021650Z Submodule 'pluginterfaces' (https://github.com/steinbergmedia/vst3_pluginterfaces) registered for path 'pluginterfaces'
+2026-10-08T18:29:17.2026830Z Submodule 'public.sdk' (https://github.com/steinbergmedia/vst3_public_sdk) registered for path 'public.sdk'
+2026-10-08T18:29:17.2032960Z Submodule 'tutorials' (https://github.com/steinbergmedia/vst3_tutorials) registered for path 'tutorials'
+2026-10-08T18:29:17.2038670Z Submodule 'vstgui4' (https://github.com/steinbergmedia/vstgui) registered for path 'vstgui4'
+2026-10-08T18:29:17.2119020Z Cloning into '/Users/runner/work/_temp/vst3sdk/base'...
+2026-10-08T18:29:17.9563110Z Cloning into '/Users/runner/work/_temp/vst3sdk/cmake'...
+2026-10-08T18:29:18.6973070Z Cloning into '/Users/runner/work/_temp/vst3sdk/doc'...
+2026-10-08T18:29:28.3985400Z Cloning into '/Users/runner/work/_temp/vst3sdk/pluginterfaces'...
+2026-10-08T18:29:29.1080690Z Cloning into '/Users/runner/work/_temp/vst3sdk/public.sdk'...
+2026-10-08T18:29:30.4640700Z Cloning into '/Users/runner/work/_temp/vst3sdk/tutorials'...
+2026-10-08T18:29:31.0700520Z Cloning into '/Users/runner/work/_temp/vst3sdk/vstgui4'...
+2026-10-08T18:29:33.3537060Z Submodule path 'base': checked out 'fcf9da0bd27a16f7f03773a3a39822f28f5c8477'
+2026-10-08T18:29:33.3850440Z Submodule path 'cmake': checked out '054c9143cbb8d47fc4694e473f2ee3b4d951a8f5'
+2026-10-08T18:29:34.3177850Z Submodule path 'doc': checked out '8bfca19d3b76a61d093951ba9297047f544caea1'
+2026-10-08T18:29:34.3461710Z Submodule path 'pluginterfaces': checked out '4f547e8e102b47de4a8b8aaf343c73b700786372'
+2026-10-08T18:29:34.5173910Z Submodule path 'public.sdk': checked out '586dc5e6c8012c3e4b01c79389375cbe96bdb1da'
+2026-10-08T18:29:34.5445640Z Submodule path 'tutorials': checked out '33b73dfbb87f3fde3bce8c0a10cae934dc66ad34'
+2026-10-08T18:29:34.7425320Z Submodule path 'vstgui4': checked out '5db272256172557818b6158cf0bb2c4410bddb25'
+2026-10-08T18:29:34.7550750Z ##[group]Run cmake -S CamelCrusherPreservation -B build-mac -DCMAKE_BUILD_TYPE=Release '-DCMAKE_OSX_ARCHITECTURES=arm64;x86_64' -DCMAKE_OSX_DEPLOYMENT_TARGET=11.0 -DVST3_SDK_ROOT="$RUNNER_TEMP/vst3sdk" -DCAMEL_BUILD_LEGACY=ON
+2026-10-08T18:29:34.7551920Z [36;1mcmake -S CamelCrusherPreservation -B build-mac -DCMAKE_BUILD_TYPE=Release '-DCMAKE_OSX_ARCHITECTURES=arm64;x86_64' -DCMAKE_OSX_DEPLOYMENT_TARGET=11.0 -DVST3_SDK_ROOT="$RUNNER_TEMP/vst3sdk" -DCAMEL_BUILD_LEGACY=ON[0m
+2026-10-08T18:29:34.7605580Z shell: /bin/bash -e {0}
+2026-10-08T18:29:34.7605780Z ##[endgroup]
+2026-10-08T18:29:36.5483470Z -- The CXX compiler identification is AppleClang 15.0.0.15000309
+2026-10-08T18:29:37.0231890Z -- Detecting CXX compiler ABI info
+2026-10-08T18:29:37.6528170Z -- Detecting CXX compiler ABI info - done
+2026-10-08T18:29:37.6665320Z -- Check for working CXX compiler: /usr/bin/c++ - skipped
+2026-10-08T18:29:37.6672500Z -- Detecting CXX compile features
+2026-10-08T18:29:37.6683160Z -- Detecting CXX compile features - done
+2026-10-08T18:29:37.7425040Z -- The OBJCXX compiler identification is AppleClang 15.0.0.15000309
+2026-10-08T18:29:37.7487370Z -- Detecting OBJCXX compiler ABI info
+2026-10-08T18:29:37.9121310Z -- Detecting OBJCXX compiler ABI info - done
+2026-10-08T18:29:37.9249000Z -- Check for working OBJCXX compiler: /usr/bin/clang++ - skipped
+2026-10-08T18:29:37.9291180Z -- [SMTG] Check C++ compiler
+2026-10-08T18:29:37.9660290Z -- [SMTG] Building with Xcode version: 15.4
+2026-10-08T18:29:39.2945070Z -- The C compiler identification is AppleClang 15.0.0.15000309
+2026-10-08T18:29:39.3010100Z -- Detecting C compiler ABI info
+2026-10-08T18:29:39.5248800Z -- Detecting C compiler ABI info - done
+2026-10-08T18:29:39.5405760Z -- Check for working C compiler: /usr/bin/cc - skipped
+2026-10-08T18:29:39.5427750Z -- Detecting C compile features
+2026-10-08T18:29:39.5428240Z -- Detecting C compile features - done
+2026-10-08T18:29:39.5447190Z -- [SMTG] SMTG_AAX_SDK_PATH is not set. If you need it, please download the AAX SDK!
+2026-10-08T18:29:40.6774860Z -- Could NOT find LIBJACK (missing: LIBJACK_LIBRARIES LIBJACK_INCLUDE_DIR) 
+2026-10-08T18:29:40.6794230Z -- Performing Test SMTG_USE_STDATOMIC_H
+2026-10-08T18:29:40.9285780Z -- Performing Test SMTG_USE_STDATOMIC_H - Success
+2026-10-08T18:29:40.9342680Z -- [SMTG] Setup running moduleinfotool for CamelCrusherPreservation
+2026-10-08T18:29:40.9353760Z -- Configuring done (6.1s)
+2026-10-08T18:29:41.0476980Z -- Generating done (0.1s)
+2026-10-08T18:29:41.0578560Z -- Build files have been written to: /Users/runner/work/CGPTCamelCrusherPort/CGPTCamelCrusherPort/build-mac
+2026-10-08T18:29:41.0659180Z ##[group]Run cmake --build build-mac --parallel 3
+2026-10-08T18:29:41.0659940Z [36;1mcmake --build build-mac --parallel 3[0m
+2026-10-08T18:29:41.0741630Z shell: /bin/bash -e {0}
+2026-10-08T18:29:41.0741850Z ##[endgroup]
+2026-10-08T18:29:41.1611200Z [  1%] Building OBJCXX object CMakeFiles/camel_native_vst3.dir/src/NativeEditor.mm.o
+2026-10-08T18:29:41.1692990Z [  2%] Building OBJCXX object CMakeFiles/camel_native_legacy.dir/src/NativeEditor.mm.o
+2026-10-08T18:29:41.1759330Z [  3%] Building CXX object CMakeFiles/camel_core.dir/src/Dsp.cpp.o
+2026-10-08T18:29:42.3423040Z [  4%] Building CXX object CMakeFiles/camel_core.dir/src/State.cpp.o
+2026-10-08T18:29:43.5089450Z [  5%] Linking CXX static library libcamel_core.a
+2026-10-08T18:29:43.6931750Z [  5%] Linking OBJCXX static library libcamel_native_legacy.a
+2026-10-08T18:29:43.7104050Z [  6%] Linking OBJCXX static library libcamel_native_vst3.a
+2026-10-08T18:29:44.3710520Z [  6%] Built target camel_core
+2026-10-08T18:29:44.4117110Z [  6%] Building OBJCXX object CMakeFiles/camel_native_au.dir/src/NativeEditor.mm.o
+2026-10-08T18:29:44.5725120Z [  6%] Built target camel_native_legacy
+2026-10-08T18:29:44.5890630Z [  6%] Built target camel_native_vst3
+2026-10-08T18:29:44.5926430Z [  6%] Building CXX object sdk/CMakeFiles/pluginterfaces.dir/pluginterfaces/base/conststringtable.cpp.o
+2026-10-08T18:29:44.6108000Z [  7%] Building CXX object sdk/CMakeFiles/base.dir/base/source/baseiids.cpp.o
+2026-10-08T18:29:44.7873350Z [  7%] Building CXX object sdk/CMakeFiles/base.dir/base/source/fbuffer.cpp.o
+2026-10-08T18:29:45.3921800Z [  8%] Building CXX object sdk/CMakeFiles/base.dir/base/source/fdebug.cpp.o
+2026-10-08T18:29:45.5448520Z [  9%] Building CXX object sdk/CMakeFiles/base.dir/base/source/fdynlib.cpp.o
+2026-10-08T18:29:45.5653590Z [ 10%] Building CXX object sdk/CMakeFiles/pluginterfaces.dir/pluginterfaces/base/coreiids.cpp.o
+2026-10-08T18:29:45.7181810Z [ 11%] Building CXX object sdk/CMakeFiles/pluginterfaces.dir/pluginterfaces/base/funknown.cpp.o
+2026-10-08T18:29:46.0022290Z [ 12%] Building CXX object sdk/CMakeFiles/pluginterfaces.dir/pluginterfaces/base/ustring.cpp.o
+2026-10-08T18:29:46.1109120Z [ 12%] Building CXX object sdk/CMakeFiles/base.dir/base/source/fobject.cpp.o
+2026-10-08T18:29:46.2084660Z [ 12%] Linking CXX static library ../lib/Release/libpluginterfaces.a
+2026-10-08T18:29:46.2617180Z [ 13%] Linking OBJCXX static library libcamel_native_au.a
+2026-10-08T18:29:46.2678870Z [ 13%] Built target pluginterfaces
+2026-10-08T18:29:46.2929780Z [ 13%] Building CXX object CMakeFiles/CamelCrusherLegacy.dir/src/Legacy.cpp.o
+2026-10-08T18:29:46.2966570Z [ 13%] Built target camel_native_au
+2026-10-08T18:29:46.3139380Z [ 14%] Building CXX object CMakeFiles/au_reference.dir/tools/au_reference.cpp.o
+2026-10-08T18:29:46.7796970Z [ 15%] Building CXX object sdk/CMakeFiles/base.dir/base/source/fstreamer.cpp.o
+2026-10-08T18:29:47.2465660Z [ 16%] Building CXX object sdk/CMakeFiles/base.dir/base/source/fstring.cpp.o
+2026-10-08T18:29:47.2667240Z [ 17%] Building OBJCXX object CMakeFiles/CamelCrusherLegacy.dir/src/LegacyMac.mm.o
+2026-10-08T18:29:47.2973240Z [ 18%] Linking CXX executable au_reference
+2026-10-08T18:29:47.3702760Z [ 18%] Built target au_reference
+2026-10-08T18:29:47.3892710Z [ 19%] Building CXX object CMakeFiles/legacy_smoke.dir/tests/legacy_smoke.cpp.o
+2026-10-08T18:29:48.2658880Z [ 19%] Building OBJCXX object CMakeFiles/legacy_smoke.dir/tests/mac_editor_smoke.mm.o
+2026-10-08T18:29:48.5678820Z Copying OS X content CamelCrusher.vst/Contents/Resources/Background.png
+2026-10-08T18:29:48.5821670Z Copying OS X content CamelCrusher.vst/Contents/Resources/ButtonRandom.png
+2026-10-08T18:29:48.5913190Z Copying OS X content CamelCrusher.vst/Contents/Resources/FontDisplay-Old.png
+2026-10-08T18:29:48.6005050Z Copying OS X content CamelCrusher.vst/Contents/Resources/FontDisplay.png
+2026-10-08T18:29:48.6105940Z Copying OS X content CamelCrusher.vst/Contents/Resources/FontSelector.png
+2026-10-08T18:29:48.6204190Z Copying OS X content CamelCrusher.vst/Contents/Resources/FontVersion.png
+2026-10-08T18:29:48.6286670Z Copying OS X content CamelCrusher.vst/Contents/Resources/Knob.png
+2026-10-08T18:29:48.6376130Z Copying OS X content CamelCrusher.vst/Contents/Resources/OnButton.png
+2026-10-08T18:29:48.6461300Z Copying OS X content CamelCrusher.vst/Contents/Resources/PhatButton.png
+2026-10-08T18:29:48.6566030Z Copying OS X content CamelCrusher.vst/Contents/Resources/SelectorPreset.png
+2026-10-08T18:29:48.6670060Z [ 20%] Linking CXX CFBundle shared module CamelCrusher.vst/Contents/MacOS/CamelCrusher
+2026-10-08T18:29:48.8078490Z [ 21%] Building CXX object sdk/CMakeFiles/base.dir/base/source/timer.cpp.o
+2026-10-08T18:29:48.8793770Z [ 21%] Built target CamelCrusherLegacy
+2026-10-08T18:29:48.8853400Z [ 21%] Building CXX object sdk/CMakeFiles/base.dir/base/source/updatehandler.cpp.o
+2026-10-08T18:29:49.1260620Z [ 22%] Linking CXX executable legacy_smoke
+2026-10-08T18:29:49.3280540Z [ 22%] Built target legacy_smoke
+2026-10-08T18:29:49.3441250Z [ 22%] Building CXX object CMakeFiles/core_tests.dir/tests/core_tests.cpp.o
+2026-10-08T18:29:49.4935910Z [ 23%] Building CXX object CMakeFiles/camel_test_bridge.dir/tests/bridge.cpp.o
+2026-10-08T18:29:49.7885650Z [ 24%] Linking CXX shared library libcamel_test_bridge.dylib
+2026-10-08T18:29:49.8510210Z [ 24%] Built target camel_test_bridge
+2026-10-08T18:29:49.8664370Z [ 24%] Building CXX object CMakeFiles/camel_render.dir/tools/render.cpp.o
+2026-10-08T18:29:50.1676150Z [ 25%] Building CXX object sdk/CMakeFiles/base.dir/base/thread/source/fcondition.cpp.o
+2026-10-08T18:29:50.2553240Z [ 26%] Linking CXX executable core_tests
+2026-10-08T18:29:50.3202170Z [ 26%] Built target core_tests
+2026-10-08T18:29:50.3262630Z [ 27%] Building CXX object sdk/CMakeFiles/base.dir/base/thread/source/flock.cpp.o
+2026-10-08T18:29:50.5484530Z [ 27%] Linking CXX static library ../lib/Release/libbase.a
+2026-10-08T18:29:50.5894410Z [ 27%] Built target base
+2026-10-08T18:29:50.6054580Z [ 28%] Building CXX object sdk/CMakeFiles/sdk_common.dir/public.sdk/source/common/commoniids.cpp.o
+2026-10-08T18:29:50.6055220Z [ 28%] Building CXX object sdk/CMakeFiles/sdk_common.dir/public.sdk/source/common/commonstringconvert.cpp.o
+2026-10-08T18:29:50.6869100Z [ 29%] Linking CXX executable camel_render
+2026-10-08T18:29:50.7352100Z [ 30%] Building CXX object sdk/CMakeFiles/sdk_common.dir/public.sdk/source/common/openurl.cpp.o
+2026-10-08T18:29:50.7546780Z [ 30%] Built target camel_render
+2026-10-08T18:29:50.7613420Z [ 31%] Building CXX object sdk/CMakeFiles/sdk_common.dir/public.sdk/source/common/systemclipboard_linux.cpp.o
+2026-10-08T18:29:51.0807480Z [ 32%] Building CXX object sdk/CMakeFiles/sdk_common.dir/public.sdk/source/common/systemclipboard_win32.cpp.o
+2026-10-08T18:29:51.1656580Z [ 32%] Building CXX object sdk/CMakeFiles/sdk_common.dir/public.sdk/source/common/threadchecker_linux.cpp.o
+2026-10-08T18:29:51.2817930Z [ 33%] Building CXX object sdk/CMakeFiles/sdk_common.dir/public.sdk/source/common/threadchecker_win32.cpp.o
+2026-10-08T18:29:51.4030200Z [ 34%] Building CXX object sdk/CMakeFiles/sdk_common.dir/public.sdk/source/common/readfile.cpp.o
+2026-10-08T18:29:51.4659730Z [ 34%] Building CXX object sdk/CMakeFiles/sdk_common.dir/public.sdk/source/vst/vstpresetfile.cpp.o
+2026-10-08T18:29:51.5341040Z [ 35%] Building OBJCXX object sdk/CMakeFiles/sdk_common.dir/public.sdk/source/common/threadchecker_mac.mm.o
+2026-10-08T18:29:52.0378670Z [ 36%] Building OBJCXX object sdk/CMakeFiles/sdk_common.dir/public.sdk/source/common/systemclipboard_mac.mm.o
+2026-10-08T18:29:53.2252070Z [ 37%] Linking CXX static library ../lib/Release/libsdk_common.a
+2026-10-08T18:29:53.2516310Z /Applications/Xcode_15.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ranlib: for architecture: x86_64 file: ../lib/Release/libsdk_common.a(systemclipboard_linux.cpp.o) has no symbols
+2026-10-08T18:29:53.2517440Z /Applications/Xcode_15.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ranlib: for architecture: x86_64 file: ../lib/Release/libsdk_common.a(systemclipboard_win32.cpp.o) has no symbols
+2026-10-08T18:29:53.2519120Z /Applications/Xcode_15.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ranlib: for architecture: x86_64 file: ../lib/Release/libsdk_common.a(threadchecker_linux.cpp.o) has no symbols
+2026-10-08T18:29:53.2520390Z /Applications/Xcode_15.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ranlib: for architecture: x86_64 file: ../lib/Release/libsdk_common.a(threadchecker_win32.cpp.o) has no symbols
+2026-10-08T18:29:53.2594980Z [ 37%] Built target sdk_common
+2026-10-08T18:29:53.2762330Z [ 39%] Building CXX object sdk/CMakeFiles/sdk.dir/public.sdk/source/common/pluginview.cpp.o
+2026-10-08T18:29:53.2763490Z [ 39%] Building CXX object sdk/CMakeFiles/sdk.dir/public.sdk/source/main/pluginfactory.cpp.o
+2026-10-08T18:29:53.2764640Z [ 39%] Building CXX object sdk/CMakeFiles/sdk_hosting.dir/public.sdk/source/vst/hosting/connectionproxy.cpp.o
+2026-10-08T18:29:53.4568060Z [ 39%] Building CXX object sdk/CMakeFiles/sdk.dir/public.sdk/source/main/moduleinit.cpp.o
+2026-10-08T18:29:53.6115940Z [ 40%] Building CXX object sdk/CMakeFiles/sdk_hosting.dir/public.sdk/source/vst/hosting/eventlist.cpp.o
+2026-10-08T18:29:53.7845970Z [ 41%] Building CXX object sdk/CMakeFiles/sdk_hosting.dir/public.sdk/source/vst/hosting/hostclasses.cpp.o
+2026-10-08T18:29:53.9896130Z [ 42%] Building CXX object sdk/CMakeFiles/sdk.dir/public.sdk/source/vst/utility/dataexchange.cpp.o
+2026-10-08T18:29:54.5390270Z [ 43%] Building CXX object sdk/CMakeFiles/sdk.dir/public.sdk/source/vst/utility/stringconvert.cpp.o
+2026-10-08T18:29:54.7405640Z [ 43%] Building CXX object sdk/CMakeFiles/sdk_hosting.dir/public.sdk/source/vst/hosting/module.cpp.o
+2026-10-08T18:29:55.0125400Z [ 44%] Building CXX object sdk/CMakeFiles/sdk_hosting.dir/public.sdk/source/vst/hosting/parameterchanges.cpp.o
+2026-10-08T18:29:55.2272430Z [ 45%] Building CXX object sdk/CMakeFiles/sdk.dir/public.sdk/source/vst/utility/systemtime.cpp.o
+2026-10-08T18:29:55.7248990Z [ 46%] Building CXX object sdk/CMakeFiles/sdk_hosting.dir/public.sdk/source/vst/hosting/pluginterfacesupport.cpp.o
+2026-10-08T18:29:55.8017330Z [ 46%] Building CXX object sdk/CMakeFiles/sdk.dir/public.sdk/source/vst/utility/testing.cpp.o
+2026-10-08T18:29:56.1347830Z [ 46%] Building CXX object sdk/CMakeFiles/sdk_hosting.dir/public.sdk/source/vst/hosting/processdata.cpp.o
+2026-10-08T18:29:56.2981520Z [ 47%] Building CXX object sdk/CMakeFiles/sdk_hosting.dir/public.sdk/source/vst/utility/stringconvert.cpp.o
+2026-10-08T18:29:56.3399620Z [ 48%] Building CXX object sdk/CMakeFiles/sdk.dir/public.sdk/source/vst/utility/vst2persistence.cpp.o
+2026-10-08T18:29:56.7543040Z [ 49%] Building CXX object sdk/CMakeFiles/sdk.dir/public.sdk/source/vst/vstaudioeffect.cpp.o
+2026-10-08T18:29:57.0508010Z [ 50%] Building CXX object sdk/CMakeFiles/sdk_hosting.dir/public.sdk/source/vst/vstinitiids.cpp.o
+2026-10-08T18:29:57.2572980Z [ 51%] Linking CXX static library ../lib/Release/libsdk_hosting.a
+2026-10-08T18:29:57.3302700Z [ 51%] Built target sdk_hosting
+2026-10-08T18:29:57.3461820Z [ 51%] Building CXX object sdk/CMakeFiles/sdk.dir/public.sdk/source/vst/vstbus.cpp.o
+2026-10-08T18:29:57.5449420Z [ 52%] Building CXX object sdk/CMakeFiles/sdk.dir/public.sdk/source/vst/vstcomponent.cpp.o
+2026-10-08T18:29:57.6806600Z [ 53%] Building CXX object sdk/CMakeFiles/sdk.dir/public.sdk/source/vst/vstcomponentbase.cpp.o
+2026-10-08T18:29:58.2643620Z [ 53%] Building CXX object sdk/CMakeFiles/sdk.dir/public.sdk/source/vst/vsteditcontroller.cpp.o
+2026-10-08T18:29:58.2845370Z [ 54%] Building CXX object sdk/CMakeFiles/sdk.dir/public.sdk/source/vst/vstinitiids.cpp.o
+2026-10-08T18:29:58.4562170Z [ 55%] Building CXX object sdk/CMakeFiles/sdk.dir/public.sdk/source/vst/vstnoteexpressiontypes.cpp.o
+2026-10-08T18:29:58.5387270Z [ 56%] Building CXX object sdk/public.sdk/samples/vst-utilities/moduleinfotool/CMakeFiles/moduleinfotool.dir/source/main.cpp.o
+2026-10-08T18:29:59.4890890Z [ 57%] Building CXX object sdk/CMakeFiles/sdk.dir/public.sdk/source/vst/vstparameters.cpp.o
+2026-10-08T18:30:00.1369370Z [ 57%] Building CXX object sdk/public.sdk/samples/vst-hosting/validator/CMakeFiles/validator.dir/Users/runner/work/_temp/vst3sdk/public.sdk/source/common/memorystream.cpp.o
+2026-10-08T18:30:00.2843990Z [ 58%] Building CXX object sdk/public.sdk/samples/vst-hosting/validator/CMakeFiles/validator.dir/Users/runner/work/_temp/vst3sdk/public.sdk/source/main/moduleinit.cpp.o
+2026-10-08T18:30:00.5045920Z [ 58%] Building CXX object sdk/CMakeFiles/sdk.dir/public.sdk/source/vst/vstrepresentation.cpp.o
+2026-10-08T18:30:00.8432130Z [ 59%] Building CXX object sdk/public.sdk/samples/vst-utilities/moduleinfotool/CMakeFiles/moduleinfotool.dir/Users/runner/work/_temp/vst3sdk/public.sdk/source/vst/moduleinfo/moduleinfocreator.cpp.o
+2026-10-08T18:30:01.0021060Z [ 60%] Linking CXX static library ../lib/Release/libsdk.a
+2026-10-08T18:30:01.0474740Z [ 60%] Built target sdk
+2026-10-08T18:30:01.0539680Z [ 61%] Building CXX object sdk/public.sdk/samples/vst-hosting/validator/CMakeFiles/validator.dir/Users/runner/work/_temp/vst3sdk/public.sdk/source/vst/moduleinfo/moduleinfoparser.cpp.o
+2026-10-08T18:30:01.2637040Z [ 61%] Building CXX object sdk/public.sdk/samples/vst-hosting/validator/CMakeFiles/validator.dir/Users/runner/work/_temp/vst3sdk/public.sdk/source/vst/hosting/test/connectionproxytest.cpp.o
+2026-10-08T18:30:02.2724690Z [ 62%] Building CXX object sdk/public.sdk/samples/vst-hosting/validator/CMakeFiles/validator.dir/Users/runner/work/_temp/vst3sdk/public.sdk/source/vst/hosting/test/eventlisttest.cpp.o
+2026-10-08T18:30:02.4658040Z [ 62%] Building CXX object sdk/public.sdk/samples/vst-utilities/moduleinfotool/CMakeFiles/moduleinfotool.dir/Users/runner/work/_temp/vst3sdk/public.sdk/source/vst/moduleinfo/moduleinfoparser.cpp.o
+2026-10-08T18:30:02.7882650Z [ 63%] Building OBJCXX object sdk/public.sdk/samples/vst-utilities/moduleinfotool/CMakeFiles/moduleinfotool.dir/Users/runner/work/_temp/vst3sdk/public.sdk/source/vst/hosting/module_mac.mm.o
+2026-10-08T18:30:03.2901530Z [ 64%] Building CXX object sdk/public.sdk/samples/vst-hosting/validator/CMakeFiles/validator.dir/Users/runner/work/_temp/vst3sdk/public.sdk/source/vst/hosting/test/hostclassestest.cpp.o
+2026-10-08T18:30:04.2652410Z [ 65%] Building CXX object sdk/public.sdk/samples/vst-hosting/validator/CMakeFiles/validator.dir/Users/runner/work/_temp/vst3sdk/public.sdk/source/vst/hosting/test/miditovsttest.cpp.o
+2026-10-08T18:30:04.6361960Z [ 66%] Linking CXX executable ../../../../../bin/Release/moduleinfotool
+2026-10-08T18:30:04.6429970Z [ 66%] Building CXX object sdk/public.sdk/samples/vst-hosting/validator/CMakeFiles/validator.dir/Users/runner/work/_temp/vst3sdk/public.sdk/source/vst/hosting/test/parameterchangestest.cpp.o
+2026-10-08T18:30:04.8632940Z [ 66%] Built target moduleinfotool
+2026-10-08T18:30:04.8698950Z [ 67%] Building CXX object sdk/public.sdk/samples/vst-hosting/validator/CMakeFiles/validator.dir/Users/runner/work/_temp/vst3sdk/public.sdk/source/vst/hosting/test/pluginterfacesupporttest.cpp.o
+2026-10-08T18:30:05.6327490Z [ 68%] Building CXX object sdk/public.sdk/samples/vst-hosting/validator/CMakeFiles/validator.dir/Users/runner/work/_temp/vst3sdk/public.sdk/source/vst/hosting/test/processdatatest.cpp.o
+2026-10-08T18:30:05.7674100Z [ 68%] Building CXX object sdk/public.sdk/samples/vst-hosting/validator/CMakeFiles/validator.dir/Users/runner/work/_temp/vst3sdk/public.sdk/source/vst/hosting/plugprovider.cpp.o
+2026-10-08T18:30:06.4159570Z [ 68%] Building CXX object CMakeFiles/CamelCrusherPreservation.dir/src/Vst3.cpp.o
+2026-10-08T18:30:06.6627200Z [ 69%] Building CXX object CMakeFiles/CamelCrusherPreservation.dir/Users/runner/work/_temp/vst3sdk/public.sdk/source/main/macmain.cpp.o
+2026-10-08T18:30:07.3454530Z [ 70%] Building OBJCXX object CMakeFiles/CamelCrusherPreservation.dir/src/Vst3MacView.mm.o
+2026-10-08T18:30:07.6200380Z Copying OS X content VST3/Release/CamelCrusherPreservation.vst3/Contents/Resources/Background.png
+2026-10-08T18:30:07.6295010Z Copying OS X content VST3/Release/CamelCrusherPreservation.vst3/Contents/Resources/ButtonRandom.png
+2026-10-08T18:30:07.6399290Z Copying OS X content VST3/Release/CamelCrusherPreservation.vst3/Contents/Resources/FontDisplay-Old.png
+2026-10-08T18:30:07.6504600Z Copying OS X content VST3/Release/CamelCrusherPreservation.vst3/Contents/Resources/FontDisplay.png
+2026-10-08T18:30:07.6611080Z [ 71%] Building CXX object sdk/public.sdk/samples/vst-hosting/validator/CMakeFiles/validator.dir/Users/runner/work/_temp/vst3sdk/public.sdk/source/vst/testsuite/bus/busactivation.cpp.o
+2026-10-08T18:30:08.1892940Z [ 72%] Building CXX object sdk/public.sdk/samples/vst-hosting/validator/CMakeFiles/validator.dir/Users/runner/work/_temp/vst3sdk/public.sdk/source/vst/testsuite/bus/busconsistency.cpp.o
+2026-10-08T18:30:08.5975430Z Copying OS X content VST3/Release/CamelCrusherPreservation.vst3/Contents/Resources/FontSelector.png
+2026-10-08T18:30:08.6085060Z Copying OS X content VST3/Release/CamelCrusherPreservation.vst3/Contents/Resources/FontVersion.png
+2026-10-08T18:30:08.6196670Z Copying OS X content VST3/Release/CamelCrusherPreservation.vst3/Contents/Resources/Knob.png
+2026-10-08T18:30:08.6311780Z Copying OS X content VST3/Release/CamelCrusherPreservation.vst3/Contents/Resources/OnButton.png
+2026-10-08T18:30:08.6415630Z Copying OS X content VST3/Release/CamelCrusherPreservation.vst3/Contents/Resources/PhatButton.png
+2026-10-08T18:30:08.6525300Z [ 73%] Building CXX object sdk/public.sdk/samples/vst-hosting/validator/CMakeFiles/validator.dir/Users/runner/work/_temp/vst3sdk/public.sdk/source/vst/testsuite/bus/businvalidindex.cpp.o
+2026-10-08T18:30:08.6684540Z [ 73%] Building CXX object sdk/public.sdk/samples/vst-hosting/validator/CMakeFiles/validator.dir/Users/runner/work/_temp/vst3sdk/public.sdk/source/vst/testsuite/bus/checkaudiobusarrangement.cpp.o
+2026-10-08T18:30:08.9747820Z Copying OS X content VST3/Release/CamelCrusherPreservation.vst3/Contents/Resources/SelectorPreset.png
+2026-10-08T18:30:08.9872660Z [ 73%] Linking CXX CFBundle shared module VST3/Release/CamelCrusherPreservation.vst3/Contents/MacOS/CamelCrusherPreservation
+2026-10-08T18:30:09.1808460Z [ 74%] Building CXX object sdk/public.sdk/samples/vst-hosting/validator/CMakeFiles/validator.dir/Users/runner/work/_temp/vst3sdk/public.sdk/source/vst/testsuite/bus/scanbusses.cpp.o
+2026-10-08T18:30:09.1912510Z [ 75%] Building CXX object sdk/public.sdk/samples/vst-hosting/validator/CMakeFiles/validator.dir/Users/runner/work/_temp/vst3sdk/public.sdk/source/vst/testsuite/bus/sidechainarrangement.cpp.o
+2026-10-08T18:30:09.2717270Z /Users/runner/work/CGPTCamelCrusherPort/CGPTCamelCrusherPort/build-mac/VST3/Release/CamelCrusherPreservation.vst3/Contents/Resources/moduleinfo.json: signed generic [moduleinfo-635c6bd4e72b942062e7c0059ca28476921f061a]
+2026-10-08T18:30:09.2842680Z [ 75%] Built target CamelCrusherPreservation
+2026-10-08T18:30:09.2932900Z [ 75%] Building CXX object sdk/public.sdk/samples/vst-hosting/validator/CMakeFiles/validator.dir/Users/runner/work/_temp/vst3sdk/public.sdk/source/vst/testsuite/general/editorclasses.cpp.o
+2026-10-08T18:30:09.6726620Z [ 76%] Building CXX object sdk/public.sdk/samples/vst-hosting/validator/CMakeFiles/validator.dir/Users/runner/work/_temp/vst3sdk/public.sdk/source/vst/testsuite/general/midilearn.cpp.o
+2026-10-08T18:30:09.6829240Z [ 77%] Building CXX object sdk/public.sdk/samples/vst-hosting/validator/CMakeFiles/validator.dir/Users/runner/work/_temp/vst3sdk/public.sdk/source/vst/testsuite/general/midimapping.cpp.o
+2026-10-08T18:30:09.7325130Z [ 78%] Building CXX object sdk/public.sdk/samples/vst-hosting/validator/CMakeFiles/validator.dir/Users/runner/work/_temp/vst3sdk/public.sdk/source/vst/testsuite/general/plugcompat.cpp.o
+2026-10-08T18:30:10.1219620Z [ 78%] Building CXX object sdk/public.sdk/samples/vst-hosting/validator/CMakeFiles/validator.dir/Users/runner/work/_temp/vst3sdk/public.sdk/source/vst/testsuite/general/scanparameters.cpp.o
+2026-10-08T18:30:10.3748820Z [ 79%] Building CXX object sdk/public.sdk/samples/vst-hosting/validator/CMakeFiles/validator.dir/Users/runner/work/_temp/vst3sdk/public.sdk/source/vst/testsuite/general/suspendresume.cpp.o
+2026-10-08T18:30:10.4081580Z [ 80%] Building CXX object sdk/public.sdk/samples/vst-hosting/validator/CMakeFiles/validator.dir/Users/runner/work/_temp/vst3sdk/public.sdk/source/vst/testsuite/general/terminit.cpp.o
+2026-10-08T18:30:10.8142580Z [ 80%] Building CXX object sdk/public.sdk/samples/vst-hosting/validator/CMakeFiles/validator.dir/Users/runner/work/_temp/vst3sdk/public.sdk/source/vst/testsuite/noteexpression/keyswitch.cpp.o
+2026-10-08T18:30:10.8681820Z [ 81%] Building CXX object sdk/public.sdk/samples/vst-hosting/validator/CMakeFiles/validator.dir/Users/runner/work/_temp/vst3sdk/public.sdk/source/vst/testsuite/noteexpression/noteexpression.cpp.o
+2026-10-08T18:30:11.2618980Z [ 82%] Building CXX object sdk/public.sdk/samples/vst-hosting/validator/CMakeFiles/validator.dir/Users/runner/work/_temp/vst3sdk/public.sdk/source/vst/testsuite/processing/automation.cpp.o
+2026-10-08T18:30:11.2820630Z [ 82%] Building CXX object sdk/public.sdk/samples/vst-hosting/validator/CMakeFiles/validator.dir/Users/runner/work/_temp/vst3sdk/public.sdk/source/vst/testsuite/processing/process.cpp.o
+2026-10-08T18:30:11.3630630Z [ 83%] Building CXX object sdk/public.sdk/samples/vst-hosting/validator/CMakeFiles/validator.dir/Users/runner/work/_temp/vst3sdk/public.sdk/source/vst/testsuite/processing/processcontextrequirements.cpp.o
+2026-10-08T18:30:11.8003150Z [ 84%] Building CXX object sdk/public.sdk/samples/vst-hosting/validator/CMakeFiles/validator.dir/Users/runner/work/_temp/vst3sdk/public.sdk/source/vst/testsuite/processing/processformat.cpp.o
+2026-10-08T18:30:11.9552350Z [ 85%] Building CXX object sdk/public.sdk/samples/vst-hosting/validator/CMakeFiles/validator.dir/Users/runner/work/_temp/vst3sdk/public.sdk/source/vst/testsuite/processing/processinputoverwriting.cpp.o
+2026-10-08T18:30:11.9941500Z [ 85%] Building CXX object sdk/public.sdk/samples/vst-hosting/validator/CMakeFiles/validator.dir/Users/runner/work/_temp/vst3sdk/public.sdk/source/vst/testsuite/processing/processtail.cpp.o
+2026-10-08T18:30:12.2511310Z [ 86%] Building CXX object sdk/public.sdk/samples/vst-hosting/validator/CMakeFiles/validator.dir/Users/runner/work/_temp/vst3sdk/public.sdk/source/vst/testsuite/processing/processthreaded.cpp.o
+2026-10-08T18:30:12.4510040Z [ 87%] Building CXX object sdk/public.sdk/samples/vst-hosting/validator/CMakeFiles/validator.dir/Users/runner/work/_temp/vst3sdk/public.sdk/source/vst/testsuite/processing/silenceflags.cpp.o
+2026-10-08T18:30:12.4981520Z [ 87%] Building CXX object sdk/public.sdk/samples/vst-hosting/validator/CMakeFiles/validator.dir/Users/runner/work/_temp/vst3sdk/public.sdk/source/vst/testsuite/processing/silenceprocessing.cpp.o
+2026-10-08T18:30:12.8983670Z [ 88%] Building CXX object sdk/public.sdk/samples/vst-hosting/validator/CMakeFiles/validator.dir/Users/runner/work/_temp/vst3sdk/public.sdk/source/vst/testsuite/processing/speakerarrangement.cpp.o
+2026-10-08T18:30:12.9475410Z [ 89%] Building CXX object sdk/public.sdk/samples/vst-hosting/validator/CMakeFiles/validator.dir/Users/runner/work/_temp/vst3sdk/public.sdk/source/vst/testsuite/processing/variableblocksize.cpp.o
+2026-10-08T18:30:12.9778530Z [ 90%] Building CXX object sdk/public.sdk/samples/vst-hosting/validator/CMakeFiles/validator.dir/Users/runner/work/_temp/vst3sdk/public.sdk/source/vst/testsuite/state/bypasspersistence.cpp.o
+2026-10-08T18:30:13.3635630Z [ 90%] Building CXX object sdk/public.sdk/samples/vst-hosting/validator/CMakeFiles/validator.dir/Users/runner/work/_temp/vst3sdk/public.sdk/source/vst/testsuite/state/invalidstatetransition.cpp.o
+2026-10-08T18:30:13.3690000Z [ 91%] Building CXX object sdk/public.sdk/samples/vst-hosting/validator/CMakeFiles/validator.dir/Users/runner/work/_temp/vst3sdk/public.sdk/source/vst/testsuite/state/repeatidenticalstatetransition.cpp.o
+2026-10-08T18:30:13.4942370Z [ 92%] Building CXX object sdk/public.sdk/samples/vst-hosting/validator/CMakeFiles/validator.dir/Users/runner/work/_temp/vst3sdk/public.sdk/source/vst/testsuite/state/validstatetransition.cpp.o
+2026-10-08T18:30:13.7639080Z [ 92%] Building CXX object sdk/public.sdk/samples/vst-hosting/validator/CMakeFiles/validator.dir/Users/runner/work/_temp/vst3sdk/public.sdk/source/vst/testsuite/testbase.cpp.o
+2026-10-08T18:30:13.7926350Z [ 93%] Building CXX object sdk/public.sdk/samples/vst-hosting/validator/CMakeFiles/validator.dir/Users/runner/work/_temp/vst3sdk/public.sdk/source/vst/testsuite/unit/checkunitstructure.cpp.o
+2026-10-08T18:30:13.9150820Z [ 94%] Building CXX object sdk/public.sdk/samples/vst-hosting/validator/CMakeFiles/validator.dir/Users/runner/work/_temp/vst3sdk/public.sdk/source/vst/testsuite/unit/scanprograms.cpp.o
+2026-10-08T18:30:14.2290410Z [ 94%] Building CXX object sdk/public.sdk/samples/vst-hosting/validator/CMakeFiles/validator.dir/Users/runner/work/_temp/vst3sdk/public.sdk/source/vst/testsuite/vsttestsuite.cpp.o
+2026-10-08T18:30:14.2386550Z [ 95%] Building CXX object sdk/public.sdk/samples/vst-hosting/validator/CMakeFiles/validator.dir/Users/runner/work/_temp/vst3sdk/public.sdk/source/vst/testsuite/unit/scanunits.cpp.o
+2026-10-08T18:30:14.2719230Z [ 96%] Building CXX object sdk/public.sdk/samples/vst-hosting/validator/CMakeFiles/validator.dir/Users/runner/work/_temp/vst3sdk/public.sdk/source/vst/utility/testing.cpp.o
+2026-10-08T18:30:14.4466620Z [ 97%] Building CXX object sdk/public.sdk/samples/vst-hosting/validator/CMakeFiles/validator.dir/source/main.cpp.o
+2026-10-08T18:30:14.6938830Z [ 97%] Building CXX object sdk/public.sdk/samples/vst-hosting/validator/CMakeFiles/validator.dir/source/usediids.cpp.o
+2026-10-08T18:30:14.8156520Z [ 98%] Building CXX object sdk/public.sdk/samples/vst-hosting/validator/CMakeFiles/validator.dir/source/validator.cpp.o
+2026-10-08T18:30:15.1218890Z [ 99%] Building OBJCXX object sdk/public.sdk/samples/vst-hosting/validator/CMakeFiles/validator.dir/Users/runner/work/_temp/vst3sdk/public.sdk/source/vst/hosting/module_mac.mm.o
+2026-10-08T18:30:16.7985500Z [100%] Linking CXX executable ../../../../../bin/Release/validator
+2026-10-08T18:30:17.0051460Z [100%] Built target validator
+2026-10-08T18:30:17.0228010Z ##[group]Run ctest --test-dir build-mac --output-on-failure
+2026-10-08T18:30:17.0228390Z [36;1mctest --test-dir build-mac --output-on-failure[0m
+2026-10-08T18:30:17.0228680Z [36;1mpython3 CamelCrusherPreservation/tests/test_presets.py[0m
+2026-10-08T18:30:17.0285010Z shell: /bin/bash -e {0}
+2026-10-08T18:30:17.0285190Z ##[endgroup]
+2026-10-08T18:30:17.0903790Z Test project /Users/runner/work/CGPTCamelCrusherPort/CGPTCamelCrusherPort/build-mac
+2026-10-08T18:30:17.0921290Z     Start 1: core_tests
+2026-10-08T18:30:17.0948140Z 1/2 Test #1: core_tests .......................   Passed    0.00 sec
+2026-10-08T18:30:17.0949860Z     Start 2: legacy_smoke
+2026-10-08T18:30:17.1357370Z 2/2 Test #2: legacy_smoke .....................   Passed    0.04 sec
+2026-10-08T18:30:17.1368160Z 
+2026-10-08T18:30:17.1368930Z 100% tests passed out of 2
+2026-10-08T18:30:17.1369160Z 
+2026-10-08T18:30:17.1369240Z Total Test time (real) =   0.05 sec
+2026-10-08T18:30:17.3702350Z .....
+2026-10-08T18:30:17.3702770Z ----------------------------------------------------------------------
+2026-10-08T18:30:17.3703440Z Ran 5 tests in 0.002s
+2026-10-08T18:30:17.3703590Z 
+2026-10-08T18:30:17.3703660Z OK
+2026-10-08T18:30:17.3813700Z ##[group]Run codesign --force --deep --sign - build-mac/VST3/Release/CamelCrusherPreservation.vst3
+2026-10-08T18:30:17.3814270Z [36;1mcodesign --force --deep --sign - build-mac/VST3/Release/CamelCrusherPreservation.vst3[0m
+2026-10-08T18:30:17.3814670Z [36;1mcodesign --force --deep --sign - build-mac/CamelCrusher.vst[0m
+2026-10-08T18:30:17.3815080Z [36;1mcodesign --verify --deep --strict build-mac/VST3/Release/CamelCrusherPreservation.vst3[0m
+2026-10-08T18:30:17.3815540Z [36;1mcodesign --verify --deep --strict build-mac/CamelCrusher.vst[0m
+2026-10-08T18:30:17.3816010Z [36;1mlipo -archs build-mac/VST3/Release/CamelCrusherPreservation.vst3/Contents/MacOS/CamelCrusherPreservation[0m
+2026-10-08T18:30:17.3816510Z [36;1mlipo -archs build-mac/CamelCrusher.vst/Contents/MacOS/CamelCrusher[0m
+2026-10-08T18:30:17.3816920Z [36;1mbuild-mac/bin/Release/validator build-mac/VST3/Release/CamelCrusherPreservation.vst3[0m
+2026-10-08T18:30:17.3865820Z shell: /bin/bash -e {0}
+2026-10-08T18:30:17.3866050Z ##[endgroup]
+2026-10-08T18:30:17.4190690Z build-mac/VST3/Release/CamelCrusherPreservation.vst3: replacing existing signature
+2026-10-08T18:30:17.4322970Z build-mac/CamelCrusher.vst: replacing existing signature
+2026-10-08T18:30:17.8168860Z x86_64 arm64
+2026-10-08T18:30:17.8242450Z x86_64 arm64
+2026-10-08T18:30:17.8281750Z * Loading module...
+2026-10-08T18:30:17.8284220Z 
+2026-10-08T18:30:17.8292910Z 	/Users/runner/work/CGPTCamelCrusherPort/CGPTCamelCrusherPort/build-mac/VST3/Release/CamelCrusherPreservation.vst3
+2026-10-08T18:30:17.8310850Z 
+2026-10-08T18:30:17.8323310Z * Check valid bundle structure...
+2026-10-08T18:30:17.8337690Z 
+2026-10-08T18:30:17.8337990Z * Scanning classes...
+2026-10-08T18:30:17.8338120Z 
+2026-10-08T18:30:17.8338210Z   Factory Info:
+2026-10-08T18:30:17.8338360Z 	vendor = Preservation Research
+2026-10-08T18:30:17.8339040Z 	url = 
+2026-10-08T18:30:17.8339300Z 	email =  
+2026-10-08T18:30:17.8339390Z 
+2026-10-08T18:30:17.8339470Z   Class Info 0:
+2026-10-08T18:30:17.8339720Z 	name = CamelCrusher Preservation
+2026-10-08T18:30:17.8339950Z 	category = Audio Module Class
+2026-10-08T18:30:17.8340160Z 	subCategories = Fx|Distortion
+2026-10-08T18:30:17.8340400Z 	version = 0.1.1
+2026-10-08T18:30:17.8340590Z 	sdkVersion = VST 3.8.1
+2026-10-08T18:30:17.8340780Z 	cid = CC010101F4D14E5589A8C50AE7B68302
+2026-10-08T18:30:17.8340930Z 
+2026-10-08T18:30:17.8340970Z   Class Info 1:
+2026-10-08T18:30:17.8341160Z 	name = CamelCrusher Preservation Controller
+2026-10-08T18:30:17.8341400Z 	category = Component Controller Class
+2026-10-08T18:30:17.8341610Z 	subCategories = 
+2026-10-08T18:30:17.8341770Z 	version = 0.1.1
+2026-10-08T18:30:17.8341910Z 	sdkVersion = VST 3.8.1
+2026-10-08T18:30:17.8342100Z 	cid = CC010102F4D14E5589A8C50AE7B68302
+2026-10-08T18:30:17.8342220Z 
+2026-10-08T18:30:17.8342290Z * Checking snapshots...
+2026-10-08T18:30:17.8342400Z 
+2026-10-08T18:30:17.8342530Z Info: No snapshots in Bundle.
+2026-10-08T18:30:17.8342650Z 
+2026-10-08T18:30:17.8342740Z * Creating tests...
+2026-10-08T18:30:17.8342820Z 
+2026-10-08T18:30:17.8342890Z * Running tests...
+2026-10-08T18:30:17.8342990Z 
+2026-10-08T18:30:17.8343100Z -------------------------------------------------------------
+2026-10-08T18:30:17.8343340Z TestSuite : CamelCrusher Preservation
+2026-10-08T18:30:17.8343580Z -------------------------------------------------------------
+2026-10-08T18:30:17.8343760Z 
+2026-10-08T18:30:17.8343850Z -------------------------------------------------------------
+2026-10-08T18:30:17.8344490Z TestSuite : General Tests
+2026-10-08T18:30:17.8344700Z -------------------------------------------------------------
+2026-10-08T18:30:17.8344850Z 
+2026-10-08T18:30:17.8344940Z [Scan Editor Classes]
+2026-10-08T18:30:17.8345240Z Info:  ===Scan Editor Classes ====================================
+2026-10-08T18:30:17.8345510Z Info:  This component has an edit controller class
+2026-10-08T18:30:17.8345810Z Info:     Controller CID: {CC010102-F4D1-4E55-89A8-C50AE7B68302}
+2026-10-08T18:30:17.8346050Z [Succeeded]
+2026-10-08T18:30:17.8346530Z 
+2026-10-08T18:30:17.8346600Z [Scan Buses]
+2026-10-08T18:30:17.8346780Z Info:  ===Scan Buses ====================================
+2026-10-08T18:30:17.8347030Z Info:  => Audio Buses: [1 In(s) => 1 Out(s)]
+2026-10-08T18:30:17.8347260Z Info:       In [0]: "Stereo In" (Main-Default Active) 
+2026-10-08T18:30:17.8347500Z Info:       Out[0]: "Stereo Out" (Main-Default Active) 
+2026-10-08T18:30:17.8347740Z Info:  => Event Buses: [0 In(s) => 0 Out(s)]
+2026-10-08T18:30:17.8347940Z [Succeeded]
+2026-10-08T18:30:17.8348000Z 
+2026-10-08T18:30:17.8348070Z [Scan Parameters]
+2026-10-08T18:30:17.8348320Z Info:  ===Scan Parameters ====================================
+2026-10-08T18:30:17.8348610Z Info:  This component exports 18 parameter(s)
+2026-10-08T18:30:17.8348950Z Info:     Parameter 000 (id=0): [title="DistOn"] [unit=""] [type = Toggle, default = 1.000000, unit = 0]
+2026-10-08T18:30:17.8349530Z Info:  =>Parameter 000 (id=0): getParamValueByString ("On") doesn't return the original normalized value! Got 0.000000 instead of 1.000000.
+2026-10-08T18:30:17.8361410Z Info:     Parameter 001 (id=1): [title="DistMech"] [unit=""] [type = Float, default = 0.000000, unit = 0]
+2026-10-08T18:30:17.8361860Z Info:     Parameter 002 (id=2): [title="DistTube"] [unit=""] [type = Float, default = 0.340000, unit = 0]
+2026-10-08T18:30:17.8362410Z Info:  =>Parameter 002 (id=2): getParamValueByString ("33 %") doesn't return the original normalized value! Got 33.000000 instead of 0.340000.
+2026-10-08T18:30:17.8362970Z Info:     Parameter 003 (id=3): [title="MmFilterOn"] [unit=""] [type = Toggle, default = 0.000000, unit = 0]
+2026-10-08T18:30:17.8363430Z Info:     Parameter 004 (id=4): [title="MmFilterCutoff"] [unit=""] [type = Float, default = 0.350000, unit = 0]
+2026-10-08T18:30:17.8364120Z Info:  =>Parameter 004 (id=4): getParamValueByString ("824 Hz") doesn't return the original normalized value! Got 824.000000 instead of 0.350000.
+2026-10-08T18:30:17.8364680Z Info:     Parameter 005 (id=5): [title="MmFilterRes"] [unit=""] [type = Float, default = 0.050000, unit = 0]
+2026-10-08T18:30:17.8365340Z Info:  =>Parameter 005 (id=5): getParamValueByString ("5 %") doesn't return the original normalized value! Got 5.000000 instead of 0.050000.
+2026-10-08T18:30:17.8365890Z Info:     Parameter 006 (id=6): [title="CompressOn"] [unit=""] [type = Toggle, default = 1.000000, unit = 0]
+2026-10-08T18:30:17.8366430Z Info:  =>Parameter 006 (id=6): getParamValueByString ("On") doesn't return the original normalized value! Got 0.000000 instead of 1.000000.
+2026-10-08T18:30:17.8366980Z Info:     Parameter 007 (id=7): [title="CompressAmount"] [unit=""] [type = Float, default = 0.905000, unit = 0]
+2026-10-08T18:30:17.8367530Z Info:  =>Parameter 007 (id=7): getParamValueByString ("20 dB") doesn't return the original normalized value! Got 20.000000 instead of 0.905000.
+2026-10-08T18:30:17.8368070Z Info:     Parameter 008 (id=8): [title="CompressMode"] [unit=""] [type = Toggle, default = 1.000000, unit = 0]
+2026-10-08T18:30:17.8368610Z Info:  =>Parameter 008 (id=8): getParamValueByString ("On") doesn't return the original normalized value! Got 0.000000 instead of 1.000000.
+2026-10-08T18:30:17.8369200Z Info:     Parameter 009 (id=9): [title="MasterOn"] [unit=""] [type = Toggle, default = 1.000000, unit = 0]
+2026-10-08T18:30:17.8369790Z Info:  =>Parameter 009 (id=9): getParamValueByString ("On") doesn't return the original normalized value! Got 0.000000 instead of 1.000000.
+2026-10-08T18:30:17.8370570Z Info:     Parameter 010 (id=10): [title="MasterMix"] [unit=""] [type = Float, default = 1.000000, unit = 0]
+2026-10-08T18:30:17.8371130Z Info:  =>Parameter 010 (id=10): getParamValueByString ("100 %") doesn't return the original normalized value! Got 100.000000 instead of 1.000000.
+2026-10-08T18:30:17.8371730Z Info:     Parameter 011 (id=11): [title="MasterVolume"] [unit=""] [type = Float, default = 0.780000, unit = 0]
+2026-10-08T18:30:17.8372520Z Info:  =>Parameter 011 (id=11): getParamValueByString ("-6 dB") doesn't return the original normalized value! Got -6.000000 instead of 0.780000.
+2026-10-08T18:30:17.8373070Z Info:     Parameter 012 (id=12): [title="Unused1"] [unit=""] [type = Toggle, default = 0.000000, unit = 0]
+2026-10-08T18:30:17.8373490Z Info:     Parameter 013 (id=13): [title="Unused2"] [unit=""] [type = Toggle, default = 0.000000, unit = 0]
+2026-10-08T18:30:17.8373910Z Info:     Parameter 014 (id=14): [title="Unused3"] [unit=""] [type = Toggle, default = 0.000000, unit = 0]
+2026-10-08T18:30:17.8374330Z Info:     Parameter 015 (id=15): [title="Unused4"] [unit=""] [type = Toggle, default = 0.000000, unit = 0]
+2026-10-08T18:30:17.8374760Z Info:     Parameter 016 (id=16): [title="Unused5"] [unit=""] [type = Toggle, default = 0.000000, unit = 0]
+2026-10-08T18:30:17.8375220Z Info:     Parameter 017 (id=256): [title="Legacy Program"] [unit=""] [type = Discrete, default = 0.000000, unit = 0]
+2026-10-08T18:30:17.8375620Z Info:  =>Parameter 017 (id=256) is kIsProgramChange, but not a kIsList!
+2026-10-08T18:30:17.8375960Z Info:  Warning: No bypass parameter found. Is this intended ?
+2026-10-08T18:30:17.8376180Z [Succeeded]
+2026-10-08T18:30:17.8376290Z 
+2026-10-08T18:30:17.8376340Z [MIDI Mapping]
+2026-10-08T18:30:17.8376490Z Info:  ===MIDI Mapping ====================================
+2026-10-08T18:30:17.8376720Z Info:  No MIDI Mapping interface supplied!
+2026-10-08T18:30:17.8376890Z [Succeeded]
+2026-10-08T18:30:17.8376960Z 
+2026-10-08T18:30:17.8377010Z [MIDI Learn]
+2026-10-08T18:30:17.8377160Z Info:  ===MIDI Learn ====================================
+2026-10-08T18:30:17.8377380Z Info:  No MIDI Learn interface supplied!
+2026-10-08T18:30:17.8377550Z [Succeeded]
+2026-10-08T18:30:17.8377610Z 
+2026-10-08T18:30:17.8377660Z [Scan Units]
+2026-10-08T18:30:17.8377800Z Info:  ===Scan Units ====================================
+2026-10-08T18:30:17.8378010Z Info:  This component has no units.
+2026-10-08T18:30:17.8378170Z [Succeeded]
+2026-10-08T18:30:17.8378230Z 
+2026-10-08T18:30:17.8378280Z [Scan Programs]
+2026-10-08T18:30:17.8378490Z Info:  ===Scan Programs ====================================
+2026-10-08T18:30:17.8378730Z Info:  This component does not export any programs.
+2026-10-08T18:30:17.8378920Z [Succeeded]
+2026-10-08T18:30:17.8378980Z 
+2026-10-08T18:30:17.8379040Z [Terminate/Initialize]
+2026-10-08T18:30:17.8379220Z Info:  ===Terminate/Initialize ====================================
+2026-10-08T18:30:17.8379440Z [Succeeded]
+2026-10-08T18:30:17.8379510Z 
+2026-10-08T18:30:17.8379560Z [Check Unit Structure]
+2026-10-08T18:30:17.8379750Z Info:  ===Check Unit Structure ====================================
+2026-10-08T18:30:17.8380000Z Info:  This component does not support IUnitInfo!
+2026-10-08T18:30:17.8380190Z [Succeeded]
+2026-10-08T18:30:17.8380260Z 
+2026-10-08T18:30:17.8380320Z [Valid State Transition 32bits]
+2026-10-08T18:30:17.8380550Z Info:  ===Valid State Transition 32bits ====================================
+2026-10-08T18:30:17.8380790Z [Succeeded]
+2026-10-08T18:30:17.8380850Z 
+2026-10-08T18:30:17.8380910Z [Valid State Transition 64bits]
+2026-10-08T18:30:17.8381130Z Info:  ===Valid State Transition 64bits ====================================
+2026-10-08T18:30:17.8381400Z Info:  64bit Audio Processing not supported.
+2026-10-08T18:30:17.8381570Z [Succeeded]
+2026-10-08T18:30:17.8381640Z 
+2026-10-08T18:30:17.8381680Z [Bus Consistency]
+2026-10-08T18:30:17.8381850Z Info:  ===Bus Consistency ====================================
+2026-10-08T18:30:17.8382050Z [Succeeded]
+2026-10-08T18:30:17.8382110Z 
+2026-10-08T18:30:17.8382340Z [Bus Activation]
+2026-10-08T18:30:17.8382510Z Info:  ===Bus Activation ====================================
+2026-10-08T18:30:17.8382750Z Info:     Bus Activation: Input Audio Bus (0) (kMain)
+2026-10-08T18:30:17.8382980Z Info:     Bus Activation: Output Audio Bus (0) (kMain)
+2026-10-08T18:30:17.8383170Z [Succeeded]
+2026-10-08T18:30:17.8383240Z 
+2026-10-08T18:30:17.8383290Z [Check Audio Bus Arrangement]
+2026-10-08T18:30:17.8383510Z Info:  ===Check Audio Bus Arrangement ====================================
+2026-10-08T18:30:17.8383770Z Info:     Check Input Audio Bus Arrangement (0)
+2026-10-08T18:30:17.8384100Z Info:     Check Output Audio Bus Arrangement (0)
+2026-10-08T18:30:17.8384290Z [Succeeded]
+2026-10-08T18:30:17.8384460Z 
+2026-10-08T18:30:17.8384510Z [SideChain Arrangement]
+2026-10-08T18:30:17.8384760Z Info:  ===SideChain Arrangement ====================================
+2026-10-08T18:30:17.8385050Z [Succeeded]
+2026-10-08T18:30:17.8385120Z 
+2026-10-08T18:30:17.8385170Z [Suspend/Resume]
+2026-10-08T18:30:17.8385330Z Info:  ===Suspend/Resume ====================================
+2026-10-08T18:30:17.8385740Z [Succeeded]
+2026-10-08T18:30:17.8385870Z 
+2026-10-08T18:30:17.8385920Z [Note Expression]
+2026-10-08T18:30:17.8386250Z Info:  ===Note Expression ====================================
+2026-10-08T18:30:17.8386600Z Info:  No Note Expression interface supplied!
+2026-10-08T18:30:17.8386920Z [Succeeded]
+2026-10-08T18:30:17.8387080Z 
+2026-10-08T18:30:17.8387200Z [Keyswitch]
+2026-10-08T18:30:17.8387440Z Info:  ===Keyswitch ====================================
+2026-10-08T18:30:17.8387800Z Info:  No Keyswitch interface supplied!
+2026-10-08T18:30:17.8388080Z [Succeeded]
+2026-10-08T18:30:17.8388190Z 
+2026-10-08T18:30:17.8388340Z [ProcessContext Requirements]
+2026-10-08T18:30:17.8388660Z Info:  ===ProcessContext Requirements ====================================
+2026-10-08T18:30:17.8389130Z Info:  ProcessContextRequirements:
+2026-10-08T18:30:17.8389470Z Info:   - None
+2026-10-08T18:30:17.8389720Z [Succeeded]
+2026-10-08T18:30:17.8389800Z 
+2026-10-08T18:30:17.8389940Z -------------------------------------------------------------
+2026-10-08T18:30:17.8390310Z TestSuite : Single Precision (32 bit) Tests
+2026-10-08T18:30:17.8390670Z -------------------------------------------------------------
+2026-10-08T18:30:17.8390880Z 
+2026-10-08T18:30:17.8390990Z [Process Test]
+2026-10-08T18:30:17.8391160Z [Succeeded]
+2026-10-08T18:30:17.8391290Z 
+2026-10-08T18:30:17.8391420Z [Process function running in another thread]
+2026-10-08T18:30:17.8391900Z Info:  ===Process function running in another thread ====================================
+2026-10-08T18:30:17.8392430Z [Succeeded]
+2026-10-08T18:30:17.8392580Z 
+2026-10-08T18:30:17.8392710Z [Silence Flags]
+2026-10-08T18:30:17.8392940Z Info:  ===Silence Flags ====================================
+2026-10-08T18:30:17.8393260Z [Succeeded]
+2026-10-08T18:30:17.8393330Z 
+2026-10-08T18:30:17.8393460Z [Silence Processing]
+2026-10-08T18:30:17.8393780Z Info:  ===Silence Processing ====================================
+2026-10-08T18:30:17.8465950Z Info:  The component reported a wrong silent flag for its output buffer! : output is silent but silenceFlags not set !
+2026-10-08T18:30:17.8466520Z [Succeeded]
+2026-10-08T18:30:17.8466640Z 
+2026-10-08T18:30:17.8466780Z [Parameters Flush (no Buffer)]
+2026-10-08T18:30:17.8467060Z Info:  ===Parameters Flush (no Buffer) ====================================
+2026-10-08T18:30:17.8467420Z [Succeeded]
+2026-10-08T18:30:17.8467500Z 
+2026-10-08T18:30:17.8467630Z [Parameters Flush 2 (only numChannel==0)]
+2026-10-08T18:30:17.8468080Z Info:  ===Parameters Flush 2 (only numChannel==0) ====================================
+2026-10-08T18:30:17.8468490Z [Succeeded]
+2026-10-08T18:30:17.8468670Z 
+2026-10-08T18:30:17.8468880Z [Parameters Flush 2 (no Buffer, no parameter change)]
+2026-10-08T18:30:17.8469350Z Info:  ===Parameters Flush 2 (no Buffer, no parameter change) ====================================
+2026-10-08T18:30:17.8469780Z [Succeeded]
+2026-10-08T18:30:17.8469950Z 
+2026-10-08T18:30:17.8470320Z [Variable Block Size]
+2026-10-08T18:30:17.8470560Z Info:  ===Variable Block Size ====================================
+2026-10-08T18:30:17.8472410Z [Succeeded]
+2026-10-08T18:30:17.8472660Z 
+2026-10-08T18:30:17.8473510Z [Process Format]
+2026-10-08T18:30:17.8474270Z Info:  ===Process Format ====================================
+2026-10-08T18:30:17.8475040Z Info:  ***Tested Sample Rates***
+2026-10-08T18:30:17.8475720Z Info:        22050 Hz - processed successfully!
+2026-10-08T18:30:17.8476130Z Info:        32000 Hz - processed successfully!
+2026-10-08T18:30:17.8476710Z Info:        44100 Hz - processed successfully!
+2026-10-08T18:30:17.8477220Z Info:        48000 Hz - processed successfully!
+2026-10-08T18:30:17.8477570Z Info:        88200 Hz - processed successfully!
+2026-10-08T18:30:17.8477870Z Info:        96000 Hz - processed successfully!
+2026-10-08T18:30:17.8478090Z Info:       192000 Hz - processed successfully!
+2026-10-08T18:30:17.8478320Z Info:       384000 Hz - processed successfully!
+2026-10-08T18:30:17.8478540Z Info:    1234.5678 Hz - processed successfully!
+2026-10-08T18:30:17.8478770Z Info:    12345.678 Hz - processed successfully!
+2026-10-08T18:30:17.8479010Z Info:    123456.78 Hz - processed successfully!
+2026-10-08T18:30:17.8479360Z Info:    1234567.8 Hz - processed successfully!
+2026-10-08T18:30:17.8479580Z [Succeeded]
+2026-10-08T18:30:17.8479680Z 
+2026-10-08T18:30:17.8479760Z [Parameter Bypass persistence]
+2026-10-08T18:30:17.8480010Z Info:  ===Parameter Bypass persistence ====================================
+2026-10-08T18:30:17.8480320Z Info:  This plugin does not have a bypass parameter!!!
+2026-10-08T18:30:17.8480540Z [Succeeded]
+2026-10-08T18:30:17.8480620Z 
+2026-10-08T18:30:17.8480710Z [In: Stereo: 2 Channels, Out: Stereo: 2 Channels]
+2026-10-08T18:30:17.8481030Z Info:  ===In: Stereo: 2 Channels, Out: Stereo: 2 Channels ====================================
+2026-10-08T18:30:17.8481340Z [Succeeded]
+2026-10-08T18:30:17.8481420Z 
+2026-10-08T18:30:17.8481510Z [In: Mono: 1 Channels, Out: Mono: 1 Channels]
+2026-10-08T18:30:17.8481990Z Info:  ===In: Mono: 1 Channels, Out: Mono: 1 Channels ====================================
+2026-10-08T18:30:17.8482420Z Info:      Mono Input-SpeakerArrangement is not supported. Plug-in suggests: Stereo.
+2026-10-08T18:30:17.8482850Z Info:      Mono Output-SpeakerArrangement is not supported. Plug-in suggests: Stereo.
+2026-10-08T18:30:17.8483150Z [Succeeded]
+2026-10-08T18:30:17.8483230Z 
+2026-10-08T18:30:17.8483340Z [Accuracy: Block, 1 Parameters, Change every100 Samples]
+2026-10-08T18:30:17.8483810Z Info:  ===Accuracy: Block, 1 Parameters, Change every100 Samples ====================================
+2026-10-08T18:30:17.8484220Z [Succeeded]
+2026-10-08T18:30:17.8484320Z 
+2026-10-08T18:30:17.8484450Z [Accuracy: Sample, 1 Parameters, Change every100 Samples]
+2026-10-08T18:30:17.8484840Z Info:  ===Accuracy: Sample, 1 Parameters, Change every100 Samples ====================================
+2026-10-08T18:30:17.8485280Z Info:     Not all points have been read via IParameterChanges
+2026-10-08T18:30:17.8490570Z Info:     Not all points have been read via IParameterChanges
+2026-10-08T18:30:17.8490850Z [Succeeded]
+2026-10-08T18:30:17.8490930Z 
+2026-10-08T18:30:17.8491010Z -------------------------------------------------------------
+2026-10-08T18:30:17.8491240Z TestSuite : Double Precision (64 bit) Tests
+2026-10-08T18:30:17.8491500Z -------------------------------------------------------------
+2026-10-08T18:30:17.8491700Z 
+2026-10-08T18:30:17.8491770Z [Process Test]
+2026-10-08T18:30:17.8491930Z Info:  64bit Audio Processing not supported.
+2026-10-08T18:30:17.8492110Z [Succeeded]
+2026-10-08T18:30:17.8492180Z 
+2026-10-08T18:30:17.8492250Z [Process function running in another thread]
+2026-10-08T18:30:17.8492450Z Info:  64bit Audio Processing not supported.
+2026-10-08T18:30:17.8492620Z [Succeeded]
+2026-10-08T18:30:17.8492790Z 
+2026-10-08T18:30:17.8492840Z [Silence Flags]
+2026-10-08T18:30:17.8492980Z Info:  64bit Audio Processing not supported.
+2026-10-08T18:30:17.8493150Z [Succeeded]
+2026-10-08T18:30:17.8493440Z 
+2026-10-08T18:30:17.8493510Z [Silence Processing]
+2026-10-08T18:30:17.8493720Z Info:  64bit Audio Processing not supported.
+2026-10-08T18:30:17.8493930Z [Succeeded]
+2026-10-08T18:30:17.8493990Z 
+2026-10-08T18:30:17.8494050Z [Parameters Flush (no Buffer)]
+2026-10-08T18:30:17.8494220Z Info:  64bit Audio Processing not supported.
+2026-10-08T18:30:17.8494390Z [Succeeded]
+2026-10-08T18:30:17.8494450Z 
+2026-10-08T18:30:17.8494520Z [Parameters Flush 2 (only numChannel==0)]
+2026-10-08T18:30:17.8494710Z Info:  64bit Audio Processing not supported.
+2026-10-08T18:30:17.8495020Z [Succeeded]
+2026-10-08T18:30:17.8495090Z 
+2026-10-08T18:30:17.8495180Z [Parameters Flush 2 (no Buffer, no parameter change)]
+2026-10-08T18:30:17.8495410Z Info:  64bit Audio Processing not supported.
+2026-10-08T18:30:17.8495580Z [Succeeded]
+2026-10-08T18:30:17.8495640Z 
+2026-10-08T18:30:17.8495690Z [Variable Block Size]
+2026-10-08T18:30:17.8495840Z Info:  64bit Audio Processing not supported.
+2026-10-08T18:30:17.8496020Z [Succeeded]
+2026-10-08T18:30:17.8496090Z 
+2026-10-08T18:30:17.8496130Z [Process Format]
+2026-10-08T18:30:17.8496270Z Info:  64bit Audio Processing not supported.
+2026-10-08T18:30:17.8496450Z [Succeeded]
+2026-10-08T18:30:17.8496520Z 
+2026-10-08T18:30:17.8496590Z [Parameter Bypass persistence]
+2026-10-08T18:30:17.8496770Z Info:  64bit Audio Processing not supported.
+2026-10-08T18:30:17.8496940Z [Succeeded]
+2026-10-08T18:30:17.8497010Z 
+2026-10-08T18:30:17.8497090Z [In: Stereo: 2 Channels, Out: Stereo: 2 Channels]
+2026-10-08T18:30:17.8497380Z Info:  ===In: Stereo: 2 Channels, Out: Stereo: 2 Channels ====================================
+2026-10-08T18:30:17.8497680Z Info:  64bit Audio Processing not supported.
+2026-10-08T18:30:17.8497860Z [Succeeded]
+2026-10-08T18:30:17.8497920Z 
+2026-10-08T18:30:17.8497990Z [In: Mono: 1 Channels, Out: Mono: 1 Channels]
+2026-10-08T18:30:17.8498270Z Info:  ===In: Mono: 1 Channels, Out: Mono: 1 Channels ====================================
+2026-10-08T18:30:17.8498550Z Info:  64bit Audio Processing not supported.
+2026-10-08T18:30:17.8498730Z [Succeeded]
+2026-10-08T18:30:17.8498790Z 
+2026-10-08T18:30:17.8498890Z [Accuracy: Block, 1 Parameters, Change every100 Samples]
+2026-10-08T18:30:17.8499230Z Info:  ===Accuracy: Block, 1 Parameters, Change every100 Samples ====================================
+2026-10-08T18:30:17.8499550Z Info:  64bit Audio Processing not supported.
+2026-10-08T18:30:17.8499730Z [Succeeded]
+2026-10-08T18:30:17.8499800Z 
+2026-10-08T18:30:17.8499890Z [Accuracy: Sample, 1 Parameters, Change every100 Samples]
+2026-10-08T18:30:17.8500240Z Info:  ===Accuracy: Sample, 1 Parameters, Change every100 Samples ====================================
+2026-10-08T18:30:17.8500570Z Info:  64bit Audio Processing not supported.
+2026-10-08T18:30:17.8500740Z [Succeeded]
+2026-10-08T18:30:17.8500810Z 
+2026-10-08T18:30:17.8500890Z -------------------------------------------------------------
+2026-10-08T18:30:17.8501100Z Result: 47 tests passed, 0 tests failed
+2026-10-08T18:30:17.8501310Z -------------------------------------------------------------
+2026-10-08T18:30:17.8531030Z ##[group]Run mkdir -p download
+2026-10-08T18:30:17.8531240Z [36;1mmkdir -p download[0m
+2026-10-08T18:30:17.8531590Z [36;1mditto build-mac/VST3/Release/CamelCrusherPreservation.vst3 download/CamelCrusherPreservation.vst3[0m
+2026-10-08T18:30:17.8532020Z [36;1mditto build-mac/CamelCrusher.vst download/CamelCrusher.vst[0m
+2026-10-08T18:30:17.8532330Z [36;1mcp CamelCrusherPreservation/NOTICE.md download/NOTICE.md[0m
+2026-10-08T18:30:17.8532660Z [36;1mcp CamelCrusherPreservation/docs/INSTALL.md download/INSTALL.md[0m
+2026-10-08T18:30:17.8533110Z [36;1mditto -c -k --sequesterRsrc --keepParent download CamelCrusher-Mac-plugins.zip[0m
+2026-10-08T18:30:17.8580230Z shell: /bin/bash -e {0}
+2026-10-08T18:30:17.8580410Z ##[endgroup]
+2026-10-08T18:30:17.9593080Z ##[group]Run actions/upload-artifact@v4
+2026-10-08T18:30:17.9593280Z with:
+2026-10-08T18:30:17.9593430Z   name: CamelCrusher-Mac-plugins
+2026-10-08T18:30:17.9593630Z   path: CamelCrusher-Mac-plugins.zip
+2026-10-08T18:30:17.9593970Z   retention-days: 30
+2026-10-08T18:30:17.9594120Z   if-no-files-found: error
+2026-10-08T18:30:17.9594270Z   compression-level: 6
+2026-10-08T18:30:17.9594400Z   overwrite: false
+2026-10-08T18:30:17.9594530Z   include-hidden-files: false
+2026-10-08T18:30:17.9594680Z ##[endgroup]
+2026-10-08T18:30:18.0990640Z (node:4463) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-08T18:30:18.0992040Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-08T18:30:18.1016610Z With the provided path, there will be 1 file uploaded
+2026-10-08T18:30:18.1019190Z Artifact name is valid!
+2026-10-08T18:30:18.1029540Z Root directory input is valid!
+2026-10-08T18:30:18.3704810Z Beginning upload of artifact content to blob storage
+2026-10-08T18:30:18.4028940Z (node:4463) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2026-10-08T18:30:18.7403990Z Uploaded bytes 829955
+2026-10-08T18:30:18.7820280Z Finished uploading artifact content to blob storage!
+2026-10-08T18:30:18.7833740Z SHA256 digest of uploaded artifact zip is e00dc4e2ae76c703b6dab608e3dd754a02be9973ec7ab581c13f8bb04a0c229a
+2026-10-08T18:30:18.7844850Z Finalizing artifact upload
+2026-10-08T18:30:19.1194410Z Artifact CamelCrusher-Mac-plugins.zip successfully finalized. Artifact ID 11570837505
+2026-10-08T18:30:19.1195750Z Artifact CamelCrusher-Mac-plugins has been successfully uploaded! Final size is 829955 bytes. Artifact ID is 11570837505
+2026-10-08T18:30:19.1201350Z Artifact download URL: https://github.com/kalmnet/CGPTCamelCrusherPort/actions/runs/37824633602/artifacts/11570837505
+2026-10-08T18:30:19.1336200Z Post job cleanup.
+2026-10-08T18:30:19.2207630Z [command]/opt/homebrew/bin/git version
+2026-10-08T18:30:19.2257770Z git version 2.55.0
+2026-10-08T18:30:19.2275440Z Copying '/Users/runner/.gitconfig' to '/Users/runner/work/_temp/311d8bf0-35a4-436e-a05e-0765a17beb68/.gitconfig'
+2026-10-08T18:30:19.2283040Z Temporarily overriding HOME='/Users/runner/work/_temp/311d8bf0-35a4-436e-a05e-0765a17beb68' before making global git config changes
+2026-10-08T18:30:19.2283640Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-08T18:30:19.2286310Z [command]/opt/homebrew/bin/git config --global --add safe.directory /Users/runner/work/CGPTCamelCrusherPort/CGPTCamelCrusherPort
+2026-10-08T18:30:19.2332710Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-08T18:30:19.2374170Z [command]/opt/homebrew/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-08T18:30:19.2892330Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-08T18:30:19.2928710Z http.https://github.com/.extraheader
+2026-10-08T18:30:19.2936730Z [command]/opt/homebrew/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-10-08T18:30:19.2981360Z [command]/opt/homebrew/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-08T18:30:19.3552350Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-08T18:30:19.3593530Z [command]/opt/homebrew/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-08T18:30:19.4238040Z Cleaning up orphan processes
+2026-10-08T18:30:19.9089170Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/upload-artifact@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+

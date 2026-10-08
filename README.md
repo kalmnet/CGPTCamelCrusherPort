@@ -2,7 +2,9 @@
 
 **Compiled Mac plugins are now available. No coding or Xcode is needed to install them.**
 
-[Download the Mac plugin ZIP](https://github.com/kalmnet/CGPTCamelCrusherPort/actions/runs/37819328990/artifacts/11567644736) while signed in to GitHub. Extract the downloaded ZIP and the plugin ZIP inside it.
+[Download the Mac plugin ZIP](https://github.com/kalmnet/CGPTCamelCrusherPort/actions/runs/37824633602/artifacts/11570837505) while signed in to GitHub. Extract the downloaded ZIP and the plugin ZIP inside it.
+
+Version 0.1.1 corrects the legacy VST2 Cocoa editor attachment and negotiation; its Mac editor smoke test verifies attachment and all eight bundled images. Live/FL visual retesting remains necessary.
 
 Read [the installation steps](CamelCrusherPreservation/docs/INSTALL.md). The download contains `CamelCrusherPreservation.vst3` and the optional old-project compatibility adapter `CamelCrusher.vst`. Both include native ARM64 and Intel x86_64 code.
 
@@ -15,4 +17,4 @@ The build artifact expires after 30 days. [Actions](https://github.com/kalmnet/C
 - [Old-project migration and recall](CamelCrusherPreservation/docs/MIGRATION.md)
 - [Provenance and distribution limits](CamelCrusherPreservation/NOTICE.md)
 
-The original AU is the user's working sound/parameter reference despite its black GUI. The original binaries and external SDK dependencies are not included. This private repository is for the requested preservation research; no public redistribution rights are asserted. AU reconstruction remains an experimental source target.
+The original AU is the user's working sound/parameter reference despite its black GUI. The original binaries and external SDK dependencies are not included. Windows DLL and JDMeet findings are in [the additional investigation report](CamelCrusherPreservation/docs/WINDOWS-AND-THIRD-PARTY.md). This private repository is for the requested preservation research; no public redistribution rights are asserted. AU reconstruction remains an experimental source target.

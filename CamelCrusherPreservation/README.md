@@ -2,7 +2,7 @@
 
 C++ reconstruction from the **supplied Intel VST and AU binaries**, with a native macOS ARM64 VST3 build target, original bitmap GUI assets, a legacy ABI compatibility adapter, and an experimental AUv2 target. No replacement `tanh` distortion, substitute compressor, Moog-style filter, or added oversampling was used.
 
-**Status:** compiled universal macOS VST3 and legacy VST2 test bundles are now available. They include ARM64 and x86_64 slices, passed architecture/signature checks, core/adapter tests and 47 VST3 validator tests on an Apple Silicon GitHub runner (Xcode 15.4). [Download](https://github.com/kalmnet/CGPTCamelCrusherPort/actions/runs/37819328990/artifacts/11567644736) and follow [installation steps](docs/INSTALL.md). Cocoa code compiled, but GUI appearance, full original-AU renders and old Ableton Live/FL Studio project recall remain unverified. The experimental AU target is not included in the binary package.
+**Status:** compiled universal macOS VST3 and legacy VST2 test bundles are now available. They include ARM64 and x86_64 slices, passed architecture/signature checks, core/adapter tests and 47 VST3 validator tests on an Apple Silicon GitHub runner (Xcode 15.4). [Download](https://github.com/kalmnet/CGPTCamelCrusherPort/actions/runs/37824633602/artifacts/11570837505) and follow [installation steps](docs/INSTALL.md). Cocoa code compiled, but GUI appearance, full original-AU renders and old Ableton Live/FL Studio project recall remain unverified. The experimental AU target is not included in the binary package.
 
 Your observation is recorded in the report: the existing AU responds to parameters despite a black GUI; the existing VST has a black GUI and its parameters do not audibly work. Use the AU as the full-plugin reference on your Mac.
 
@@ -72,7 +72,7 @@ python3 tests/test_presets.py
 
 ## Deliberate limits
 
-- The Windows DLL was not supplied. Cross-platform state encoding is investigated; Windows DSP equivalence and actual project replacement are not established.
+- The subsequently supplied Windows DLL confirms identity, parameter order and serialization; selected distortion/compressor routines match. Full Windows filter/master/platform DSP equality and project recall certification remain pending. See docs/WINDOWS-AND-THIRD-PARTY.md.
 - VST3 parameter queues are collapsed to the last value per host block to feed the legacy block engine. Dense sample-offset automation may differ from how an old DAW split VST2 blocks.
 - Original wrapper silence/quiet-counter bypass is not reproduced; full-plugin tail comparisons remain pending.
 - MIDI Learn, the original MIDI event scheduler, circular knob interaction, and the full original preset/file menus are not implemented.
