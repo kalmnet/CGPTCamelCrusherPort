@@ -2,8 +2,8 @@
   "files": [
     {
       "path": "CMakeLists.txt",
-      "sha256": "841b654daff2584b2f458536a4b979c6017524fb78e8a089a1fafcc87a8d8be5",
-      "bytes": 6416
+      "sha256": "d23521c82c1068d8aacca74144c68c7c10b619b551067f1342b005cd272fae19",
+      "bytes": 6487
     },
     {
       "path": "NOTICE.md",
@@ -12,13 +12,18 @@
     },
     {
       "path": "README.md",
-      "sha256": "321aabeedee35f50f1ca14d60c6e8c4604e0f4afb13ffb25a4868cb4299a3f09",
-      "bytes": 6429
+      "sha256": "4921ff11a7c663fa34ca5c91ec4314ea8f32b4ad7ebb6dedb9b80c8fd5f66538",
+      "bytes": 6648
     },
     {
       "path": "docs/FINDINGS.md",
-      "sha256": "d2766ef5dab592687569d1391f0f2d3678b732161ce7e4f90b7ab105af5fb35b",
-      "bytes": 14360
+      "sha256": "a6d523883f66761968facb13501981a87fdbfd0acca501e0986a5424a900a051",
+      "bytes": 15193
+    },
+    {
+      "path": "docs/INSTALL.md",
+      "sha256": "1a8aac314a967e60ddfc5565e4a8d4fd2d731d23472ed24266d170e7b4a0908e",
+      "bytes": 1324
     },
     {
       "path": "docs/MIGRATION.md",
@@ -27,8 +32,8 @@
     },
     {
       "path": "docs/TESTING.md",
-      "sha256": "cc5673bfd32ea7cf6936e6aa295c8cb7ce01b23dfa324f788fe1c28f0e837a11",
-      "bytes": 6367
+      "sha256": "533065ead63fa1aa81fcb74fc461e9dec93f3de80d619a48066a4f7a87302247",
+      "bytes": 6594
     },
     {
       "path": "docs/evidence/au-differential.json",
@@ -49,6 +54,11 @@
       "path": "docs/evidence/inventory.json",
       "sha256": "d94631d615e2706ca139d5ee8eb2e7349e733e87825c1665de1bf054451d4e47",
       "bytes": 7398
+    },
+    {
+      "path": "docs/evidence/macos-build.log",
+      "sha256": "ce9b87adc9cb212f50a338da947c7dd5fb8a8fa154ea685200a8e4856d1ec439",
+      "bytes": 69644
     },
     {
       "path": "docs/evidence/portable-checks.txt",

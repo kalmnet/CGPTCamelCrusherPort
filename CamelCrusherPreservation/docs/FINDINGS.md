@@ -1,6 +1,6 @@
 # Verified findings and unresolved behavior
 
-“Verified” below means evidence from the supplied bytes, raw instructions, or the limited executable DSP experiments described here. It does not mean a native ARM64 host test has taken place.
+“Verified” below means evidence from the supplied bytes, raw instructions, or the limited executable DSP experiments described here. The later macOS CI build/test evidence is identified separately below; full DAW and GUI tests remain pending.
 
 ## Supplied material
 
@@ -139,7 +139,8 @@ Ghidra sometimes generated bad instruction boundaries and implausible decompilat
 | Active Mech, Tube, biquad/filter limiter and compressor algorithms | Recovered, tested against both original Intel DSP images in the stated harness |
 | Normalized parameter order, factory values, little-endian chunks | Recovered and round-trip tested |
 | Windows binary DSP and host metadata | Not supplied; not verified |
-| Native macOS ARM64 compilation, libm rounding and DAW scanning | Source/build target provided; not executed here |
+| Native macOS ARM64 compilation | Universal VST3/legacy bundles built on Apple Silicon with Xcode 15.4; core/adapter tests and 47 validator checks passed |
+| macOS Intel/ARM libm equality to original and DAW scanning | Full original-AU comparisons and Live/FL tests remain pending |
 | Reopening real Ableton Live/FL Studio projects | Adapter and import routes provided; requires actual projects/host tests |
 | VST2 NSView extension on those hosts | Implemented, not tested in those hosts |
 | VST3 dense automation offsets | New block-boundary queue adaptation; possible differences |
@@ -154,3 +155,7 @@ Ghidra sometimes generated bad instruction boundaries and implausible decompilat
 ## User-reported macOS behavior
 
 The user reports: AU opens with a black GUI but its parameters change the sound; VST opens with a black GUI and parameter changes have no audible effect. This is a user observation, not a reproduced finding in this environment. It changes the testing plan: use the original AU under Rosetta as the full-host sound/parameter reference, while retaining VST binary analysis for its shared DSP and Windows-compatible legacy state format.
+
+## Subsequent macOS build evidence
+
+GitHub Actions run 37819328990, source commit 40a6fd9c56dca1563328853ac0da75e7f2822b73, used the macos-14-arm64 image and Xcode 15.4/AppleClang 15. The VST3 and legacy VST bundles each contain x86_64 and arm64 slices. CTest passed core_tests and legacy_smoke; Python passed five preset checks. Ad hoc code signatures verified, and the VST3 validator reported 47 passed, zero failed. The full log is evidence/macos-build.log. No original-AU render or Live/FL project was run by CI; the Cocoa editor was compiled but not visually inspected. The experimental new AU was not built.

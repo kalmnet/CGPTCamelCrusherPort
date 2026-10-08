@@ -2,7 +2,7 @@
 
 ## Checks completed in this environment
 
-Linux x86-64, GCC 14, Release: reconstructed core and legacy adapter tests; five Python preset tests; Steinberg VST3 validator (47 passed, zero failed); selected original Intel DSP differential comparisons for both supplied images. Evidence logs are in evidence/. These checks do not validate AppKit, macOS ARM64, Rosetta full-plugin processing, Live/FL recall or Windows binaries.
+Linux x86-64, GCC 14, Release: reconstructed core and legacy adapter tests; five Python preset tests; Steinberg VST3 validator (47 passed, zero failed); selected original Intel DSP differential comparisons for both supplied images. Evidence logs are in evidence/. The subsequent Apple Silicon CI build passed core/adapter checks, five preset tests and 47 VST3 validator tests; both compiled bundles contain ARM64 and Intel code. See evidence/macos-build.log. AppKit appearance/interaction, Rosetta full-plugin comparisons, Live/FL recall and Windows binaries remain unverified.
 
 ## Repeat the portable checks
 
@@ -51,7 +51,7 @@ After building the experimental new AU, use the ARM64 reference executable with 
 
 The build script requests ARM64 and checks VST3 architecture, signature and SDK validator. Verify legacy/AU architectures and sign those bundles separately when testing them. Run `auval -v aumf CrP1 Prsv` for the default new AU; run the original identity only when it is the intended sole registered component. Confirm actual component discovery, not just bundle existence.
 
-In both Live and FL Studio, test scan/load/unload, multiple instances, preset selection, every knob/button, Shift fine adjustment, resizing rejection, open/close/reopen editor, FXP import, automation recording/playback, suspend/resume, sample-rate changes, variable blocks, bypass, project save/reopen and offline export. Check that the original 345×373 artwork appears rather than a black panel. Measure CPU, unexpected allocations on the audio thread and long-run stability. The macOS sources remain uncompiled here; these are required acceptance gates.
+In both Live and FL Studio, test scan/load/unload, multiple instances, preset selection, every knob/button, Shift fine adjustment, resizing rejection, open/close/reopen editor, FXP import, automation recording/playback, suspend/resume, sample-rate changes, variable blocks, bypass, project save/reopen and offline export. Check that the original 345×373 artwork appears rather than a black panel. Measure CPU, unexpected allocations on the audio thread and long-run stability. The VST3/legacy Cocoa sources have compiled in macOS CI, but these real-host acceptance gates remain pending.
 
 ## Old-project acceptance
 

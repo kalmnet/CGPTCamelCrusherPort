@@ -2,7 +2,7 @@
 
 C++ reconstruction from the **supplied Intel VST and AU binaries**, with a native macOS ARM64 VST3 build target, original bitmap GUI assets, a legacy ABI compatibility adapter, and an experimental AUv2 target. No replacement `tanh` distortion, substitute compressor, Moog-style filter, or added oversampling was used.
 
-**Status:** the portable core, Linux VST3 module and legacy adapter compile and pass their tests. The DSP matches selected original x86-64 routines with zero sample error in the recorded experiments. **The macOS ARM64 targets and GUI have not been compiled or hosted in this Linux environment. There is no verified ready-to-install ARM64 binary in this package. Old Ableton Live/FL Studio project recall is not yet certified.**
+**Status:** compiled universal macOS VST3 and legacy VST2 test bundles are now available. They include ARM64 and x86_64 slices, passed architecture/signature checks, core/adapter tests and 47 VST3 validator tests on an Apple Silicon GitHub runner (Xcode 15.4). [Download](https://github.com/kalmnet/CGPTCamelCrusherPort/actions/runs/37819328990/artifacts/11567644736) and follow [installation steps](docs/INSTALL.md). Cocoa code compiled, but GUI appearance, full original-AU renders and old Ableton Live/FL Studio project recall remain unverified. The experimental AU target is not included in the binary package.
 
 Your observation is recorded in the report: the existing AU responds to parameters despite a black GUI; the existing VST has a black GUI and its parameters do not audibly work. Use the AU as the full-plugin reference on your Mac.
 
@@ -77,5 +77,5 @@ python3 tests/test_presets.py
 - Original wrapper silence/quiet-counter bypass is not reproduced; full-plugin tail comparisons remain pending.
 - MIDI Learn, the original MIDI event scheduler, circular knob interaction, and the full original preset/file menus are not implemented.
 - GUI randomization uses a modern RNG. The distortion/filter/compressor signal algorithms do not use that substitute.
-- The background, control sprites and main readout glyphs are original. Cocoa interaction code is new, and version text uses an AppKit font. Mac visual validation remains pending.
+- The background, control sprites and main readout glyphs are original. Cocoa interaction code compiled on macOS; version text uses an AppKit font. Visual and interaction validation in real DAWs remains pending.
 - The AU host tail declaration and AU adapter state handling are new integration behavior and require their own validation.

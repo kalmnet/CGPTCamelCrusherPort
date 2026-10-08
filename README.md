@@ -1,14 +1,18 @@
-# CamelCrusher preservation source
+# CamelCrusher Mac test plugins
 
-Start with [the build instructions](CamelCrusherPreservation/README.md). The complete source is in `CamelCrusherPreservation/`; an equivalent source archive is `CamelCrusherPreservation-source.zip`.
+**Compiled Mac plugins are now available. No coding or Xcode is needed to install them.**
 
-The selected Intel DSP comparisons reported zero sample error for both supplied binaries. Portable core, Linux VST3 and optional legacy-adapter checks passed. **macOS ARM64 compilation, the Cocoa editor, full original-AU Rosetta comparisons, and actual Ableton Live/FL Studio project recall remain unverified. No ready-to-install ARM64 binary is included.**
+[Download the Mac plugin ZIP](https://github.com/kalmnet/CGPTCamelCrusherPort/actions/runs/37819328990/artifacts/11567644736) while signed in to GitHub. Extract the downloaded ZIP and the plugin ZIP inside it.
+
+Read [the installation steps](CamelCrusherPreservation/docs/INSTALL.md). The download contains `CamelCrusherPreservation.vst3` and the optional old-project compatibility adapter `CamelCrusher.vst`. Both include native ARM64 and Intel x86_64 code.
+
+The macOS build succeeded on an Apple Silicon runner using Xcode 15.4. Core and legacy-adapter checks passed; the VST3 validator passed 47 tests. GUI appearance, full original-AU sound comparisons and real Ableton Live/FL Studio project recall still need your Mac tests. Test a copied project. Do not register both original and replacement VST2 plugins with the same ID.
+
+The build artifact expires after 30 days. [Actions](https://github.com/kalmnet/CGPTCamelCrusherPort/actions/workflows/mac-plugins.yml) can rebuild it using Run workflow. The complete source and build instructions remain in this repository.
 
 - [Verified findings and limitations](CamelCrusherPreservation/docs/FINDINGS.md)
-- [Mac testing procedures](CamelCrusherPreservation/docs/TESTING.md)
+- [Sound and host testing](CamelCrusherPreservation/docs/TESTING.md)
 - [Old-project migration and recall](CamelCrusherPreservation/docs/MIGRATION.md)
 - [Provenance and distribution limits](CamelCrusherPreservation/NOTICE.md)
 
-The original AU is the user's working parameter/sound reference despite a black GUI. The original VST's reported nonresponsive parameters are not reproduced here. A VST3 alone is not assumed to replace an old VST2 instance.
-
-The original executable binaries and external SDK dependencies are not included. Keep the original archive for repeating the Intel machine-code comparisons. This private repository is for the requested preservation research; no public redistribution rights are asserted.
+The original AU is the user's working sound/parameter reference despite its black GUI. The original binaries and external SDK dependencies are not included. This private repository is for the requested preservation research; no public redistribution rights are asserted. AU reconstruction remains an experimental source target.
