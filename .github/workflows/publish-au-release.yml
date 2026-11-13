@@ -1,0 +1,67 @@
+name: Publish AU 0.2.0
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/publish-au-release.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+  actions: read
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      GH_TOKEN: ${{ github.token }}
+      AU_BUILD_RUN: '43348379334'
+      AU_BUILD_SHA: d41b8d5fe00de1c4e1684a0a1e64262271d90615
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Verify release source matches validated AU code
+        run: |
+          git fetch --depth=1 origin "$AU_BUILD_SHA"
+          git diff --exit-code "$AU_BUILD_SHA" HEAD -- CamelCrusherPreservation/src CamelCrusherPreservation/resources CamelCrusherPreservation/tests CamelCrusherPreservation/CMakeLists.txt
+      - name: Retrieve validated universal AU
+        run: gh run download "$AU_BUILD_RUN" --repo "$GITHUB_REPOSITORY" --name CamelCrusher-AU-Mac --dir validated
+      - name: Check AU archive and generate current source manifest
+        run: |
+          python3 - <<'PY'
+          import pathlib,zipfile,hashlib,json,plistlib,struct
+          with zipfile.ZipFile('validated/CamelCrusher-AU-Mac.zip') as z:
+              assert z.testzip() is None
+              binary=z.read('download/CamelCrusherAU.component/Contents/MacOS/CamelCrusherAU')
+              assert binary[:4]==bytes.fromhex('cafebabe')
+              count=struct.unpack_from('>I',binary,4)[0]
+              assert {struct.unpack_from('>I',binary,8+i*20)[0] for i in range(count)}=={0x1000007,0x100000c}
+              info=plistlib.loads(z.read('download/CamelCrusherAU.component/Contents/Info.plist'))
+              assert info['CFBundleShortVersionString']=='0.2.0'
+              assert 'download/INSTALL.md' in z.namelist()
+              assert 'download/AudioUnitSDK-LICENSE.txt' in z.namelist()
+          project=pathlib.Path('CamelCrusherPreservation')
+          manifest=project/'docs/evidence/source-manifest.json'
+          files=sorted(p for p in project.rglob('*') if p.is_file() and p!=manifest and '__pycache__' not in p.parts)
+          manifest.write_text(json.dumps({'files':[{'path':str(p.relative_to(project)),'sha256':hashlib.sha256(p.read_bytes()).hexdigest(),'bytes':p.stat().st_size} for p in files]},indent=2)+'\n')
+          with zipfile.ZipFile('CamelCrusherPreservation-source.zip','w',zipfile.ZIP_DEFLATED) as z:
+              for p in sorted(project.rglob('*')):
+                  if p.is_file() and '__pycache__' not in p.parts:z.write(p,p)
+          PY
+      - name: Save updated source package
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add CamelCrusherPreservation-source.zip CamelCrusherPreservation/docs/evidence/source-manifest.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'Refresh source package for completed AU 0.2.0 [skip ci]'
+            git push origin HEAD:main
+          fi
+      - name: Publish private AU release
+        run: |
+          mkdir -p release
+          cp validated/CamelCrusher-AU-Mac.zip release/CamelCrusher-AU-Mac-0.2.0.zip
+          cp CamelCrusherPreservation-source.zip release/
+          cp CamelCrusherPreservation/docs/AU-INSTALL.md release/INSTALL.md
+          cp CamelCrusherPreservation/docs/AU-STATUS.md release/VERIFICATION.md
+          (cd release && sha256sum *.zip > SHA256SUMS.txt)
+          gh release create au-v0.2.0 release/* --repo "$GITHUB_REPOSITORY" --target "$(git rev-parse HEAD)" --title 'CamelCrusher Preservation AU 0.2.0' --notes-file CamelCrusherPreservation/docs/AU-STATUS.md
