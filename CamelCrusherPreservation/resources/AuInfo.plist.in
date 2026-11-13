@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0"><dict>
+<key>CFBundleInfoDictionaryVersion</key><string>6.0</string>
+<key>CFBundleDevelopmentRegion</key><string>en</string>
+<key>CFBundleSupportedPlatforms</key><array><string>MacOSX</string></array>
+<key>LSMinimumSystemVersion</key><string>11.0</string>
 <key>CFBundleExecutable</key><string>CamelCrusherAU</string>
 <key>CFBundleIdentifier</key><string>org.preservation.camelcrusher.au</string>
 <key>CFBundleName</key><string>CamelCrusher Preservation</string>
@@ -8,6 +12,7 @@
 <key>CFBundleShortVersionString</key><string>0.2.0</string>
 <key>CFBundleVersion</key><string>2</string>
 <key>AudioComponents</key><array><dict>
+<key>sandboxSafe</key><true/>
 <key>description</key><string>CamelCrusher DSP preservation</string>
 <key>factoryFunction</key><string>CamelCrusherAUFactory</string>
 <key>manufacturer</key><string>@AU_MAKER@</string>
