@@ -37,9 +37,14 @@ jobs:
           killall AudioComponentRegistrar || true
           sudo mkdir -p /Library/Audio/Plug-Ins/Components
           sudo ditto build-au/CamelCrusherAU.component /Library/Audio/Plug-Ins/Components/CamelCrusherAU.component
-          sleep 2
+          sudo touch /Library/Audio/Plug-Ins/Components
+          killall -9 AudioComponentRegistrar || true
+          sleep 3
           auval -a
-          auval -v aumf CrP1 Prsv
+          if ! auval -v aumf CrP1 Prsv; then
+            /usr/bin/log show --last 3m --style compact --info --predicate 'process == "AudioComponentRegistrar"' || true
+            exit 1
+          fi
       - name: Package
         run: |
           mkdir -p download
