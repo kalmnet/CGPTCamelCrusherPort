@@ -47,10 +47,10 @@ int main(int argc,char** argv){@autoreleasepool{
    Unit u(component);UInt32 bytes=0;Boolean writable=false;check(AudioUnitGetPropertyInfo(u.u,kAudioUnitProperty_ParameterList,kAudioUnitScope_Global,0,&bytes,&writable),"Parameter list");require(bytes==17*sizeof(AudioUnitParameterID),"17 legacy parameter IDs");
    CFArrayRef presets=nullptr;bytes=sizeof presets;check(AudioUnitGetProperty(u.u,kAudioUnitProperty_FactoryPresets,kAudioUnitScope_Global,0,&presets,&bytes),"Factory presets");require(presets&&CFArrayGetCount(presets)==20,"20 factory presets");CFRelease(presets);
    select(u.u,13);auto values=bank.programs[13].values;values[1]=.125f;values[12]=.375f;params(u.u,values);
-   select(u.u,4);select(u.u,13);verify(u.u,values);
+   select(u.u,4);auto other=bank.programs[4].values;other[11]=.55f;params(u.u,other);select(u.u,13);verify(u.u,values);
    CFPropertyListRef state=nullptr;bytes=sizeof state;check(AudioUnitGetProperty(u.u,kAudioUnitProperty_ClassInfo,kAudioUnitScope_Global,0,&state,&bytes),"Save state");
    Unit restored(component);check(AudioUnitSetProperty(restored.u,kAudioUnitProperty_ClassInfo,kAudioUnitScope_Global,0,&state,sizeof state),"Restore state");require(selected(restored.u)==13,"Current program recall");verify(restored.u,values);
-   select(restored.u,4);select(restored.u,13);verify(restored.u,values);CFRelease(state);
+   select(restored.u,4);verify(restored.u,other);select(restored.u,13);verify(restored.u,values);CFRelease(state);
    // Original-style raw single-program state, retaining unused slots.
    auto program=bank.programs[7];program.values[16]=.625f;auto raw=camel::encodeLegacy({program});NSData* data=[NSData dataWithBytes:raw.data() length:raw.size()];
    NSDictionary* legacy=@{@"data":data};CFPropertyListRef plist=(__bridge CFPropertyListRef)legacy;
@@ -68,7 +68,7 @@ int main(int argc,char** argv){@autoreleasepool{
    }
    CFRelease(info.mCocoaAUViewBundleLocation);CFRelease(info.mCocoaAUViewClass[0]);
   }
-  int cases=0;double worst=0;
+  int cases=0;std::uint64_t samples=0;double worst=0;
   for(double rate:{44100.,48000.,96000.})for(UInt32 block:{31u,64u,257u,512u})for(int preset=0;preset<20;++preset){
    Unit u(component);Source source;setup(u.u,rate,block,&source);auto values=bank.programs[preset].values;params(u.u,values);check(AudioUnitInitialize(u.u),"Initialize");camel::Dsp dsp;dsp.prepare(float(rate));dsp.restore(values);
    std::vector<float> l(block),r(block),ol(block),orr(block),rl(block),rr(block);
@@ -78,11 +78,11 @@ int main(int argc,char** argv){@autoreleasepool{
     for(UInt32 i=0;i<block;++i){l[i]=float(std::sin((pass*block+i)*.071)*1.2);r[i]=float(std::cos((pass*block+i)*.113)*.8);}
     source={l.data(),r.data(),block};list.b[0]={1,block*4,ol.data()};list.b[1]={1,block*4,orr.data()};AudioTimeStamp time{};time.mSampleTime=pass*block;time.mFlags=kAudioTimeStampSampleTimeValid;AudioUnitRenderActionFlags flags=0;
     check(AudioUnitRender(u.u,&flags,&time,0,block,reinterpret_cast<AudioBufferList*>(&list)),"Render");dsp.process(l.data(),r.data(),rl.data(),rr.data(),int(block));
-    for(UInt32 i=0;i<block;++i){require(std::isfinite(ol[i])&&std::isfinite(orr[i]),"Finite AU output");worst=std::max(worst,double(std::fabs(ol[i]-rl[i])));worst=std::max(worst,double(std::fabs(orr[i]-rr[i])));}
+    samples+=block*2;for(UInt32 i=0;i<block;++i){require(std::isfinite(ol[i])&&std::isfinite(orr[i]),"Finite AU output");worst=std::max(worst,double(std::fabs(ol[i]-rl[i])));worst=std::max(worst,double(std::fabs(orr[i]-rr[i])));}
    }++cases;
   }
   require(worst==0,"AU render equals recovered core");
-  std::cout<<"AU render cases="<<cases<<" max_absolute_error="<<worst<<"; parameter, bank, legacy state, preset and Cocoa editor tests passed\n";
+  std::cout<<"AU render cases="<<cases<<" channel_samples="<<samples<<" max_absolute_error="<<worst<<"; parameter, bank, legacy state, preset and Cocoa editor tests passed\n";
   // Registered component retains executable factory: keep the bundle loaded until process exit.
   CFRelease(bundle);return 0;
  }catch(const std::exception& e){std::cerr<<e.what()<<'\n';return 1;}
