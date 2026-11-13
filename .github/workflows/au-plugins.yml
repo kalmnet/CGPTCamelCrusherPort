@@ -1,7 +1,7 @@
 name: Build and validate Audio Unit
 on:
   push:
-    branches: [finish-au-port, main]
+    branches: [au-original-identity, main]
     paths: ['CamelCrusherPreservation/src/Au.mm', 'CamelCrusherPreservation/tests/au_*', 'CamelCrusherPreservation/resources/AuInfo.plist.in', 'CamelCrusherPreservation/CMakeLists.txt', '.github/workflows/au-plugins.yml']
   workflow_dispatch:
 permissions:
@@ -20,35 +20,35 @@ jobs:
         run: >-
           cmake -S CamelCrusherPreservation -B build-au -DCMAKE_BUILD_TYPE=Release
           '-DCMAKE_OSX_ARCHITECTURES=arm64;x86_64' -DCMAKE_OSX_DEPLOYMENT_TARGET=11.0
-          -DCAMEL_BUILD_VST3=OFF -DCAMEL_BUILD_AU=ON -DAUDIOUNIT_SDK_ROOT="$RUNNER_TEMP/AudioUnitSDK"
+          -DCAMEL_BUILD_VST3=OFF -DCAMEL_BUILD_AU=ON -DCAMEL_AU_LEGACY_ID=ON -DAUDIOUNIT_SDK_ROOT="$RUNNER_TEMP/AudioUnitSDK"
       - name: Compile
         run: cmake --build build-au --parallel 3
       - name: Core tests
         run: ctest --test-dir build-au --output-on-failure -V
       - name: Sign, install, and validate AU
         run: |
-          codesign --force --deep --sign - build-au/CamelCrusherAU.component
-          codesign --verify --deep --strict build-au/CamelCrusherAU.component
-          lipo -archs build-au/CamelCrusherAU.component/Contents/MacOS/CamelCrusherAU
+          codesign --force --deep --sign - build-au/CamelCrusher.component
+          codesign --verify --deep --strict build-au/CamelCrusher.component
+          lipo -archs build-au/CamelCrusher.component/Contents/MacOS/CamelCrusher
           mkdir -p "$HOME/Library/Audio/Plug-Ins/Components"
-          ditto build-au/CamelCrusherAU.component "$HOME/Library/Audio/Plug-Ins/Components/CamelCrusherAU.component"
-          plutil -p build-au/CamelCrusherAU.component/Contents/Info.plist
+          ditto build-au/CamelCrusher.component "$HOME/Library/Audio/Plug-Ins/Components/CamelCrusher.component"
+          plutil -p build-au/CamelCrusher.component/Contents/Info.plist
           touch "$HOME/Library/Audio/Plug-Ins/Components"
           killall AudioComponentRegistrar || true
           sudo mkdir -p /Library/Audio/Plug-Ins/Components
-          sudo ditto build-au/CamelCrusherAU.component /Library/Audio/Plug-Ins/Components/CamelCrusherAU.component
+          sudo ditto build-au/CamelCrusher.component /Library/Audio/Plug-Ins/Components/CamelCrusher.component
           sudo touch /Library/Audio/Plug-Ins/Components
           killall -9 AudioComponentRegistrar || true
           sleep 3
           auval -a
-          if ! auval -v aumf CrP1 Prsv; then
+          if ! auval -v aumf CaCr CamA; then
             /usr/bin/log show --last 3m --style compact --info --predicate 'process == "AudioComponentRegistrar"' || true
             exit 1
           fi
       - name: Package
         run: |
           mkdir -p download
-          ditto build-au/CamelCrusherAU.component download/CamelCrusherAU.component
+          ditto build-au/CamelCrusher.component download/CamelCrusher.component
           cp CamelCrusherPreservation/NOTICE.md download/
           cp CamelCrusherPreservation/docs/AU-INSTALL.md download/INSTALL.md
           cp "$RUNNER_TEMP/AudioUnitSDK/LICENSE.txt" download/AudioUnitSDK-LICENSE.txt
