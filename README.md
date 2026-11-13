@@ -17,6 +17,6 @@ The release preserves the tested 0.1.1 binaries. The Apple Silicon CI build pass
 
 This private repository is for the requested preservation work. Original executable binaries and third-party port assets/code are not included; no public redistribution rights are asserted.
 
-## Audio Unit 0.2.0
+## Audio Unit replacement
 
-[Download the native AU](https://github.com/kalmnet/CGPTCamelCrusherPort/releases/tag/au-v0.2.0) and follow [AU installation](CamelCrusherPreservation/docs/AU-INSTALL.md). It includes the recovered DSP and original GUI, full preset-bank recall, and ARM64/Intel code. It uses a separate identity so the original AU can remain installed. See [AU verification and limits](CamelCrusherPreservation/docs/AU-STATUS.md). Existing VST2/VST3 downloads remain version 0.1.1.
+[Download CamelCrusher AU](https://github.com/kalmnet/CGPTCamelCrusherPort/releases/tag/au-v0.2.1). The file and plugin name are **CamelCrusher**, with the original Camel Audio identity. It replaces the unsupported AU. Back up and move the original component outside scanned folders before installing this one; also remove the earlier separate CamelCrusherAU.component if installed. [Installation](CamelCrusherPreservation/docs/AU-INSTALL.md) · [verification](CamelCrusherPreservation/docs/AU-STATUS.md). Old AU project recall still needs confirmation in a copied project. VST2/VST3 binaries remain unchanged.
