@@ -1,4 +1,4 @@
-name: Publish AU 0.2.0
+name: Publish AU 0.2.1
 on:
   push:
     branches: [main]
@@ -13,8 +13,8 @@ jobs:
     timeout-minutes: 10
     env:
       GH_TOKEN: ${{ github.token }}
-      AU_BUILD_RUN: '43348379334'
-      AU_BUILD_SHA: d41b8d5fe00de1c4e1684a0a1e64262271d90615
+      AU_BUILD_RUN: '43352082334'
+      AU_BUILD_SHA: 8bdd1d543499aab353985dc055a964da34297d4b
     steps:
       - uses: actions/checkout@v4
         with:
@@ -31,12 +31,18 @@ jobs:
           import pathlib,zipfile,hashlib,json,plistlib,struct
           with zipfile.ZipFile('validated/CamelCrusher-AU-Mac.zip') as z:
               assert z.testzip() is None
-              binary=z.read('download/CamelCrusherAU.component/Contents/MacOS/CamelCrusherAU')
+              binary=z.read('download/CamelCrusher.component/Contents/MacOS/CamelCrusher')
               assert binary[:4]==bytes.fromhex('cafebabe')
               count=struct.unpack_from('>I',binary,4)[0]
               assert {struct.unpack_from('>I',binary,8+i*20)[0] for i in range(count)}=={0x1000007,0x100000c}
-              info=plistlib.loads(z.read('download/CamelCrusherAU.component/Contents/Info.plist'))
-              assert info['CFBundleShortVersionString']=='0.2.0'
+              info=plistlib.loads(z.read('download/CamelCrusher.component/Contents/Info.plist'))
+              assert info['CFBundleShortVersionString']=='1.01'
+              assert info['CFBundleName']=='CamelCrusher'
+              assert info['CFBundleExecutable']=='CamelCrusher'
+              assert info['CFBundleIdentifier']=='com.camelaudio.au.CamelCrusher'
+              component=info['AudioComponents'][0]
+              assert (component['type'],component['subtype'],component['manufacturer'])==('aumf','CaCr','CamA')
+              assert component['name']=='Camel Audio: CamelCrusher'
               assert 'download/INSTALL.md' in z.namelist()
               assert 'download/AudioUnitSDK-LICENSE.txt' in z.namelist()
           project=pathlib.Path('CamelCrusherPreservation')
@@ -53,15 +59,15 @@ jobs:
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add CamelCrusherPreservation-source.zip CamelCrusherPreservation/docs/evidence/source-manifest.json
           if ! git diff --cached --quiet; then
-            git commit -m 'Refresh source package for completed AU 0.2.0 [skip ci]'
+            git commit -m 'Refresh source package for completed AU 0.2.1 [skip ci]'
             git push origin HEAD:main
           fi
       - name: Publish private AU release
         run: |
           mkdir -p release
-          cp validated/CamelCrusher-AU-Mac.zip release/CamelCrusher-AU-Mac-0.2.0.zip
+          cp validated/CamelCrusher-AU-Mac.zip release/CamelCrusher-AU-Mac-0.2.1.zip
           cp CamelCrusherPreservation-source.zip release/
           cp CamelCrusherPreservation/docs/AU-INSTALL.md release/INSTALL.md
           cp CamelCrusherPreservation/docs/AU-STATUS.md release/VERIFICATION.md
           (cd release && sha256sum *.zip > SHA256SUMS.txt)
-          gh release create au-v0.2.0 release/* --repo "$GITHUB_REPOSITORY" --target "$(git rev-parse HEAD)" --title 'CamelCrusher Preservation AU 0.2.0' --notes-file CamelCrusherPreservation/docs/AU-STATUS.md
+          gh release create au-v0.2.1 release/* --repo "$GITHUB_REPOSITORY" --target "$(git rev-parse HEAD)" --title 'CamelCrusher AU — original-name replacement' --notes-file CamelCrusherPreservation/docs/AU-STATUS.md
