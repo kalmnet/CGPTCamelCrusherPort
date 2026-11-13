@@ -1,0 +1,653 @@
+﻿2026-11-13T01:55:06.5552470Z Current runner version: '2.338.2'
+2026-11-13T01:55:06.5568810Z ##[group]Runner Image Provisioner
+2026-11-13T01:55:06.5569410Z Hosted Compute Agent
+2026-11-13T01:55:06.5569860Z Version: 20261103.629
+2026-11-13T01:55:06.5570300Z Commit: 15dbd9ccb5dbf34fae002b6ed1a2670f52df37bc
+2026-11-13T01:55:06.5570790Z Build Date: 2026-11-03T17:26:59Z
+2026-11-13T01:55:06.5571220Z Worker ID: {f04bd5a4-073d-4402-b206-1d259a15f99f}
+2026-11-13T01:55:06.5571680Z Region: westus
+2026-11-13T01:55:06.5572040Z Cloud: MacCloud
+2026-11-13T01:55:06.5572390Z ##[endgroup]
+2026-11-13T01:55:06.5573550Z ##[group]Operating System
+2026-11-13T01:55:06.5573940Z macOS
+2026-11-13T01:55:06.5574280Z 15.8.2
+2026-11-13T01:55:06.5574610Z 24H232
+2026-11-13T01:55:06.5574940Z ##[endgroup]
+2026-11-13T01:55:06.5575300Z ##[group]Runner Image
+2026-11-13T01:55:06.5575680Z Image: macos-15-arm64
+2026-11-13T01:55:06.5576060Z Version: 20261104.0514.1
+2026-11-13T01:55:06.5576900Z Included Software: https://github.com/actions/runner-images/blob/macos-15-arm64/20261104.0514/images/macos/macos-15-arm64-Readme.md
+2026-11-13T01:55:06.5577940Z Image Release: https://github.com/actions/runner-images/releases/tag/macos-15-arm64%2F20261104.0514
+2026-11-13T01:55:06.5578590Z ##[endgroup]
+2026-11-13T01:55:06.5579410Z ##[group]GITHUB_TOKEN Permissions
+2026-11-13T01:55:06.5580770Z Contents: read
+2026-11-13T01:55:06.5581130Z Metadata: read
+2026-11-13T01:55:06.5581490Z ##[endgroup]
+2026-11-13T01:55:06.5582920Z Secret source: Actions
+2026-11-13T01:55:06.5583470Z Cache mode: write
+2026-11-13T01:55:06.5584750Z Prepare workflow directory
+2026-11-13T01:55:06.6004660Z Prepare all required actions
+2026-11-13T01:55:06.6080420Z Getting action download info
+2026-11-13T01:55:06.9541580Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+2026-11-13T01:55:07.2811670Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+2026-11-13T01:55:07.5328450Z Complete job name: au
+2026-11-13T01:55:07.6041820Z ##[group]Run actions/checkout@v4
+2026-11-13T01:55:07.6042500Z with:
+2026-11-13T01:55:07.6042850Z   repository: kalmnet/CGPTCamelCrusherPort
+2026-11-13T01:55:07.6045890Z   token: ***
+2026-11-13T01:55:07.6046210Z   ssh-strict: true
+2026-11-13T01:55:07.6046530Z   ssh-user: git
+2026-11-13T01:55:07.6046870Z   persist-credentials: true
+2026-11-13T01:55:07.6047220Z   clean: true
+2026-11-13T01:55:07.6047550Z   sparse-checkout-cone-mode: true
+2026-11-13T01:55:07.6047920Z   fetch-depth: 1
+2026-11-13T01:55:07.6048240Z   fetch-tags: false
+2026-11-13T01:55:07.6048570Z   show-progress: true
+2026-11-13T01:55:07.6048900Z   lfs: false
+2026-11-13T01:55:07.6049190Z   submodules: false
+2026-11-13T01:55:07.6049530Z   set-safe-directory: true
+2026-11-13T01:55:07.6049890Z   allow-unsafe-pr-checkout: false
+2026-11-13T01:55:07.6050420Z ##[endgroup]
+2026-11-13T01:55:08.0215070Z Syncing repository: kalmnet/CGPTCamelCrusherPort
+2026-11-13T01:55:08.0216990Z ##[group]Getting Git version info
+2026-11-13T01:55:08.0217880Z Working directory is '/Users/runner/work/CGPTCamelCrusherPort/CGPTCamelCrusherPort'
+2026-11-13T01:55:08.0255630Z [command]/opt/homebrew/bin/git version
+2026-11-13T01:55:08.0534530Z git version 2.56.0
+2026-11-13T01:55:08.0547360Z ##[endgroup]
+2026-11-13T01:55:08.0556730Z Copying '/Users/runner/.gitconfig' to '/Users/runner/work/_temp/faf086dd-2304-4e40-aef5-37cee85d5836/.gitconfig'
+2026-11-13T01:55:08.0567390Z Temporarily overriding HOME='/Users/runner/work/_temp/faf086dd-2304-4e40-aef5-37cee85d5836' before making global git config changes
+2026-11-13T01:55:08.0570050Z Adding repository directory to the temporary git global config as a safe directory
+2026-11-13T01:55:08.0572820Z [command]/opt/homebrew/bin/git config --global --add safe.directory /Users/runner/work/CGPTCamelCrusherPort/CGPTCamelCrusherPort
+2026-11-13T01:55:08.0703880Z Deleting the contents of '/Users/runner/work/CGPTCamelCrusherPort/CGPTCamelCrusherPort'
+2026-11-13T01:55:08.0706870Z ##[group]Initializing the repository
+2026-11-13T01:55:08.0710720Z [command]/opt/homebrew/bin/git init /Users/runner/work/CGPTCamelCrusherPort/CGPTCamelCrusherPort
+2026-11-13T01:55:08.0910550Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-11-13T01:55:08.0911510Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-11-13T01:55:08.0912250Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-11-13T01:55:08.0912930Z hint: call:
+2026-11-13T01:55:08.0913280Z hint:
+2026-11-13T01:55:08.0913680Z hint: 	git config --global init.defaultBranch <name>
+2026-11-13T01:55:08.0914180Z hint:
+2026-11-13T01:55:08.0914710Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-11-13T01:55:08.0915370Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-11-13T01:55:08.0916000Z hint:
+2026-11-13T01:55:08.0916330Z hint: 	git branch -m <name>
+2026-11-13T01:55:08.0916730Z hint:
+2026-11-13T01:55:08.0917440Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-11-13T01:55:08.0921650Z Initialized empty Git repository in /Users/runner/work/CGPTCamelCrusherPort/CGPTCamelCrusherPort/.git/
+2026-11-13T01:55:08.0928280Z [command]/opt/homebrew/bin/git remote add origin https://github.com/kalmnet/CGPTCamelCrusherPort
+2026-11-13T01:55:08.1008150Z ##[endgroup]
+2026-11-13T01:55:08.1008800Z ##[group]Disabling automatic garbage collection
+2026-11-13T01:55:08.1011690Z [command]/opt/homebrew/bin/git config --local gc.auto 0
+2026-11-13T01:55:08.1079400Z ##[endgroup]
+2026-11-13T01:55:08.1080070Z ##[group]Setting up auth
+2026-11-13T01:55:08.1084630Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-13T01:55:08.1196100Z [command]/opt/homebrew/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-13T01:55:08.2511680Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-13T01:55:08.2614860Z [command]/opt/homebrew/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-11-13T01:55:08.3644370Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-13T01:55:08.3762640Z [command]/opt/homebrew/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-11-13T01:55:08.4758160Z [command]/opt/homebrew/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-11-13T01:55:08.4878720Z ##[endgroup]
+2026-11-13T01:55:08.4879590Z ##[group]Fetching the repository
+2026-11-13T01:55:08.4890740Z [command]/opt/homebrew/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +d41b8d5fe00de1c4e1684a0a1e64262271d90615:refs/remotes/origin/finish-au-port
+2026-11-13T01:55:09.1493490Z From https://github.com/kalmnet/CGPTCamelCrusherPort
+2026-11-13T01:55:09.1494340Z  * [new ref]         d41b8d5fe00de1c4e1684a0a1e64262271d90615 -> origin/finish-au-port
+2026-11-13T01:55:09.1496980Z ##[endgroup]
+2026-11-13T01:55:09.1497580Z ##[group]Determining the checkout info
+2026-11-13T01:55:09.1498330Z ##[endgroup]
+2026-11-13T01:55:09.1503190Z [command]/opt/homebrew/bin/git sparse-checkout disable
+2026-11-13T01:55:09.1596810Z [command]/opt/homebrew/bin/git config --local --unset-all extensions.worktreeConfig
+2026-11-13T01:55:09.1668460Z ##[group]Checking out the ref
+2026-11-13T01:55:09.1676550Z [command]/opt/homebrew/bin/git checkout --progress --force -B finish-au-port refs/remotes/origin/finish-au-port
+2026-11-13T01:55:09.1991340Z Switched to a new branch 'finish-au-port'
+2026-11-13T01:55:09.1993560Z branch 'finish-au-port' set up to track 'origin/finish-au-port'.
+2026-11-13T01:55:09.1998210Z ##[endgroup]
+2026-11-13T01:55:09.2106570Z [command]/opt/homebrew/bin/git log -1 --format=%H
+2026-11-13T01:55:09.2190000Z d41b8d5fe00de1c4e1684a0a1e64262271d90615
+2026-11-13T01:55:09.2415900Z ##[group]Run git clone https://github.com/apple/AudioUnitSDK.git "$RUNNER_TEMP/AudioUnitSDK"
+2026-11-13T01:55:09.2416820Z [36;1mgit clone https://github.com/apple/AudioUnitSDK.git "$RUNNER_TEMP/AudioUnitSDK"[0m
+2026-11-13T01:55:09.2417680Z [36;1mgit -C "$RUNNER_TEMP/AudioUnitSDK" checkout bd98b31feff57a15989fcfab4cd86dc63382b1ac[0m
+2026-11-13T01:55:09.2470660Z shell: /bin/bash -e {0}
+2026-11-13T01:55:09.2471140Z ##[endgroup]
+2026-11-13T01:55:09.2904830Z Cloning into '/Users/runner/work/_temp/AudioUnitSDK'...
+2026-11-13T01:55:09.8002800Z HEAD is now at bd98b31 AudioUnitSDK - version 1.4.0
+2026-11-13T01:55:09.8069130Z ##[group]Run cmake -S CamelCrusherPreservation -B build-au -DCMAKE_BUILD_TYPE=Release '-DCMAKE_OSX_ARCHITECTURES=arm64;x86_64' -DCMAKE_OSX_DEPLOYMENT_TARGET=11.0 -DCAMEL_BUILD_VST3=OFF -DCAMEL_BUILD_AU=ON -DAUDIOUNIT_SDK_ROOT="$RUNNER_TEMP/AudioUnitSDK"
+2026-11-13T01:55:09.8072030Z [36;1mcmake -S CamelCrusherPreservation -B build-au -DCMAKE_BUILD_TYPE=Release '-DCMAKE_OSX_ARCHITECTURES=arm64;x86_64' -DCMAKE_OSX_DEPLOYMENT_TARGET=11.0 -DCAMEL_BUILD_VST3=OFF -DCAMEL_BUILD_AU=ON -DAUDIOUNIT_SDK_ROOT="$RUNNER_TEMP/AudioUnitSDK"[0m
+2026-11-13T01:55:09.8108720Z shell: /bin/bash -e {0}
+2026-11-13T01:55:09.8109290Z ##[endgroup]
+2026-11-13T01:55:11.9218940Z -- The CXX compiler identification is AppleClang 17.0.0.17000013
+2026-11-13T01:55:12.5535580Z -- Detecting CXX compiler ABI info
+2026-11-13T01:55:13.3599910Z -- Detecting CXX compiler ABI info - done
+2026-11-13T01:55:13.4249330Z -- Check for working CXX compiler: /usr/bin/c++ - skipped
+2026-11-13T01:55:13.4358340Z -- Detecting CXX compile features
+2026-11-13T01:55:13.4415510Z -- Detecting CXX compile features - done
+2026-11-13T01:55:13.5924770Z -- The OBJCXX compiler identification is AppleClang 17.0.0.17000013
+2026-11-13T01:55:13.6018690Z -- Detecting OBJCXX compiler ABI info
+2026-11-13T01:55:13.8454460Z -- Detecting OBJCXX compiler ABI info - done
+2026-11-13T01:55:13.8653820Z -- Check for working OBJCXX compiler: /usr/bin/clang++ - skipped
+2026-11-13T01:55:13.8704150Z -- Configuring done (4.0s)
+2026-11-13T01:55:13.9052490Z -- Generating done (0.0s)
+2026-11-13T01:55:13.9060400Z -- Build files have been written to: /Users/runner/work/CGPTCamelCrusherPort/CGPTCamelCrusherPort/build-au
+2026-11-13T01:55:13.9138290Z ##[group]Run cmake --build build-au --parallel 3
+2026-11-13T01:55:13.9138780Z [36;1mcmake --build build-au --parallel 3[0m
+2026-11-13T01:55:13.9178310Z shell: /bin/bash -e {0}
+2026-11-13T01:55:13.9178690Z ##[endgroup]
+2026-11-13T01:55:14.0441530Z [  2%] Building CXX object CMakeFiles/camel_core.dir/src/Dsp.cpp.o
+2026-11-13T01:55:14.0454390Z [  5%] Building OBJCXX object CMakeFiles/camel_native_legacy.dir/src/NativeEditor.mm.o
+2026-11-13T01:55:14.0522680Z [  8%] Building OBJCXX object CMakeFiles/camel_native_vst3.dir/src/NativeEditor.mm.o
+2026-11-13T01:55:16.0672490Z [ 11%] Building CXX object CMakeFiles/camel_core.dir/src/State.cpp.o
+2026-11-13T01:55:18.8811570Z [ 14%] Linking CXX static library libcamel_core.a
+2026-11-13T01:55:19.8174400Z [ 17%] Linking OBJCXX static library libcamel_native_legacy.a
+2026-11-13T01:55:19.8456130Z [ 20%] Linking OBJCXX static library libcamel_native_vst3.a
+2026-11-13T01:55:20.7773980Z [ 20%] Built target camel_core
+2026-11-13T01:55:20.8344800Z [ 23%] Building OBJCXX object CMakeFiles/camel_native_au.dir/src/NativeEditor.mm.o
+2026-11-13T01:55:21.3128170Z [ 23%] Built target camel_native_legacy
+2026-11-13T01:55:21.3587780Z [ 23%] Built target camel_native_vst3
+2026-11-13T01:55:21.3778460Z [ 26%] Building CXX object CMakeFiles/apple_au_sdk.dir/Users/runner/work/_temp/AudioUnitSDK/src/AudioUnitSDK/AUBase.cpp.o
+2026-11-13T01:55:21.4314400Z [ 29%] Building CXX object CMakeFiles/au_reference.dir/tools/au_reference.cpp.o
+2026-11-13T01:55:24.0347010Z [ 32%] Linking CXX executable au_reference
+2026-11-13T01:55:24.1945580Z [ 32%] Built target au_reference
+2026-11-13T01:55:24.2149180Z [ 35%] Building CXX object CMakeFiles/apple_au_sdk.dir/Users/runner/work/_temp/AudioUnitSDK/src/AudioUnitSDK/AUBuffer.cpp.o
+2026-11-13T01:55:24.9056140Z [ 38%] Linking OBJCXX static library libcamel_native_au.a
+2026-11-13T01:55:24.9927780Z [ 38%] Built target camel_native_au
+2026-11-13T01:55:25.0746720Z [ 41%] Building CXX object CMakeFiles/core_tests.dir/tests/core_tests.cpp.o
+2026-11-13T01:55:25.9542480Z [ 44%] Building CXX object CMakeFiles/camel_test_bridge.dir/tests/bridge.cpp.o
+2026-11-13T01:55:26.3147130Z [ 47%] Building CXX object CMakeFiles/apple_au_sdk.dir/Users/runner/work/_temp/AudioUnitSDK/src/AudioUnitSDK/AUBufferAllocator.cpp.o
+2026-11-13T01:55:26.6483280Z [ 50%] Linking CXX shared library libcamel_test_bridge.dylib
+2026-11-13T01:55:26.7815270Z [ 50%] Built target camel_test_bridge
+2026-11-13T01:55:26.8244990Z [ 52%] Building CXX object CMakeFiles/camel_render.dir/tools/render.cpp.o
+2026-11-13T01:55:27.4764010Z [ 55%] Linking CXX executable core_tests
+2026-11-13T01:55:27.6234980Z [ 55%] Built target core_tests
+2026-11-13T01:55:27.6375540Z [ 58%] Building CXX object CMakeFiles/apple_au_sdk.dir/Users/runner/work/_temp/AudioUnitSDK/src/AudioUnitSDK/AUEffectBase.cpp.o
+2026-11-13T01:55:27.7436050Z [ 61%] Building CXX object CMakeFiles/apple_au_sdk.dir/Users/runner/work/_temp/AudioUnitSDK/src/AudioUnitSDK/AUInputElement.cpp.o
+2026-11-13T01:55:28.4572750Z [ 64%] Linking CXX executable camel_render
+2026-11-13T01:55:28.6079190Z [ 64%] Built target camel_render
+2026-11-13T01:55:28.6200490Z [ 67%] Building CXX object CMakeFiles/apple_au_sdk.dir/Users/runner/work/_temp/AudioUnitSDK/src/AudioUnitSDK/AUMIDIBase.cpp.o
+2026-11-13T01:55:29.3268380Z [ 70%] Building CXX object CMakeFiles/apple_au_sdk.dir/Users/runner/work/_temp/AudioUnitSDK/src/AudioUnitSDK/AUMIDIEffectBase.cpp.o
+2026-11-13T01:55:29.6693250Z [ 73%] Building CXX object CMakeFiles/apple_au_sdk.dir/Users/runner/work/_temp/AudioUnitSDK/src/AudioUnitSDK/AUOutputElement.cpp.o
+2026-11-13T01:55:30.5112650Z [ 76%] Building CXX object CMakeFiles/apple_au_sdk.dir/Users/runner/work/_temp/AudioUnitSDK/src/AudioUnitSDK/AUPlugInDispatch.cpp.o
+2026-11-13T01:55:31.0410220Z [ 79%] Building CXX object CMakeFiles/apple_au_sdk.dir/Users/runner/work/_temp/AudioUnitSDK/src/AudioUnitSDK/AUScopeElement.cpp.o
+2026-11-13T01:55:31.3819960Z [ 82%] Building CXX object CMakeFiles/apple_au_sdk.dir/Users/runner/work/_temp/AudioUnitSDK/src/AudioUnitSDK/ComponentBase.cpp.o
+2026-11-13T01:55:32.5533750Z [ 85%] Building CXX object CMakeFiles/apple_au_sdk.dir/Users/runner/work/_temp/AudioUnitSDK/src/AudioUnitSDK/MusicDeviceBase.cpp.o
+2026-11-13T01:55:34.4986850Z [ 88%] Linking CXX static library libapple_au_sdk.a
+2026-11-13T01:55:34.5649200Z [ 88%] Built target apple_au_sdk
+2026-11-13T01:55:34.5981510Z [ 91%] Building OBJCXX object CMakeFiles/CamelCrusherAU.dir/src/Au.mm.o
+2026-11-13T01:55:34.6018410Z Copying OS X content CamelCrusherAU.component/Contents/Resources/Background.png
+2026-11-13T01:55:34.6124430Z Copying OS X content CamelCrusherAU.component/Contents/Resources/ButtonRandom.png
+2026-11-13T01:55:34.6381220Z Copying OS X content CamelCrusherAU.component/Contents/Resources/FontDisplay-Old.png
+2026-11-13T01:55:34.6490000Z Copying OS X content CamelCrusherAU.component/Contents/Resources/FontDisplay.png
+2026-11-13T01:55:34.6657400Z Copying OS X content CamelCrusherAU.component/Contents/Resources/FontVersion.png
+2026-11-13T01:55:34.6761310Z Copying OS X content CamelCrusherAU.component/Contents/Resources/FontSelector.png
+2026-11-13T01:55:34.6959330Z Copying OS X content CamelCrusherAU.component/Contents/Resources/Knob.png
+2026-11-13T01:55:34.6960080Z Copying OS X content CamelCrusherAU.component/Contents/Resources/OnButton.png
+2026-11-13T01:55:34.7184000Z Copying OS X content CamelCrusherAU.component/Contents/Resources/PhatButton.png
+2026-11-13T01:55:34.7205860Z Copying OS X content CamelCrusherAU.component/Contents/Resources/SelectorPreset.png
+2026-11-13T01:55:37.9697440Z [ 94%] Linking CXX CFBundle shared module CamelCrusherAU.component/Contents/MacOS/CamelCrusherAU
+2026-11-13T01:55:38.3261280Z [ 94%] Built target CamelCrusherAU
+2026-11-13T01:55:38.3534650Z [ 97%] Building OBJCXX object CMakeFiles/au_smoke.dir/tests/au_smoke.mm.o
+2026-11-13T01:55:40.6736460Z [100%] Linking CXX executable au_smoke
+2026-11-13T01:55:41.0658860Z [100%] Built target au_smoke
+2026-11-13T01:55:41.1167560Z ##[group]Run ctest --test-dir build-au --output-on-failure -V
+2026-11-13T01:55:41.1167960Z [36;1mctest --test-dir build-au --output-on-failure -V[0m
+2026-11-13T01:55:41.1254550Z shell: /bin/bash -e {0}
+2026-11-13T01:55:41.1255080Z ##[endgroup]
+2026-11-13T01:55:41.2274650Z UpdateCTestConfiguration  from :/Users/runner/work/CGPTCamelCrusherPort/CGPTCamelCrusherPort/build-au/DartConfiguration.tcl
+2026-11-13T01:55:41.2297790Z Test project /Users/runner/work/CGPTCamelCrusherPort/CGPTCamelCrusherPort/build-au
+2026-11-13T01:55:41.2299600Z Constructing a list of tests
+2026-11-13T01:55:41.2308940Z Done constructing a list of tests
+2026-11-13T01:55:41.2309930Z Updating test list for fixtures
+2026-11-13T01:55:41.2310690Z Added 0 tests to meet fixture requirements
+2026-11-13T01:55:41.2312840Z Checking test dependency graph...
+2026-11-13T01:55:41.2313590Z Checking test dependency graph end
+2026-11-13T01:55:41.2320300Z test 1
+2026-11-13T01:55:41.2320960Z     Start 1: core_tests
+2026-11-13T01:55:41.2321650Z 
+2026-11-13T01:55:41.2322570Z 1: Test command: /Users/runner/work/CGPTCamelCrusherPort/CGPTCamelCrusherPort/build-au/core_tests
+2026-11-13T01:55:41.2324530Z 1: Working Directory: /Users/runner/work/CGPTCamelCrusherPort/CGPTCamelCrusherPort/build-au
+2026-11-13T01:55:41.2325600Z 1: Test timeout computed to be: 10000000
+2026-11-13T01:55:41.2411600Z 1: Core state, malformed input, bypass, curve and render checks passed
+2026-11-13T01:55:41.2413770Z 1/2 Test #1: core_tests .......................   Passed    0.01 sec
+2026-11-13T01:55:41.2419290Z test 2
+2026-11-13T01:55:41.2420710Z     Start 2: au_smoke
+2026-11-13T01:55:41.2421310Z 
+2026-11-13T01:55:41.2423010Z 2: Test command: /Users/runner/work/CGPTCamelCrusherPort/CGPTCamelCrusherPort/build-au/au_smoke "/Users/runner/work/CGPTCamelCrusherPort/CGPTCamelCrusherPort/build-au/CamelCrusherAU.component"
+2026-11-13T01:55:41.2426170Z 2: Working Directory: /Users/runner/work/CGPTCamelCrusherPort/CGPTCamelCrusherPort/build-au
+2026-11-13T01:55:41.2427620Z 2: Test timeout computed to be: 10000000
+2026-11-13T01:55:41.4108830Z 2: AU render cases=240 channel_samples=829440 max_absolute_error=0; parameter, bank, legacy state, preset and Cocoa editor tests passed
+2026-11-13T01:55:41.4149480Z 2/2 Test #2: au_smoke .........................   Passed    0.17 sec
+2026-11-13T01:55:41.4149940Z 
+2026-11-13T01:55:41.4150030Z 100% tests passed out of 2
+2026-11-13T01:55:41.4150240Z 
+2026-11-13T01:55:41.4150380Z Total Test time (real) =   0.18 sec
+2026-11-13T01:55:41.4210210Z ##[group]Run codesign --force --deep --sign - build-au/CamelCrusherAU.component
+2026-11-13T01:55:41.4210730Z [36;1mcodesign --force --deep --sign - build-au/CamelCrusherAU.component[0m
+2026-11-13T01:55:41.4211280Z [36;1mcodesign --verify --deep --strict build-au/CamelCrusherAU.component[0m
+2026-11-13T01:55:41.4211770Z [36;1mlipo -archs build-au/CamelCrusherAU.component/Contents/MacOS/CamelCrusherAU[0m
+2026-11-13T01:55:41.4212260Z [36;1mmkdir -p "$HOME/Library/Audio/Plug-Ins/Components"[0m
+2026-11-13T01:55:41.4212860Z [36;1mditto build-au/CamelCrusherAU.component "$HOME/Library/Audio/Plug-Ins/Components/CamelCrusherAU.component"[0m
+2026-11-13T01:55:41.4213530Z [36;1mplutil -p build-au/CamelCrusherAU.component/Contents/Info.plist[0m
+2026-11-13T01:55:41.4215070Z [36;1mtouch "$HOME/Library/Audio/Plug-Ins/Components"[0m
+2026-11-13T01:55:41.4215500Z [36;1mkillall AudioComponentRegistrar || true[0m
+2026-11-13T01:55:41.4215910Z [36;1msudo mkdir -p /Library/Audio/Plug-Ins/Components[0m
+2026-11-13T01:55:41.4216530Z [36;1msudo ditto build-au/CamelCrusherAU.component /Library/Audio/Plug-Ins/Components/CamelCrusherAU.component[0m
+2026-11-13T01:55:41.4217150Z [36;1msudo touch /Library/Audio/Plug-Ins/Components[0m
+2026-11-13T01:55:41.4217460Z [36;1mkillall -9 AudioComponentRegistrar || true[0m
+2026-11-13T01:55:41.4218090Z [36;1msleep 3[0m
+2026-11-13T01:55:41.4218310Z [36;1mauval -a[0m
+2026-11-13T01:55:41.4218590Z [36;1mif ! auval -v aumf CrP1 Prsv; then[0m
+2026-11-13T01:55:41.4219100Z [36;1m  /usr/bin/log show --last 3m --style compact --info --predicate 'process == "AudioComponentRegistrar"' || true[0m
+2026-11-13T01:55:41.4219630Z [36;1m  exit 1[0m
+2026-11-13T01:55:41.4219910Z [36;1mfi[0m
+2026-11-13T01:55:41.4286890Z shell: /bin/bash -e {0}
+2026-11-13T01:55:41.4287430Z ##[endgroup]
+2026-11-13T01:55:41.4718300Z build-au/CamelCrusherAU.component: replacing existing signature
+2026-11-13T01:55:42.2440900Z x86_64 arm64
+2026-11-13T01:55:42.2867450Z {
+2026-11-13T01:55:42.2961680Z   "AudioComponents" => [
+2026-11-13T01:55:42.2963320Z     0 => {
+2026-11-13T01:55:42.2963900Z       "description" => "CamelCrusher DSP preservation"
+2026-11-13T01:55:42.2964470Z       "factoryFunction" => "CamelCrusherAUFactory"
+2026-11-13T01:55:42.2964920Z       "manufacturer" => "Prsv"
+2026-11-13T01:55:42.2965430Z       "name" => "Preservation Research: CamelCrusher"
+2026-11-13T01:55:42.2965760Z       "sandboxSafe" => 1
+2026-11-13T01:55:42.2966070Z       "subtype" => "CrP1"
+2026-11-13T01:55:42.2966320Z       "type" => "aumf"
+2026-11-13T01:55:42.2966610Z       "version" => 512
+2026-11-13T01:55:42.2966900Z     }
+2026-11-13T01:55:42.2967090Z   ]
+2026-11-13T01:55:42.2967380Z   "CFBundleDevelopmentRegion" => "en"
+2026-11-13T01:55:42.2967700Z   "CFBundleExecutable" => "CamelCrusherAU"
+2026-11-13T01:55:42.2968380Z   "CFBundleIdentifier" => "org.preservation.camelcrusher.au"
+2026-11-13T01:55:42.2968840Z   "CFBundleInfoDictionaryVersion" => "6.0"
+2026-11-13T01:55:42.2969200Z   "CFBundleName" => "CamelCrusher Preservation"
+2026-11-13T01:55:42.2969510Z   "CFBundlePackageType" => "BNDL"
+2026-11-13T01:55:42.2969860Z   "CFBundleShortVersionString" => "0.2.0"
+2026-11-13T01:55:42.2970230Z   "CFBundleSupportedPlatforms" => [
+2026-11-13T01:55:42.2970510Z     0 => "MacOSX"
+2026-11-13T01:55:42.2970710Z   ]
+2026-11-13T01:55:42.2970910Z   "CFBundleVersion" => "2"
+2026-11-13T01:55:42.2971260Z   "LSMinimumSystemVersion" => "11.0"
+2026-11-13T01:55:42.2971520Z }
+2026-11-13T01:55:47.4118200Z 
+2026-11-13T01:55:47.4137460Z     AU Validation Tool
+2026-11-13T01:55:47.4142140Z     Version: 1.10.0 
+2026-11-13T01:55:47.4144030Z     Copyright 2003-2019, Apple Inc. All Rights Reserved.
+2026-11-13T01:55:47.4146940Z     Specify -h (-help) for command options
+2026-11-13T01:55:47.4147850Z 
+2026-11-13T01:55:47.4148150Z aufx bpas appl  -  Apple: AUBandpass
+2026-11-13T01:55:47.4148570Z aufx dcmp appl  -  Apple: AUDynamicsProcessor
+2026-11-13T01:55:47.4149380Z aufx dely appl  -  Apple: AUDelay
+2026-11-13T01:55:47.4155230Z aufx dist appl  -  Apple: AUDistortion
+2026-11-13T01:55:47.4157430Z aufx filt appl  -  Apple: AUFilter
+2026-11-13T01:55:47.4158780Z aufx greq appl  -  Apple: AUGraphicEQ
+2026-11-13T01:55:47.4159880Z aufx hpas appl  -  Apple: AUHipass
+2026-11-13T01:55:47.4161470Z aufx hshf appl  -  Apple: AUHighShelfFilter
+2026-11-13T01:55:47.4166600Z aufx lmtr appl  -  Apple: AUPeakLimiter
+2026-11-13T01:55:47.4172900Z aufx lpas appl  -  Apple: AULowpass
+2026-11-13T01:55:47.4195480Z aufx lshf appl  -  Apple: AULowShelfFilter
+2026-11-13T01:55:47.4196840Z aufx mcmp appl  -  Apple: AUMultibandCompressor
+2026-11-13T01:55:47.4197520Z aufx mrev appl  -  Apple: AUMatrixReverb
+2026-11-13T01:55:47.4198110Z aufx nbeq appl  -  Apple: AUNBandEQ
+2026-11-13T01:55:47.4198640Z aufx nsnd appl  -  Apple: AUNetSend
+2026-11-13T01:55:47.4199230Z aufx nutp appl  -  Apple: AUNewPitch
+2026-11-13T01:55:47.4199830Z aufx pmeq appl  -  Apple: AUParametricEQ
+2026-11-13T01:55:47.4200490Z aufx raac appl  -  Apple: AURoundTripAAC
+2026-11-13T01:55:47.4201070Z aufx rogr appl  -  Apple: AURogerBeep
+2026-11-13T01:55:47.4201780Z aufx rvb2 appl  -  Apple: AUReverb2
+2026-11-13T01:55:47.4202340Z aufx sdly appl  -  Apple: AUSampleDelay
+2026-11-13T01:55:47.4202990Z aufx tmpt appl  -  Apple: AUPitch
+2026-11-13T01:55:47.4203650Z aufx vois appl  -  Apple: AUSoundIsolation
+2026-11-13T01:55:47.4205650Z aumf CrP1 Prsv  -  Preservation Research: CamelCrusher
+2026-11-13T01:55:47.4206330Z aupn ambi appl  -  Apple: AUSoundFieldPanner
+2026-11-13T01:55:47.4207050Z aupn hrtf appl  -  Apple: HRTFPanner
+2026-11-13T01:55:47.4207640Z aupn sphr appl  -  Apple: AUSphericalHeadPanner
+2026-11-13T01:55:47.4208350Z aupn vbas appl  -  Apple: AUVectorPanner
+2026-11-13T01:55:47.4208990Z aumu dls  appl  -  Apple: DLSMusicDevice
+2026-11-13T01:55:47.4212870Z aumu msyn appl  -  Apple: AUMIDISynth
+2026-11-13T01:55:47.4213350Z aumu samp appl  -  Apple: AUSampler
+2026-11-13T01:55:47.4215200Z aumx 3dem appl  -  Apple: AUSpatialMixer
+2026-11-13T01:55:47.4218420Z aumx 3dmx appl  -  Apple: AUMixer3D
+2026-11-13T01:55:47.4220220Z aumx mcmx appl  -  Apple: AUMultiChannelMixer
+2026-11-13T01:55:47.4222420Z aumx mspl appl  -  Apple: AUMultiSplitter
+2026-11-13T01:55:47.4223920Z aumx mxmx appl  -  Apple: AUMatrixMixer
+2026-11-13T01:55:47.4267070Z aumx smxr appl  -  Apple: AUMixer
+2026-11-13T01:55:47.4363130Z aufc conv appl  -  Apple: AUConverter
+2026-11-13T01:55:47.4391530Z aufc defr appl  -  Apple: AUDeferredRenderer
+2026-11-13T01:55:47.4399190Z aufc ipto appl  -  Apple: AUNotQuiteSoSimpleTime
+2026-11-13T01:55:47.4405230Z aufc merg appl  -  Apple: AUMerger
+2026-11-13T01:55:47.4409230Z aufc nutp appl  -  Apple: AUNewTimePitch
+2026-11-13T01:55:47.4417140Z aufc splt appl  -  Apple: AUSplitter
+2026-11-13T01:55:47.4423480Z aufc tmpt appl  -  Apple: AUTimePitch
+2026-11-13T01:55:47.4440380Z aufc vari appl  -  Apple: AUVarispeed
+2026-11-13T01:55:47.4449410Z auou ahal appl  -  Apple: AudioDeviceOutput
+2026-11-13T01:55:47.4454540Z auou atap appl  -  Apple: AUAudioTapIO
+2026-11-13T01:55:47.4458300Z auou def  appl  -  Apple: DefaultOutputUnit
+2026-11-13T01:55:47.4467510Z auou genr appl  -  Apple: GenericOutput
+2026-11-13T01:55:47.4473670Z auou rioc appl  -  Apple: AUAudioIO
+2026-11-13T01:55:47.4479230Z auou sys  appl  -  Apple: SystemOutputUnit
+2026-11-13T01:55:47.4492550Z auou vpio appl  -  Apple: AUVoiceProcessor
+2026-11-13T01:55:47.4496940Z augn afpl appl  -  Apple: AUAudioFilePlayer
+2026-11-13T01:55:47.4497400Z augn nrcv appl  -  Apple: AUNetReceive
+2026-11-13T01:55:47.4498330Z augn sspl appl  -  Apple: AUScheduledSoundPlayer
+2026-11-13T01:55:47.4498820Z augn ttsp appl  -  Apple: AUSpeechSynthesis
+2026-11-13T01:55:47.4500800Z auol tmpt appl  -  Apple: AUTimePitch
+2026-11-13T01:55:47.4501630Z auol vari appl  -  Apple: AUVarispeed
+2026-11-13T01:55:47.4502170Z 
+2026-11-13T01:55:47.4502330Z     AU Validation Tool
+2026-11-13T01:55:47.4502700Z     Version: 1.10.0 
+2026-11-13T01:55:47.4509990Z     Copyright 2003-2019, Apple Inc. All Rights Reserved.
+2026-11-13T01:55:47.4517220Z     Specify -h (-help) for command options
+2026-11-13T01:55:47.4518210Z 
+2026-11-13T01:55:47.4521540Z --------------------------------------------------
+2026-11-13T01:55:47.4522050Z VALIDATING AUDIO UNIT: 'aumf' - 'CrP1' - 'Prsv'
+2026-11-13T01:55:47.4522560Z --------------------------------------------------
+2026-11-13T01:55:47.4523930Z Manufacturer String: Preservation Research
+2026-11-13T01:55:47.4524660Z AudioUnit Name: CamelCrusher
+2026-11-13T01:55:47.4525610Z Component Version: 0.2.0 (0x200)
+2026-11-13T01:55:47.4569180Z 
+2026-11-13T01:55:47.4572060Z * * PASS
+2026-11-13T01:55:47.4573580Z --------------------------------------------------
+2026-11-13T01:55:47.4579360Z TESTING OPEN TIMES:
+2026-11-13T01:55:47.4580570Z COLD:
+2026-11-13T01:55:47.4611520Z Time to open AudioUnit:         4.088 ms
+2026-11-13T01:55:47.4612830Z WARM:
+2026-11-13T01:55:47.4613390Z Time to open AudioUnit:         0.046  ms
+2026-11-13T01:55:47.4614230Z This AudioUnit is a version 2 implementation.
+2026-11-13T01:55:47.4615040Z FIRST TIME:
+2026-11-13T01:55:47.4615480Z Time for initialization:        0.002 ms
+2026-11-13T01:55:47.4616000Z 
+2026-11-13T01:55:47.4616290Z * * PASS
+2026-11-13T01:55:47.4616730Z --------------------------------------------------
+2026-11-13T01:55:47.4617530Z VERIFYING DEFAULT SCOPE FORMATS:
+2026-11-13T01:55:47.4618230Z Input Scope Bus Configuration:
+2026-11-13T01:55:47.4618860Z  Default Bus Count:1
+2026-11-13T01:55:47.4620940Z     Default Format: AudioStreamBasicDescription:  2 ch,  44100 Hz, Float32, deinterleaved
+2026-11-13T01:55:47.4621690Z 
+2026-11-13T01:55:47.4621880Z Output Scope Bus Configuration:
+2026-11-13T01:55:47.4622400Z  Default Bus Count:1
+2026-11-13T01:55:47.4623440Z     Default Format: AudioStreamBasicDescription:  2 ch,  44100 Hz, Float32, deinterleaved
+2026-11-13T01:55:47.4624280Z 
+2026-11-13T01:55:47.4624440Z * * PASS
+2026-11-13T01:55:47.4624950Z --------------------------------------------------
+2026-11-13T01:55:47.4625720Z VERIFYING REQUIRED PROPERTIES:
+2026-11-13T01:55:47.4626060Z 
+2026-11-13T01:55:47.4626230Z * * PASS
+2026-11-13T01:55:47.4626770Z --------------------------------------------------
+2026-11-13T01:55:47.4627390Z VERIFYING RECOMMENDED PROPERTIES:
+2026-11-13T01:55:47.4628080Z   VERIFYING PROPERTY: Latency
+2026-11-13T01:55:47.4628650Z     PASS
+2026-11-13T01:55:47.4629180Z   VERIFYING PROPERTY: Tail Time
+2026-11-13T01:55:47.4629780Z     PASS
+2026-11-13T01:55:47.4630410Z   VERIFYING PROPERTY: Bypass Effect
+2026-11-13T01:55:47.4631040Z     PASS
+2026-11-13T01:55:47.4631250Z 
+2026-11-13T01:55:47.4631510Z * * PASS
+2026-11-13T01:55:47.4632130Z --------------------------------------------------
+2026-11-13T01:55:47.4632860Z VERIFYING OPTIONAL PROPERTIES:
+2026-11-13T01:55:47.4633310Z 
+2026-11-13T01:55:47.4633570Z * * PASS
+2026-11-13T01:55:47.4634090Z --------------------------------------------------
+2026-11-13T01:55:47.4634900Z VERIFYING SPECIAL PROPERTIES:
+2026-11-13T01:55:47.4635290Z 
+2026-11-13T01:55:47.4635510Z VERIFYING CUSTOM UI
+2026-11-13T01:55:47.4636150Z Cocoa Views Available: 1
+2026-11-13T01:55:47.4636780Z   CCPAUCocoaView
+2026-11-13T01:55:47.4637370Z     PASS
+2026-11-13T01:55:47.4637660Z 
+2026-11-13T01:55:47.4637890Z DEFAULT PRESET: 0, Name: Annihilate
+2026-11-13T01:55:47.4638270Z 
+2026-11-13T01:55:47.4638460Z HAS FACTORY PRESETS
+2026-11-13T01:55:47.4639140Z     ID:   0    Name: Annihilate
+2026-11-13T01:55:47.4640540Z     ID:   1    Name: American Crunch
+2026-11-13T01:55:47.4641340Z     ID:   2    Name: American HiGain
+2026-11-13T01:55:47.4642020Z     ID:   3    Name: British Clean
+2026-11-13T01:55:47.4642810Z     ID:   4    Name: British Crunch
+2026-11-13T01:55:47.4643570Z     ID:   5    Name: British HiGain
+2026-11-13T01:55:47.4644220Z     ID:   6    Name: Bass Maker
+2026-11-13T01:55:47.4644830Z     ID:   7    Name: Clean Rainbow
+2026-11-13T01:55:47.4645470Z     ID:   8    Name: Tube Warmth
+2026-11-13T01:55:47.4646160Z     ID:   9    Name: Dark Crunch
+2026-11-13T01:55:47.4646960Z     ID:  10    Name: Destroyer
+2026-11-13T01:55:47.4647170Z     ID:  11    Name: Ultra Phat
+2026-11-13T01:55:47.4647420Z     ID:  12    Name: Distort
+2026-11-13T01:55:47.4648140Z     ID:  13    Name: Dream
+2026-11-13T01:55:47.4648450Z     ID:  14    Name: More Beef
+2026-11-13T01:55:47.4648700Z     ID:  15    Name: Santana Row
+2026-11-13T01:55:47.4649030Z     ID:  16    Name: Fuzz Filter
+2026-11-13T01:55:47.4649300Z     ID:  17    Name: Subtle Master
+2026-11-13T01:55:47.4649610Z     ID:  18    Name: YouWereWarned
+2026-11-13T01:55:47.4649890Z     ID:  19    Name: Turn it to 11
+2026-11-13T01:55:47.4650080Z 
+2026-11-13T01:55:47.4650140Z VERIFYING CLASS INFO
+2026-11-13T01:55:47.4650290Z     PASS
+2026-11-13T01:55:47.4650440Z 
+2026-11-13T01:55:47.4650560Z TESTING HOST CALLBACKS
+2026-11-13T01:55:47.4650840Z     PASS
+2026-11-13T01:55:47.4651000Z 
+2026-11-13T01:55:47.4651150Z * * PASS
+2026-11-13T01:55:47.4651470Z --------------------------------------------------
+2026-11-13T01:55:47.4651800Z PUBLISHED PARAMETER INFO:
+2026-11-13T01:55:47.4652000Z 
+2026-11-13T01:55:47.4652140Z # # # 17 Global Scope Parameters:
+2026-11-13T01:55:47.4652420Z Parameter ID:0
+2026-11-13T01:55:47.4652690Z Name: DistOn
+2026-11-13T01:55:47.4652920Z Parameter Type: Generic
+2026-11-13T01:55:47.4653230Z Values: Minimum = 0.000000, Default = 1.000000, Maximum = 1.000000
+2026-11-13T01:55:47.4653580Z Flags: Readable, Writable 
+2026-11-13T01:55:47.4654300Z   -parameter PASS
+2026-11-13T01:55:47.4654500Z 
+2026-11-13T01:55:47.4654980Z Parameter ID:1
+2026-11-13T01:55:47.4655860Z Name: DistMech
+2026-11-13T01:55:47.4656190Z Parameter Type: Generic
+2026-11-13T01:55:47.4658140Z Values: Minimum = 0.000000, Default = 0.000000, Maximum = 1.000000
+2026-11-13T01:55:47.4658520Z Flags: Readable, Writable 
+2026-11-13T01:55:47.4658710Z   -parameter PASS
+2026-11-13T01:55:47.4658930Z 
+2026-11-13T01:55:47.4658990Z Parameter ID:2
+2026-11-13T01:55:47.4659140Z Name: DistTube
+2026-11-13T01:55:47.4659300Z Parameter Type: Generic
+2026-11-13T01:55:47.4659690Z Values: Minimum = 0.000000, Default = 0.340000, Maximum = 1.000000
+2026-11-13T01:55:47.4660640Z Flags: Readable, Writable 
+2026-11-13T01:55:47.4661020Z   -parameter PASS
+2026-11-13T01:55:47.4661120Z 
+2026-11-13T01:55:47.4661250Z Parameter ID:3
+2026-11-13T01:55:47.4661480Z Name: MmFilterOn
+2026-11-13T01:55:47.4661640Z Parameter Type: Generic
+2026-11-13T01:55:47.4661870Z Values: Minimum = 0.000000, Default = 0.000000, Maximum = 1.000000
+2026-11-13T01:55:47.4662160Z Flags: Readable, Writable 
+2026-11-13T01:55:47.4662400Z   -parameter PASS
+2026-11-13T01:55:47.4662500Z 
+2026-11-13T01:55:47.4662550Z Parameter ID:4
+2026-11-13T01:55:47.4662740Z Name: MmFilterCutoff
+2026-11-13T01:55:47.4662900Z Parameter Type: Generic
+2026-11-13T01:55:47.4663180Z Values: Minimum = 0.000000, Default = 0.350000, Maximum = 1.000000
+2026-11-13T01:55:47.4663550Z Flags: Readable, Writable 
+2026-11-13T01:55:47.4663830Z   -parameter PASS
+2026-11-13T01:55:47.4663930Z 
+2026-11-13T01:55:47.4664040Z Parameter ID:5
+2026-11-13T01:55:47.4664190Z Name: MmFilterRes
+2026-11-13T01:55:47.4664380Z Parameter Type: Generic
+2026-11-13T01:55:47.4664620Z Values: Minimum = 0.000000, Default = 0.050000, Maximum = 1.000000
+2026-11-13T01:55:47.4664880Z Flags: Readable, Writable 
+2026-11-13T01:55:47.4665060Z   -parameter PASS
+2026-11-13T01:55:47.4665170Z 
+2026-11-13T01:55:47.4665230Z Parameter ID:6
+2026-11-13T01:55:47.4665410Z Name: CompressOn
+2026-11-13T01:55:47.4665650Z Parameter Type: Generic
+2026-11-13T01:55:47.4665950Z Values: Minimum = 0.000000, Default = 1.000000, Maximum = 1.000000
+2026-11-13T01:55:47.4666220Z Flags: Readable, Writable 
+2026-11-13T01:55:47.4666390Z   -parameter PASS
+2026-11-13T01:55:47.4666480Z 
+2026-11-13T01:55:47.4666540Z Parameter ID:7
+2026-11-13T01:55:47.4666690Z Name: CompressAmount
+2026-11-13T01:55:47.4666910Z Parameter Type: Generic
+2026-11-13T01:55:47.4667150Z Values: Minimum = 0.000000, Default = 0.905000, Maximum = 1.000000
+2026-11-13T01:55:47.4667590Z Flags: Readable, Writable 
+2026-11-13T01:55:47.4667830Z   -parameter PASS
+2026-11-13T01:55:47.4667980Z 
+2026-11-13T01:55:47.4668080Z Parameter ID:8
+2026-11-13T01:55:47.4668220Z Name: CompressMode
+2026-11-13T01:55:47.4668470Z Parameter Type: Generic
+2026-11-13T01:55:47.4669010Z Values: Minimum = 0.000000, Default = 1.000000, Maximum = 1.000000
+2026-11-13T01:55:47.4669330Z Flags: Readable, Writable 
+2026-11-13T01:55:47.4669570Z   -parameter PASS
+2026-11-13T01:55:47.4669700Z 
+2026-11-13T01:55:47.4669760Z Parameter ID:9
+2026-11-13T01:55:47.4669890Z Name: MasterOn
+2026-11-13T01:55:47.4670110Z Parameter Type: Generic
+2026-11-13T01:55:47.4670380Z Values: Minimum = 0.000000, Default = 1.000000, Maximum = 1.000000
+2026-11-13T01:55:47.4670680Z Flags: Readable, Writable 
+2026-11-13T01:55:47.4670920Z   -parameter PASS
+2026-11-13T01:55:47.4671060Z 
+2026-11-13T01:55:47.4671110Z Parameter ID:10
+2026-11-13T01:55:47.4671330Z Name: MasterMix
+2026-11-13T01:55:47.4671520Z Parameter Type: Generic
+2026-11-13T01:55:47.4671780Z Values: Minimum = 0.000000, Default = 1.000000, Maximum = 1.000000
+2026-11-13T01:55:47.4672080Z Flags: Readable, Writable 
+2026-11-13T01:55:47.4672250Z   -parameter PASS
+2026-11-13T01:55:47.4672380Z 
+2026-11-13T01:55:47.4672480Z Parameter ID:11
+2026-11-13T01:55:47.4672660Z Name: MasterVolume
+2026-11-13T01:55:47.4672880Z Parameter Type: Generic
+2026-11-13T01:55:47.4673150Z Values: Minimum = 0.000000, Default = 0.780000, Maximum = 1.000000
+2026-11-13T01:55:47.4673490Z Flags: Readable, Writable 
+2026-11-13T01:55:47.4673700Z   -parameter PASS
+2026-11-13T01:55:47.4673840Z 
+2026-11-13T01:55:47.4674290Z Parameter ID:12
+2026-11-13T01:55:47.4674480Z Name: Unused1
+2026-11-13T01:55:47.4674740Z Parameter Type: Generic
+2026-11-13T01:55:47.4675030Z Values: Minimum = 0.000000, Default = 0.000000, Maximum = 1.000000
+2026-11-13T01:55:47.4675350Z Flags: Readable, Writable 
+2026-11-13T01:55:47.4675590Z   -parameter PASS
+2026-11-13T01:55:47.4675690Z 
+2026-11-13T01:55:47.4675780Z Parameter ID:13
+2026-11-13T01:55:47.4675990Z Name: Unused2
+2026-11-13T01:55:47.4676170Z Parameter Type: Generic
+2026-11-13T01:55:47.4676470Z Values: Minimum = 0.000000, Default = 0.000000, Maximum = 1.000000
+2026-11-13T01:55:47.4676770Z Flags: Readable, Writable 
+2026-11-13T01:55:47.4677020Z   -parameter PASS
+2026-11-13T01:55:47.4677150Z 
+2026-11-13T01:55:47.4677210Z Parameter ID:14
+2026-11-13T01:55:47.4677350Z Name: Unused3
+2026-11-13T01:55:47.4677490Z Parameter Type: Generic
+2026-11-13T01:55:47.4677710Z Values: Minimum = 0.000000, Default = 0.000000, Maximum = 1.000000
+2026-11-13T01:55:47.4677970Z Flags: Readable, Writable 
+2026-11-13T01:55:47.4678130Z   -parameter PASS
+2026-11-13T01:55:47.4678230Z 
+2026-11-13T01:55:47.4678280Z Parameter ID:15
+2026-11-13T01:55:47.4678410Z Name: Unused4
+2026-11-13T01:55:47.4678600Z Parameter Type: Generic
+2026-11-13T01:55:47.4678820Z Values: Minimum = 0.000000, Default = 0.000000, Maximum = 1.000000
+2026-11-13T01:55:47.4679080Z Flags: Readable, Writable 
+2026-11-13T01:55:47.4679250Z   -parameter PASS
+2026-11-13T01:55:47.4679340Z 
+2026-11-13T01:55:47.4679390Z Parameter ID:16
+2026-11-13T01:55:47.4679530Z Name: Unused5
+2026-11-13T01:55:47.4679670Z Parameter Type: Generic
+2026-11-13T01:55:47.4679890Z Values: Minimum = 0.000000, Default = 0.000000, Maximum = 1.000000
+2026-11-13T01:55:47.4680150Z Flags: Readable, Writable 
+2026-11-13T01:55:47.4680310Z   -parameter PASS
+2026-11-13T01:55:47.4680410Z 
+2026-11-13T01:55:47.4680550Z Testing that parameters retain value across reset and initialization
+2026-11-13T01:55:47.4680820Z   PASS
+2026-11-13T01:55:47.4680900Z 
+2026-11-13T01:55:47.4680950Z * * PASS
+2026-11-13T01:55:47.4681100Z --------------------------------------------------
+2026-11-13T01:55:47.4681310Z FORMAT TESTS:
+2026-11-13T01:55:47.4681390Z 
+2026-11-13T01:55:47.4681480Z Reported Channel Capabilities (explicit):
+2026-11-13T01:55:47.4681670Z       [2, 2]  
+2026-11-13T01:55:47.4681750Z 
+2026-11-13T01:55:47.4681820Z Input/Output Channel Handling:
+2026-11-13T01:55:47.4682120Z 1-1   1-2   1-4   1-5   1-6   1-7   1-8   2-2   2-4   2-5   2-6   2-7   2-8   4-4   4-5   5-5   6-6   7-7   8-8
+2026-11-13T01:55:47.4682510Z                                           X                                                                       
+2026-11-13T01:55:47.4682730Z 
+2026-11-13T01:55:47.4682780Z * * PASS
+2026-11-13T01:55:47.4683160Z --------------------------------------------------
+2026-11-13T01:55:47.4683390Z RENDER TESTS:
+2026-11-13T01:55:47.4683470Z 
+2026-11-13T01:55:47.4683660Z Input Format: AudioStreamBasicDescription:  2 ch,  44100 Hz, Float32, deinterleaved
+2026-11-13T01:55:47.4684120Z Output Format: AudioStreamBasicDescription:  2 ch,  44100 Hz, Float32, deinterleaved
+2026-11-13T01:55:47.4684460Z Render Test at 512 frames
+2026-11-13T01:55:47.4684640Z Slicing Render Test at 64 frames
+2026-11-13T01:55:47.4684810Z   PASS
+2026-11-13T01:55:47.4684880Z 
+2026-11-13T01:55:47.4684880Z 
+2026-11-13T01:55:47.4684970Z Render Test at 64 frames, sample rate: 22050 Hz
+2026-11-13T01:55:47.4685230Z Render Test at 137 frames, sample rate: 96000 Hz
+2026-11-13T01:55:47.4685480Z Render Test at 4096 frames, sample rate: 48000 Hz
+2026-11-13T01:55:47.4685730Z Render Test at 4096 frames, sample rate: 192000 Hz
+2026-11-13T01:55:47.4685980Z Render Test at 4096 frames, sample rate: 11025 Hz
+2026-11-13T01:55:47.4686220Z Render Test at 512 frames, sample rate: 44100 Hz
+2026-11-13T01:55:47.4686430Z   PASS
+2026-11-13T01:55:47.4686500Z 
+2026-11-13T01:55:47.4686570Z Checking connection semantics:
+2026-11-13T01:55:47.4686960Z Connection format:
+2026-11-13T01:55:47.4687330Z AudioStreamBasicDescription:  2 ch,  44100 Hz, Float32, deinterleaved
+2026-11-13T01:55:47.4687850Z   PASS
+2026-11-13T01:55:47.4687990Z 
+2026-11-13T01:55:47.4688130Z Bad Max Frames - Render should fail
+2026-11-13T01:55:47.4688540Z   PASS
+2026-11-13T01:55:47.4688680Z 
+2026-11-13T01:55:47.4688810Z Checking parameter setting
+2026-11-13T01:55:47.4689070Z Using AudioUnitSetParameter
+2026-11-13T01:55:47.4689380Z Using AudioUnitScheduleParameter
+2026-11-13T01:55:47.4689640Z   PASS
+2026-11-13T01:55:47.4689780Z 
+2026-11-13T01:55:47.4689890Z Test MIDI
+2026-11-13T01:55:47.4690150Z   PASS
+2026-11-13T01:55:47.4690230Z 
+2026-11-13T01:55:47.4690370Z * * PASS
+2026-11-13T01:55:47.7840420Z --------------------------------------------------
+2026-11-13T01:55:47.7842750Z AU VALIDATION SUCCEEDED.
+2026-11-13T01:55:47.7843060Z --------------------------------------------------
+2026-11-13T01:55:47.7900350Z ##[group]Run mkdir -p download
+2026-11-13T01:55:47.7900620Z [36;1mmkdir -p download[0m
+2026-11-13T01:55:47.7900940Z [36;1mditto build-au/CamelCrusherAU.component download/CamelCrusherAU.component[0m
+2026-11-13T01:55:47.7901350Z [36;1mcp CamelCrusherPreservation/NOTICE.md download/[0m
+2026-11-13T01:55:47.7901720Z [36;1mcp CamelCrusherPreservation/docs/AU-INSTALL.md download/INSTALL.md[0m
+2026-11-13T01:55:47.7902160Z [36;1mcp "$RUNNER_TEMP/AudioUnitSDK/LICENSE.txt" download/AudioUnitSDK-LICENSE.txt[0m
+2026-11-13T01:55:47.7902610Z [36;1mditto -c -k --sequesterRsrc --keepParent download CamelCrusher-AU-Mac.zip[0m
+2026-11-13T01:55:47.7948600Z shell: /bin/bash -e {0}
+2026-11-13T01:55:47.7948780Z ##[endgroup]
+2026-11-13T01:55:47.9108720Z ##[group]Run actions/upload-artifact@v4
+2026-11-13T01:55:47.9109010Z with:
+2026-11-13T01:55:47.9109170Z   name: CamelCrusher-AU-Mac
+2026-11-13T01:55:47.9109410Z   path: CamelCrusher-AU-Mac.zip
+2026-11-13T01:55:47.9109630Z   if-no-files-found: error
+2026-11-13T01:55:47.9109820Z   compression-level: 6
+2026-11-13T01:55:47.9110000Z   overwrite: false
+2026-11-13T01:55:47.9110180Z   include-hidden-files: false
+2026-11-13T01:55:47.9110370Z ##[endgroup]
+2026-11-13T01:55:48.0996380Z (node:4494) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-11-13T01:55:48.1001840Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-11-13T01:55:48.1066820Z With the provided path, there will be 1 file uploaded
+2026-11-13T01:55:48.1067400Z Artifact name is valid!
+2026-11-13T01:55:48.1067720Z Root directory input is valid!
+2026-11-13T01:55:48.4575780Z Beginning upload of artifact content to blob storage
+2026-11-13T01:55:48.5109830Z (node:4494) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2026-11-13T01:55:48.7909210Z Uploaded bytes 425050
+2026-11-13T01:55:48.8295520Z Finished uploading artifact content to blob storage!
+2026-11-13T01:55:48.8297710Z SHA256 digest of uploaded artifact zip is f13d8843eadaa94ad5d2336d539900dedb7b3062897631e8ccd6fe0f3856a8b0
+2026-11-13T01:55:48.8298930Z Finalizing artifact upload
+2026-11-13T01:55:49.2365150Z Artifact CamelCrusher-AU-Mac.zip successfully finalized. Artifact ID 14001904890
+2026-11-13T01:55:49.2367350Z Artifact CamelCrusher-AU-Mac has been successfully uploaded! Final size is 425050 bytes. Artifact ID is 14001904890
+2026-11-13T01:55:49.2383360Z Artifact download URL: https://github.com/kalmnet/CGPTCamelCrusherPort/actions/runs/43348379334/artifacts/14001904890
+2026-11-13T01:55:49.2838430Z Post job cleanup.
+2026-11-13T01:55:49.3932510Z [command]/opt/homebrew/bin/git version
+2026-11-13T01:55:49.4019060Z git version 2.56.0
+2026-11-13T01:55:49.4039830Z Copying '/Users/runner/.gitconfig' to '/Users/runner/work/_temp/8e638e2d-8dfc-4593-85c0-e677688a6a46/.gitconfig'
+2026-11-13T01:55:49.4052200Z Temporarily overriding HOME='/Users/runner/work/_temp/8e638e2d-8dfc-4593-85c0-e677688a6a46' before making global git config changes
+2026-11-13T01:55:49.4054430Z Adding repository directory to the temporary git global config as a safe directory
+2026-11-13T01:55:49.4066250Z [command]/opt/homebrew/bin/git config --global --add safe.directory /Users/runner/work/CGPTCamelCrusherPort/CGPTCamelCrusherPort
+2026-11-13T01:55:49.4153160Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-13T01:55:49.4224590Z [command]/opt/homebrew/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-13T01:55:49.5318610Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-13T01:55:49.5375810Z http.https://github.com/.extraheader
+2026-11-13T01:55:49.5388340Z [command]/opt/homebrew/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-11-13T01:55:49.5469910Z [command]/opt/homebrew/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-11-13T01:55:49.6318320Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-13T01:55:49.6380690Z [command]/opt/homebrew/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-11-13T01:55:49.7684190Z Cleaning up orphan processes
+2026-11-13T01:55:50.0572430Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/upload-artifact@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
