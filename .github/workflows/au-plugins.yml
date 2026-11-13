@@ -32,6 +32,10 @@ jobs:
           lipo -archs build-au/CamelCrusherAU.component/Contents/MacOS/CamelCrusherAU
           mkdir -p "$HOME/Library/Audio/Plug-Ins/Components"
           ditto build-au/CamelCrusherAU.component "$HOME/Library/Audio/Plug-Ins/Components/CamelCrusherAU.component"
+          plutil -p build-au/CamelCrusherAU.component/Contents/Info.plist
+          touch "$HOME/Library/Audio/Plug-Ins/Components"
+          killall AudioComponentRegistrar || true
+          auval -a
           auval -v aumf CrP1 Prsv
       - name: Package
         run: |
