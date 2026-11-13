@@ -1,8 +1,8 @@
 # CamelCrusher 1.01 preservation research
 
-C++ reconstruction from the **supplied Intel VST and AU binaries**, with a native macOS ARM64 VST3 build target, original bitmap GUI assets, a legacy ABI compatibility adapter, and an experimental AUv2 target. No replacement `tanh` distortion, substitute compressor, Moog-style filter, or added oversampling was used.
+C++ reconstruction from the **supplied Intel VST and AU binaries**, with a native macOS ARM64 VST3 build target, original bitmap GUI assets, a legacy ABI compatibility adapter, and a native AUv2 adapter. No replacement `tanh` distortion, substitute compressor, Moog-style filter, or added oversampling was used.
 
-**Status:** compiled universal macOS VST3 and legacy VST2 test bundles are now available. They include ARM64 and x86_64 slices, passed architecture/signature checks, core/adapter tests and 47 VST3 validator tests on an Apple Silicon GitHub runner (Xcode 15.4). [Download](https://github.com/kalmnet/CGPTCamelCrusherPort/releases/tag/v0.1.1) and follow [installation steps](docs/INSTALL.md). The user confirmed working GUI/controls in Live 12.4.6 and FL Studio 26.1.7 build 5419, and tested VST2 project recall in both Windows/Mac directions. Full original-plugin sound comparisons remain pending; see docs/ACCEPTANCE.md. The experimental AU target is not included in the binary package.
+**Status:** compiled universal macOS VST3 and legacy VST2 test bundles are now available. They include ARM64 and x86_64 slices, passed architecture/signature checks, core/adapter tests and 47 VST3 validator tests on an Apple Silicon GitHub runner (Xcode 15.4). [Download](https://github.com/kalmnet/CGPTCamelCrusherPort/releases/tag/v0.1.1) and follow [installation steps](docs/INSTALL.md). The user confirmed working GUI/controls in Live 12.4.6 and FL Studio 26.1.7 build 5419, and tested VST2 project recall in both Windows/Mac directions. Full original-plugin sound comparisons remain pending; see docs/ACCEPTANCE.md. AU 0.2.0 is packaged separately; see docs/AU-INSTALL.md and docs/AU-STATUS.md.
 
 Your observation is recorded in the report: the existing AU responds to parameters despite a black GUI; the existing VST has a black GUI and its parameters do not audibly work. Use the AU as the full-plugin reference on your Mac.
 
@@ -34,7 +34,7 @@ CAMEL_BUILD_LEGACY=ON bash tools/build_macos.sh
 
 Find the resulting `CamelCrusher.vst` bundle under `build-macos/`. Keep a backup of the original VST bundle and old projects. Install the new legacy bundle only after following `docs/MIGRATION.md`. Do not register both VST2 implementations with the same ID in a DAW scan. The adapter's Cocoa editor uses the legacy NSView extension and needs a real Live/FL Studio test; its generic host parameter editor is an additional test path.
 
-## Optional AUv2 source target
+## Native AUv2 target
 
 The AU target uses Apple's Apache-2.0 AudioUnitSDK. The pinned version uses C++23 and requires a sufficiently recent Xcode/libc++.
 
@@ -45,7 +45,7 @@ export AUDIOUNIT_SDK_ROOT="$PWD/deps/AudioUnitSDK"
 CAMEL_BUILD_AU=ON bash tools/build_macos.sh
 ```
 
-Its default component identity is `aumf / CrP1 / Prsv`, so it can coexist with the functioning original AU. It has the same reconstructed DSP and a Cocoa editor. This is experimental, uncompiled here, and must pass `auval` and render comparisons before use. `CAMEL_AU_LEGACY_ID=ON` changes the identity to the recovered `aumf / CaCr / CamA`; that collides with the original AU and is a separate recall experiment, not the default.
+Its default component identity is `aumf / CrP1 / Prsv`, so it can coexist with the functioning original AU. It has the same reconstructed DSP and a Cocoa editor. The separate AU package is built and validated in Mac CI; see docs/AU-STATUS.md for adapter tests and remaining original-AU/DAW comparisons. `CAMEL_AU_LEGACY_ID=ON` changes the identity to the recovered `aumf / CaCr / CamA`; that collides with the original AU and is a separate recall experiment, not the default.
 
 ## Import existing settings
 
@@ -78,4 +78,4 @@ python3 tests/test_presets.py
 - MIDI Learn, the original MIDI event scheduler, circular knob interaction, and the full original preset/file menus are not implemented.
 - GUI randomization uses a modern RNG. The distortion/filter/compressor signal algorithms do not use that substitute.
 - The background, control sprites and main readout glyphs are original. Cocoa interaction code compiled on macOS; version text uses an AppKit font. Visual and interaction validation in real DAWs remains pending.
-- The AU host tail declaration and AU adapter state handling are new integration behavior and require their own validation.
+- AU host tail metadata and automation adaptation are new integration behavior. Adapter tests cover state and rendering; original-AU full-host comparisons remain pending.
