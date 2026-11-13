@@ -2,7 +2,7 @@
 
 C++ reconstruction from the **supplied Intel VST and AU binaries**, with a native macOS ARM64 VST3 build target, original bitmap GUI assets, a legacy ABI compatibility adapter, and a native AUv2 adapter. No replacement `tanh` distortion, substitute compressor, Moog-style filter, or added oversampling was used.
 
-**Status:** compiled universal macOS VST3 and legacy VST2 test bundles are now available. They include ARM64 and x86_64 slices, passed architecture/signature checks, core/adapter tests and 47 VST3 validator tests on an Apple Silicon GitHub runner (Xcode 15.4). [Download](https://github.com/kalmnet/CGPTCamelCrusherPort/releases/tag/v0.1.1) and follow [installation steps](docs/INSTALL.md). The user confirmed working GUI/controls in Live 12.4.6 and FL Studio 26.1.7 build 5419, and tested VST2 project recall in both Windows/Mac directions. Full original-plugin sound comparisons remain pending; see docs/ACCEPTANCE.md. AU 0.2.0 is packaged separately; see docs/AU-INSTALL.md and docs/AU-STATUS.md.
+**Status:** compiled universal macOS VST3 and legacy VST2 test bundles are now available. They include ARM64 and x86_64 slices, passed architecture/signature checks, core/adapter tests and 47 VST3 validator tests on an Apple Silicon GitHub runner (Xcode 15.4). [Download](https://github.com/kalmnet/CGPTCamelCrusherPort/releases/tag/v0.1.1) and follow [installation steps](docs/INSTALL.md). The user confirmed working GUI/controls in Live 12.4.6 and FL Studio 26.1.7 build 5419, and tested VST2 project recall in both Windows/Mac directions. Full original-plugin sound comparisons remain pending; see docs/ACCEPTANCE.md. The original-name AU replacement is packaged separately; see docs/AU-INSTALL.md and docs/AU-STATUS.md.
 
 Your observation is recorded in the report: the existing AU responds to parameters despite a black GUI; the existing VST has a black GUI and its parameters do not audibly work. Use the AU as the full-plugin reference on your Mac.
 
@@ -45,7 +45,7 @@ export AUDIOUNIT_SDK_ROOT="$PWD/deps/AudioUnitSDK"
 CAMEL_BUILD_AU=ON bash tools/build_macos.sh
 ```
 
-Its default component identity is `aumf / CrP1 / Prsv`, so it can coexist with the functioning original AU. It has the same reconstructed DSP and a Cocoa editor. The separate AU package is built and validated in Mac CI; see docs/AU-STATUS.md for adapter tests and remaining original-AU/DAW comparisons. `CAMEL_AU_LEGACY_ID=ON` changes the identity to the recovered `aumf / CaCr / CamA`; that collides with the original AU and is a separate recall experiment, not the default.
+Its default component identity is the original `aumf / CaCr / CamA`, and it builds `CamelCrusher.component` with the original name and bundle identifier. It replaces the unsupported original AU. It has the same reconstructed DSP and a Cocoa editor. The separate AU package is built and validated in Mac CI; see docs/AU-STATUS.md for adapter tests and remaining original-AU/DAW comparisons. `CAMEL_AU_LEGACY_ID` defaults to ON. Move the old AU outside scanned locations before installing the replacement. Original-identity state decoding is tested; real old-project recall still needs host confirmation.
 
 ## Import existing settings
 

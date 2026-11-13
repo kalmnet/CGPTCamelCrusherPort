@@ -1,6 +1,6 @@
-# CamelCrusher Preservation AU 0.2.0
+# CamelCrusher AU replacement — download revision 0.2.1
 
-Native AUv2 music effect using the recovered CamelCrusher DSP and original bitmap interface. Universal bundle: ARM64 and x86_64. Separate identity: aumf / CrP1 / Prsv.
+Native AUv2 music effect using the recovered CamelCrusher DSP and original bitmap interface. Universal bundle: ARM64 and x86_64. Original identity: aumf / CaCr / CamA. Original bundle identifier: com.camelaudio.au.CamelCrusher. Product/editor name: CamelCrusher. File: CamelCrusher.component.
 
 ## Completed adapter behavior
 
@@ -18,7 +18,7 @@ AU-to-core equality validates the adapter, not full equality with the original h
 
 The original wrapper's quiet-counter optimization and MIDI Learn are not implemented. Scheduled automation is adapted at host-block granularity. The AU declares a conservative new 30-second tail, which is integration metadata, not a recovered original constant.
 
-The default new component coexists with the original AU and does not automatically replace old AU instances. The source-only CAMEL_AU_LEGACY_ID option collides with the original identity and is not certified for original-AU project recall. Existing VST2/VST3 0.1.1 binaries are unchanged.
+The distributed component now replaces the original AU identity, as requested. CAMEL_AU_LEGACY_ID defaults to ON. Move the old component and the earlier separate CamelCrusherAU.component outside scanned locations before installing it. Matching identity, bundle name/identifier and investigated old-state restoration are tested; actual old AU project/automation recall still needs user confirmation. Existing VST2/VST3 0.1.1 binaries are unchanged.
 
 ## Build AU only
 
@@ -35,3 +35,7 @@ ctest --test-dir build-au --output-on-failure -V
 The deployment target is macOS 11; runtime tests are on the stated CI image, not every older OS. The AU smoke test loads/registers its bundle in-process, so it can test the actual factory/editor without changing installed plugins. Normal OS registration/auval is checked separately by CI on its disposable runner.
 
 Installation: AU-INSTALL.md. Distribution/provenance limits: ../NOTICE.md. The release bundles Apple's AudioUnitSDK license.
+
+## Replacement identity verification
+
+Run 43352082334, source 8bdd1d543499aab353985dc055a964da34297d4b, passed Apple validation for aumf / CaCr / CamA, reporting Camel Audio as manufacturer. Tests check the original bundle identifier, product name, original-identity state payloads and saved identity fields in addition to existing rendering/state/editor tests. The displayed version remains 1.01; bundle/component revision 1.01.1 supersedes the original for scanning. This is independent preservation work, not an official Camel Audio release. The earlier separate-identity AU 0.2.0 is superseded for this user's replacement requirement.
