@@ -24,7 +24,7 @@ jobs:
       - name: Compile
         run: cmake --build build-au --parallel 3
       - name: Core tests
-        run: ctest --test-dir build-au --output-on-failure
+        run: ctest --test-dir build-au --output-on-failure -V
       - name: Sign, install, and validate AU
         run: |
           codesign --force --deep --sign - build-au/CamelCrusherAU.component
@@ -50,6 +50,8 @@ jobs:
           mkdir -p download
           ditto build-au/CamelCrusherAU.component download/CamelCrusherAU.component
           cp CamelCrusherPreservation/NOTICE.md download/
+          cp CamelCrusherPreservation/docs/AU-INSTALL.md download/INSTALL.md
+          cp "$RUNNER_TEMP/AudioUnitSDK/LICENSE.txt" download/AudioUnitSDK-LICENSE.txt
           ditto -c -k --sequesterRsrc --keepParent download CamelCrusher-AU-Mac.zip
       - uses: actions/upload-artifact@v4
         with:
