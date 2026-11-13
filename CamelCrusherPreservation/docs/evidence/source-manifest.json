@@ -2,8 +2,8 @@
   "files": [
     {
       "path": "CMakeLists.txt",
-      "sha256": "92fbe05e9eba4e3df36b0ce02e84276cb91eee2a6ef3c474c4b2d2a242c362d9",
-      "bytes": 6725
+      "sha256": "1cc64fa7d4c646801044484707c40e0ffd197df94993a6f06c078f0f70de41f4",
+      "bytes": 7160
     },
     {
       "path": "NOTICE.md",
@@ -12,8 +12,8 @@
     },
     {
       "path": "README.md",
-      "sha256": "37931f352caba216323d14c8db70db8eb9b1e70134fe064d6953d0bda3c5b829",
-      "bytes": 6837
+      "sha256": "699c560c984b5f691b173b40bc538e457d7af5d2b2c7e3c462f0aa7be2936e7f",
+      "bytes": 6927
     },
     {
       "path": "docs/ACCEPTANCE.md",
@@ -21,9 +21,19 @@
       "bytes": 1291
     },
     {
+      "path": "docs/AU-INSTALL.md",
+      "sha256": "638ca529f40cfd90a9247fa3059eee2a33a7dfd30a234a7028d25028f47c3f58",
+      "bytes": 1635
+    },
+    {
+      "path": "docs/AU-STATUS.md",
+      "sha256": "e8cddf3ecfa5e456b48719f44f7d6b792332f1ddf74b6fdc86aa4a12cb64f34f",
+      "bytes": 3182
+    },
+    {
       "path": "docs/FINDINGS.md",
-      "sha256": "2afe5b3d6b98da3d6ba1860256c62e76f1ceba64295ca36109bc53522a2f47bb",
-      "bytes": 16307
+      "sha256": "997d28790de4c8b18583e4d60710781f5d338dee668f30162dcdf4377db9d5d8",
+      "bytes": 16999
     },
     {
       "path": "docs/INSTALL.md",
@@ -59,6 +69,11 @@
       "path": "docs/evidence/au-differential.json",
       "sha256": "d5541c4c7497a08fa65a314a8857513ce080a2445b38fe1aaaab084a5b9c141a",
       "bytes": 483
+    },
+    {
+      "path": "docs/evidence/au-native-validation.log",
+      "sha256": "71afda73050d464dc194876bc107caa247404b7ace57d78e5cbde14a2de5d151",
+      "bytes": 46846
     },
     {
       "path": "docs/evidence/au-selected-decompilation.c",
@@ -127,8 +142,8 @@
     },
     {
       "path": "resources/AuInfo.plist.in",
-      "sha256": "fd553080b33880fad190554ae89eddecafc7edcfc1498043ed1f8d40f48bfc68",
-      "bytes": 986
+      "sha256": "26a71bc3f2a00be8b5e54a2325d7f19e382e72dfa4979e2e3d04b966e010995b",
+      "bytes": 1262
     },
     {
       "path": "resources/Background.png",
@@ -197,8 +212,8 @@
     },
     {
       "path": "src/Au.mm",
-      "sha256": "ea6c82acf4386dc6b1f8f7751d97d8550e5d5bb46593ac9eb7b2215094c7bdb2",
-      "bytes": 9189
+      "sha256": "946b7f1d5013a6261da2e90697ffba7069d1228db2daa65dd8c9f3e6d1dce574",
+      "bytes": 13903
     },
     {
       "path": "src/Dsp.cpp",
@@ -264,6 +279,11 @@
       "path": "src/Vst3MacView.mm",
       "sha256": "1b6559aa9de02d9a68b261df98ede9601af4d1950c84d25ca3b58a51b2e03549",
       "bytes": 1751
+    },
+    {
+      "path": "tests/au_smoke.mm",
+      "sha256": "89209ba118d6141f55e968ba73167eb1d790b49fdabfd7017d694e8d9dddde9e",
+      "bytes": 10109
     },
     {
       "path": "tests/bridge.cpp",
