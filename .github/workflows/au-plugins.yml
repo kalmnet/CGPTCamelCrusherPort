@@ -35,6 +35,9 @@ jobs:
           plutil -p build-au/CamelCrusherAU.component/Contents/Info.plist
           touch "$HOME/Library/Audio/Plug-Ins/Components"
           killall AudioComponentRegistrar || true
+          sudo mkdir -p /Library/Audio/Plug-Ins/Components
+          sudo ditto build-au/CamelCrusherAU.component /Library/Audio/Plug-Ins/Components/CamelCrusherAU.component
+          sleep 2
           auval -a
           auval -v aumf CrP1 Prsv
       - name: Package
