@@ -51,6 +51,9 @@ int main(int argc,char** argv){@autoreleasepool{
    CFPropertyListRef state=nullptr;bytes=sizeof state;check(AudioUnitGetProperty(u.u,kAudioUnitProperty_ClassInfo,kAudioUnitScope_Global,0,&state,&bytes),"Save state");
    Unit restored(component);check(AudioUnitSetProperty(restored.u,kAudioUnitProperty_ClassInfo,kAudioUnitScope_Global,0,&state,sizeof state),"Restore state");require(selected(restored.u)==13,"Current program recall");verify(restored.u,values);
    select(restored.u,4);verify(restored.u,other);select(restored.u,13);verify(restored.u,values);CFRelease(state);
+   AUPreset custom{-1,CFSTR("User saved name")};check(AudioUnitSetProperty(u.u,kAudioUnitProperty_PresentPreset,kAudioUnitScope_Global,0,&custom,sizeof custom),"Custom preset name");
+   CFPropertyListRef customState=nullptr;bytes=sizeof customState;check(AudioUnitGetProperty(u.u,kAudioUnitProperty_ClassInfo,kAudioUnitScope_Global,0,&customState,&bytes),"Save custom name");Unit named(component);check(AudioUnitSetProperty(named.u,kAudioUnitProperty_ClassInfo,kAudioUnitScope_Global,0,&customState,sizeof customState),"Restore custom name");verify(named.u,values);
+   AUPreset namedPreset{};bytes=sizeof namedPreset;check(AudioUnitGetProperty(named.u,kAudioUnitProperty_PresentPreset,kAudioUnitScope_Global,0,&namedPreset,&bytes),"Read custom name");require(namedPreset.presetNumber==-1&&namedPreset.presetName&&CFEqual(namedPreset.presetName,CFSTR("User saved name")),"User preset name retained");CFRelease(namedPreset.presetName);CFRelease(customState);
    // Original-style raw single-program state, retaining unused slots.
    auto program=bank.programs[7];program.values[16]=.625f;auto raw=camel::encodeLegacy({program});NSData* data=[NSData dataWithBytes:raw.data() length:raw.size()];
    NSDictionary* legacy=@{@"data":data};CFPropertyListRef plist=(__bridge CFPropertyListRef)legacy;
