@@ -40,8 +40,14 @@ int main(int argc,char** argv){@autoreleasepool{
   NSURL* url=[NSURL fileURLWithPath:[NSString stringWithUTF8String:argv[1]] isDirectory:YES];
   CFBundleRef bundle=CFBundleCreate(nullptr,(__bridge CFURLRef)url);require(bundle&&CFBundleLoadExecutable(bundle),"Load AU bundle");
   auto factory=reinterpret_cast<AudioComponentFactoryFunction>(CFBundleGetFunctionPointerForName(bundle,CFSTR("CamelCrusherAUFactory")));require(factory,"AU factory exported");
+#if CAMEL_AU_LEGACY_ID
+  AudioComponentDescription desc{'aumf','CaCr','CamA',0,0};
+  require(CFEqual(CFBundleGetIdentifier(bundle),CFSTR("com.camelaudio.au.CamelCrusher")),"Original AU bundle identifier");
+#else
   AudioComponentDescription desc{'aumf','CrP1','Prsv',0,0};
-  auto component=AudioComponentRegister(&desc,CFSTR("Preservation test AU"),0x200,factory);require(component,"Register runtime AU");
+#endif
+  require(CFEqual(CFBundleGetValueForInfoDictionaryKey(bundle,CFSTR("CFBundleName")),CFSTR("CamelCrusher")),"Original CamelCrusher product name");
+  auto component=AudioComponentRegister(&desc,CFSTR("Camel Audio: CamelCrusher"),0x10101,factory);require(component,"Register runtime AU");
   auto bank=camel::factoryBank();
   {
    Unit u(component);UInt32 bytes=0;Boolean writable=false;check(AudioUnitGetPropertyInfo(u.u,kAudioUnitProperty_ParameterList,kAudioUnitScope_Global,0,&bytes,&writable),"Parameter list");require(bytes==17*sizeof(AudioUnitParameterID),"17 legacy parameter IDs");
@@ -49,6 +55,7 @@ int main(int argc,char** argv){@autoreleasepool{
    select(u.u,13);auto values=bank.programs[13].values;values[1]=.125f;values[12]=.375f;params(u.u,values);
    select(u.u,4);auto other=bank.programs[4].values;other[11]=.55f;params(u.u,other);select(u.u,13);verify(u.u,values);
    CFPropertyListRef state=nullptr;bytes=sizeof state;check(AudioUnitGetProperty(u.u,kAudioUnitProperty_ClassInfo,kAudioUnitScope_Global,0,&state,&bytes),"Save state");
+   NSDictionary* saved=(__bridge NSDictionary*)state;require([saved[@"subtype"] unsignedIntValue]==desc.componentSubType&&[saved[@"manufacturer"] unsignedIntValue]==desc.componentManufacturer,"Saved original component identity");
    Unit restored(component);check(AudioUnitSetProperty(restored.u,kAudioUnitProperty_ClassInfo,kAudioUnitScope_Global,0,&state,sizeof state),"Restore state");require(selected(restored.u)==13,"Current program recall");verify(restored.u,values);
    select(restored.u,4);verify(restored.u,other);select(restored.u,13);verify(restored.u,values);CFRelease(state);
    AUPreset custom{-1,CFSTR("User saved name")};check(AudioUnitSetProperty(u.u,kAudioUnitProperty_PresentPreset,kAudioUnitScope_Global,0,&custom,sizeof custom),"Custom preset name");
@@ -56,7 +63,7 @@ int main(int argc,char** argv){@autoreleasepool{
    AUPreset namedPreset{};bytes=sizeof namedPreset;check(AudioUnitGetProperty(named.u,kAudioUnitProperty_PresentPreset,kAudioUnitScope_Global,0,&namedPreset,&bytes),"Read custom name");require(namedPreset.presetNumber==-1&&namedPreset.presetName&&CFEqual(namedPreset.presetName,CFSTR("User saved name")),"User preset name retained");CFRelease(namedPreset.presetName);CFRelease(customState);
    // Original-style raw single-program state, retaining unused slots.
    auto program=bank.programs[7];program.values[16]=.625f;auto raw=camel::encodeLegacy({program});NSData* data=[NSData dataWithBytes:raw.data() length:raw.size()];
-   NSDictionary* legacy=@{@"data":data};CFPropertyListRef plist=(__bridge CFPropertyListRef)legacy;
+   NSDictionary* legacy=@{@"version":@0,@"type":@(UInt32('aumf')),@"subtype":@(UInt32('CaCr')),@"manufacturer":@(UInt32('CamA')),@"name":@"Dream",@"data":data};CFPropertyListRef plist=(__bridge CFPropertyListRef)legacy;
    check(AudioUnitSetProperty(restored.u,kAudioUnitProperty_ClassInfo,kAudioUnitScope_Global,0,&plist,sizeof plist),"Legacy AU raw chunk");verify(restored.u,program.values);
    NSMutableData* big=[NSMutableData dataWithLength:68];auto* out=static_cast<unsigned char*>(big.mutableBytes);
    for(int i=0;i<17;++i){UInt32 bits;std::memcpy(&bits,&values[i],4);out[4*i]=bits>>24;out[4*i+1]=bits>>16;out[4*i+2]=bits>>8;out[4*i+3]=bits;}
