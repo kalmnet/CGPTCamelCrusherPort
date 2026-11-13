@@ -6,7 +6,7 @@ The package contains `CamelCrusher.vst` (VST2, for original project compatibilit
 
 The user confirmed both plugins work in native Live 12.4.6 and FL Studio 26.1.7 build 5419, including restored GUI/controls. Tested VST2 projects recall in both Windows-to-Mac and Mac-to-Windows directions. [Acceptance and limits](CamelCrusherPreservation/docs/ACCEPTANCE.md) separates these user reports from automated verification.
 
-The release preserves the tested 0.1.1 binaries. The Apple Silicon CI build passed core/legacy tests, preset checks and 47 VST3 validator tests. Selected original Intel DSP tests matched exactly in their stated experiments; Windows selected distortion/compressor tests also matched. Full original-plugin comparison renders remain pending. The new AU is experimental source only.
+The release preserves the tested 0.1.1 binaries. The Apple Silicon CI build passed core/legacy tests, preset checks and 47 VST3 validator tests. Selected original Intel DSP tests matched exactly in their stated experiments; Windows selected distortion/compressor tests also matched. Full original-plugin comparison renders remain pending. The completed AU is available separately; see below.
 
 - [Verified findings](CamelCrusherPreservation/docs/FINDINGS.md)
 - [Testing procedures](CamelCrusherPreservation/docs/TESTING.md)
@@ -16,3 +16,7 @@ The release preserves the tested 0.1.1 binaries. The Apple Silicon CI build pass
 - [Provenance and distribution limits](CamelCrusherPreservation/NOTICE.md)
 
 This private repository is for the requested preservation work. Original executable binaries and third-party port assets/code are not included; no public redistribution rights are asserted.
+
+## Audio Unit 0.2.0
+
+[Download the native AU](https://github.com/kalmnet/CGPTCamelCrusherPort/releases/tag/au-v0.2.0) and follow [AU installation](CamelCrusherPreservation/docs/AU-INSTALL.md). It includes the recovered DSP and original GUI, full preset-bank recall, and ARM64/Intel code. It uses a separate identity so the original AU can remain installed. See [AU verification and limits](CamelCrusherPreservation/docs/AU-STATUS.md). Existing VST2/VST3 downloads remain version 0.1.1.

@@ -149,7 +149,7 @@ Ghidra sometimes generated bad instruction boundaries and implausible decompilat
 | Randomize | Original targets/distributions investigated; modern RNG integration, not original RNG stream; AU convenience behavior also differs |
 | GUI interaction | New Cocoa event handling, linear drag and Shift fine adjustment; circular mode/context menus not fully replicated |
 | Version text and original display timing | AppKit version font and 3-second UI timer; not pixel/timing verified |
-| AU wrapper | Experimental source, new default ID, new preset/tail integration; macOS compilation and auval pending |
+| AU wrapper | AU 0.2.0 compiled universal; Apple validation, state/preset/editor tests and core render comparison passed; real-host/original-AU comparisons pending |
 | `CaP3` conversion and parameter-only FXB | Investigated or identified, unsupported import paths |
 
 ## User-reported macOS behavior
@@ -169,3 +169,7 @@ The user reports successful testing of both VST2 and VST3 in native Ableton Live
 These are user-reported acceptance results for the tested setup/projects. They are distinct from binary differential tests and CI evidence. They do not establish sample-perfect full-plugin sound equivalence, every automation path, every project/DAW version, or new AU support. Exact full-original-AU comparison renders remain pending.
 
 See [ACCEPTANCE.md](ACCEPTANCE.md) for the finalized build record.
+
+## Completed AU adapter 0.2.0
+
+The later AU port is documented in [AU-STATUS.md](AU-STATUS.md). Validation run 43348379334 used source commit d41b8d5fe00de1c4e1684a0a1e64262271d90615. Apple auval passed without its earlier parameter/preset-name warnings. The direct host test passed 240 cases / 829,440 channel samples with maximum error zero against the recovered core, plus state, factory/user preset and Cocoa editor tests. This is new adapter evidence, not a full original-AU sound comparison or user DAW acceptance. The legacy-ID AU configuration remains uncertified. The new AU does not alter the previously accepted VST2/VST3 binaries.
