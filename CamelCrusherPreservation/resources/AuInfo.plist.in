@@ -5,20 +5,22 @@
 <key>CFBundleDevelopmentRegion</key><string>en</string>
 <key>CFBundleSupportedPlatforms</key><array><string>MacOSX</string></array>
 <key>LSMinimumSystemVersion</key><string>11.0</string>
-<key>CFBundleExecutable</key><string>CamelCrusherAU</string>
-<key>CFBundleIdentifier</key><string>org.preservation.camelcrusher.au</string>
-<key>CFBundleName</key><string>CamelCrusher Preservation</string>
+<key>CFBundleExecutable</key><string>CamelCrusher</string>
+<key>CFBundleIdentifier</key><string>@AU_BUNDLE_IDENTIFIER@</string>
+<key>CFBundleName</key><string>CamelCrusher</string>
+<key>CFBundleDisplayName</key><string>CamelCrusher</string>
+<key>CFBundleSignature</key><string>????</string>
 <key>CFBundlePackageType</key><string>BNDL</string>
-<key>CFBundleShortVersionString</key><string>0.2.0</string>
-<key>CFBundleVersion</key><string>2</string>
+<key>CFBundleShortVersionString</key><string>1.01</string>
+<key>CFBundleVersion</key><string>1.01.1</string>
 <key>AudioComponents</key><array><dict>
 <key>sandboxSafe</key><true/>
-<key>description</key><string>CamelCrusher DSP preservation</string>
+<key>description</key><string>CamelCrusher</string>
 <key>factoryFunction</key><string>CamelCrusherAUFactory</string>
 <key>manufacturer</key><string>@AU_MAKER@</string>
-<key>name</key><string>Preservation Research: CamelCrusher</string>
+<key>name</key><string>@AU_COMPONENT_NAME@</string>
 <key>subtype</key><string>@AU_SUBTYPE@</string>
 <key>type</key><string>aumf</string>
-<key>version</key><integer>512</integer>
+<key>version</key><integer>65793</integer>
 </dict></array>
 </dict></plist>
