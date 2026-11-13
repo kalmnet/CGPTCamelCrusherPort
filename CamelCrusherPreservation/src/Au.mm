@@ -11,6 +11,7 @@
 #include <cmath>
 #include <cstring>
 #include <algorithm>
+#include <random>
 namespace {
 NSBundle* ownBundle(){Dl_info info{};if(!dladdr(reinterpret_cast<void*>(&ownBundle),&info)||!info.dli_fname)return nil;NSString* executable=[NSString stringWithUTF8String:info.dli_fname];NSString* path=[[[executable stringByDeletingLastPathComponent]stringByDeletingLastPathComponent]stringByDeletingLastPathComponent];return [NSBundle bundleWithPath:path];}
 const void* retainPreset(CFAllocatorRef,const void* value){auto* p=new AUPreset(*static_cast<const AUPreset*>(value));if(p->presetName)CFRetain(p->presetName);return p;}
@@ -36,8 +37,9 @@ public:
  UInt32 SupportedNumChannels(const AUChannelInfo** info)override{static const AUChannelInfo channels{2,2};if(info)*info=&channels;return 1;}
  OSStatus Initialize()override{auto e=AUMIDIEffectBase::Initialize();if(e!=noErr)return e;dsp.prepare(float(GetSampleRate()));reset.store(true);return noErr;}
  OSStatus Reset(AudioUnitScope,AudioUnitElement)override{reset.store(true);return noErr;}
- OSStatus GetParameterInfo(AudioUnitScope scope,AudioUnitParameterID id,AudioUnitParameterInfo& info)override{if(scope!=kAudioUnitScope_Global||id>=camel::parameterCount)return kAudioUnitErr_InvalidParameter;std::memset(&info,0,sizeof info);std::strncpy(info.name,camel::parameterNames[id],sizeof info.name-1);info.unit=kAudioUnitParameterUnit_Generic;info.minValue=0;info.maxValue=1;info.defaultValue=bank.programs[0].values[id];info.flags=kAudioUnitParameterFlag_IsReadable|kAudioUnitParameterFlag_IsWritable;return noErr;}
+ OSStatus GetParameterInfo(AudioUnitScope scope,AudioUnitParameterID id,AudioUnitParameterInfo& info)override{if(scope!=kAudioUnitScope_Global||id>=camel::parameterCount)return kAudioUnitErr_InvalidParameter;std::memset(&info,0,sizeof info);std::strncpy(info.name,camel::parameterNames[id],sizeof info.name-1);info.unit=kAudioUnitParameterUnit_Generic;info.minValue=0;info.maxValue=1;info.defaultValue=camel::factoryBank().programs[0].values[id];info.flags=kAudioUnitParameterFlag_IsReadable|kAudioUnitParameterFlag_IsWritable;return noErr;}
  OSStatus ProcessBufferLists(AudioUnitRenderActionFlags& flags,const AudioBufferList& input,AudioBufferList& output,UInt32 n)override{
+  if(n==0)return noErr;
   if(input.mNumberBuffers!=2||output.mNumberBuffers!=2||input.mBuffers[0].mNumberChannels!=1||input.mBuffers[1].mNumberChannels!=1)return kAudioUnitErr_FormatNotSupported;
   camel::Parameters p;for(UInt32 i=0;i<camel::parameterCount;++i)p[i]=AUEffectBase::GetParameter(i);if(reset.exchange(false))dsp.restore(p);else for(UInt32 i=0;i<camel::parameterCount;++i)dsp.setParameter(i,p[i]);
   if(!input.mBuffers[0].mData||!input.mBuffers[1].mData||!output.mBuffers[0].mData||!output.mBuffers[1].mData)return kAudioUnitErr_InvalidPropertyValue;
@@ -73,11 +75,16 @@ public:
  float value(int id)const override{float v=0;AudioUnitGetParameter(unit,AudioUnitParameterID(id),kAudioUnitScope_Global,0,&v);return v;}
  void begin(int id)override{event(kAudioUnitEvent_BeginParameterChangeGesture,id);}void change(int id,float v)override{AudioUnitSetParameter(unit,AudioUnitParameterID(id),kAudioUnitScope_Global,0,v,0);event(kAudioUnitEvent_ParameterValueChange,id);}void end(int id)override{event(kAudioUnitEvent_EndParameterChangeGesture,id);}
  int program()const override{AUPreset p{};UInt32 size=sizeof p;if(AudioUnitGetProperty(unit,kAudioUnitProperty_PresentPreset,kAudioUnitScope_Global,0,&p,&size)==noErr){int n=p.presetNumber;if(p.presetName)CFRelease(p.presetName);if(n>=0&&n<20)return n;}return int(bank.current);}
- std::string programName(int i)const override{return i>=0&&i<20?bank.programs[i].name:"";}
+ std::string programName(int i)const override{
+  if(i<0||i>=20)return "";AUPreset preset{};UInt32 size=sizeof preset;
+  if(AudioUnitGetProperty(unit,kAudioUnitProperty_PresentPreset,kAudioUnitScope_Global,0,&preset,&size)==noErr){char name[256]{};bool matches=preset.presetNumber==i&&preset.presetName&&CFStringGetCString(preset.presetName,name,sizeof name,kCFStringEncodingUTF8);if(preset.presetName)CFRelease(preset.presetName);if(matches)return name;}return bank.programs[i].name;
+ }
  void selectProgram(int i)override{if(i<0||i>=20)return;AUPreset p{i,CFStringCreateWithCString(nullptr,bank.programs[i].name.c_str(),kCFStringEncodingUTF8)};AudioUnitSetProperty(unit,kAudioUnitProperty_PresentPreset,kAudioUnitScope_Global,0,&p,sizeof p);CFRelease(p.presetName);bank.current=UInt32(i);}
- bool loadPreset(const std::uint8_t* data,std::size_t size,std::string& error)override{std::vector<camel::Program> p;if(!camel::importFile(data,size,p,&error)||p.size()!=1)return false;for(int i=0;i<17;++i){begin(i);change(i,p[0].values[i]);end(i);}bank.programs[bank.current]=p[0];return true;}
+ bool loadPreset(const std::uint8_t* data,std::size_t size,std::string& error)override{std::vector<camel::Program> p;if(!camel::importFile(data,size,p,&error)||p.size()!=1)return false;bank.current=UInt32(program());auto raw=camel::encodeLegacy(p);NSDictionary* state=@{@"data":[NSData dataWithBytes:raw.data() length:raw.size()],@"preservationProgram":@(bank.current)};CFPropertyListRef plist=(__bridge CFPropertyListRef)state;
+ if(AudioUnitSetProperty(unit,kAudioUnitProperty_ClassInfo,kAudioUnitScope_Global,0,&plist,sizeof plist)!=noErr){error="Audio Unit rejected preset";return false;}
+ for(int i=0;i<17;++i){begin(i);change(i,p[0].values[i]);end(i);}bank.programs[bank.current]=p[0];return true;}
  std::string readout(int id)const override{return camel::displayValue(id,value(id));}
- void randomize()override{for(int i:{1,2,4,5,7}){int toggle=i<3?0:(i<6?3:6);if(value(toggle)>.5f){begin(i);change(i,float(arc4random_uniform(10001))/10000.f);end(i);}}}
+ void randomize()override{std::mt19937 rng(std::random_device{}());std::uniform_real_distribution<float> u(0,1);std::normal_distribution<float> mech(0,.6f),tube(0,1);auto update=[&](int i,float v){begin(i);change(i,std::clamp(v,0.f,1.f));end(i);};if(value(0)>.5f){update(1,mech(rng));update(2,tube(rng));}if(value(3)>.5f){update(4,u(rng));update(5,u(rng));}if(value(6)>.5f){update(7,u(rng));update(8,u(rng)<.5f?0:1);}}
 };
 }
 @interface CCPAUContainer:NSView { @public std::unique_ptr<AUModel> model;void* native; }
