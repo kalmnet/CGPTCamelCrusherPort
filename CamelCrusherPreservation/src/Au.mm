@@ -97,6 +97,6 @@ public:
 @end
 @implementation CCPAUCocoaView
 - (unsigned)interfaceVersion{return 0;}
-- (NSString*)description{return @"CamelCrusher Preservation";}
+- (NSString*)description{return @"CamelCrusher";}
 - (NSView*)uiViewForAudioUnit:(AudioUnit)unit withSize:(NSSize)size{CCPAUContainer* view=[[CCPAUContainer alloc]initWithFrame:NSMakeRect(0,0,345,373)];view->model=std::make_unique<AUModel>(unit);view->native=camel::createNativeEditor((__bridge void*)view,view->model.get(),ownBundle().resourcePath.UTF8String);return view;}
 @end
